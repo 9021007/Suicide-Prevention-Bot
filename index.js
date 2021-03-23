@@ -25,15 +25,18 @@ client.on('ready', () => {
 
 LCM = message.content.toLowerCase();
 
-triggers = ["suicide",
+words = [
+  "kys",
+  "ky$",
+  "k y s",
+  "ky s",
+  "k ys",
+];
+
+phrases = ["suicide",
 "kill myself",
 "commit die",
 "kill yourself",
-"kys",
-"ky$",
-"k y s",
-"ky s",
-"k ys",
 "s uicide",
 "su icide",
 "sui cide",
@@ -132,10 +135,19 @@ triggers = ["suicide",
    }
 
 
-for (i = 0; i < triggers.length; i++) {
-  if (LCM.includes(triggers[i])) {
-    console.log("TRIGGER")
+for (i = 0; i < phrases.length; i++) {
+  if (LCM.includes(phrases[i])) {
+    console.log("PHRASE")
     alert();
+    return;
+  }
+}
+
+for (i = 0; i < words.length; i++) {
+  if (LCM==(words[i])) {
+    console.log("WORD")
+    alert();
+    return;
   }
 }
 
