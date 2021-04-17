@@ -22,10 +22,22 @@ client.on('ready', () => {
 
 
  client.on('message', message => {
+/*
+Add this if you'd like, but this pretty much makes sure the message is deleteable, and if so, it deletes it. Just so you don't get a Unknown Message error in the console:
 
+   if (message.deletable) {
+            message.delete();
+        }
+
+*/
 LCM = message.content.toLowerCase();
 
+	 
 words = [
+"kms", // Meaning "Kill myself" 
+"km$",
+"k m s",
+"k m $",
   "kys",
   "ky$",
   "k y s",
@@ -44,6 +56,8 @@ phrases = ["suicide",
 "suici de",
 "suicid e",
 "k ill yourself",
+"K I l l yo urself",
+"ki|| yourself",
 "ki ll yourself",
 "kil l yourself",
 "kill  yourself",
@@ -66,6 +80,8 @@ phrases = ["suicide",
 "d1e fag",
 "die kike",
 "d1e kike",
+"die j3w",
+"d1e j3w",
 "die jew",
 "d1e jew",
 "die nigger",
@@ -153,10 +169,11 @@ for (i = 0; i < words.length; i++) {
 
 
 
-if (message.content === '!ping') {
+if (message.content === `${prefix}ping`) {
 	// send back "Pong." to the channel the message was sent in
-  message.channel.send('Pinging...').then(sent => {
-    sent.edit(`Pong! Roundtrip latency: ${sent.createdTimestamp - message.createdTimestamp}ms`);
+  message.channel.send('Pinging. . .').then(sent => {
+	  // Don't want to mess with this just in case you have your preferences, but for the client ping, I would just use client.ws.ping.
+    sent.edit(`🏓 Pong! Roundtrip latency: ${sent.createdTimestamp - message.createdTimestamp}ms`);
 });
 }
 
