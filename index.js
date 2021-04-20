@@ -1,64 +1,9 @@
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const Config = require("./config.json");
 const client = new Discord.Client();
 
-const words = [
-  "kys",
-  "ky$",
-  "k y s",
-  "ky s",
-  "k ys",
-];
-
-const phrases = [
-  "suicide",
-  "kill myself",
-  "commit die",
-  "kill yourself",
-  "s uicide",
-  "su icide",
-  "sui cide",
-  "suic ide",
-  "suici de",
-  "suicid e",
-  "k ill yourself",
-  "ki ll yourself",
-  "kil l yourself",
-  "kill  yourself",
-  "kill   yourself",
-  "kill    yourself",
-  "kill urself",
-  "kil urself",
-  "kil yourself",
-  "go die",
-  "go d1e",
-  "commit d1e",
-  "su1cide",
-  "suic1de",
-  "su1c1de",
-  "hope you die",
-  "hope you d1e",
-  "die faggot",
-  "die fag",
-  "d1e faggot",
-  "d1e fag",
-  "die kike",
-  "d1e kike",
-  "die jew",
-  "d1e jew",
-  "die nigger",
-  "die nigga",
-  "d1e nigger",
-  "d1e nigga",
-  "die n1gger",
-  "d1e n1gger",
-  "die n1gga",
-  "d1e n1gga",
-  "just die",
-  "just d1e",
-  "die tranny",
-  "d1e tranny"
-];
+const words = Config.triggers["words"];
+const phrases = Config.triggers["phrases"];
 
 /**
  * Send the "Online Help Chat" message to a channel.
@@ -111,6 +56,15 @@ const alert = (channel) => {
    });
 };
 
+if (Config["token"] === "") {
+  console.error("Token property not set. Please set it in \"config.json\".");
+  process.exit(1);
+}
+
+if (Config["prefix"] === "") {
+  Config["prefix"] = "!";
+}
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
@@ -147,8 +101,8 @@ client.on('message', message => {
     return;
   }
 
-  if (content.startsWith(prefix)) {
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
+  if (content.startsWith(Config["prefix"])) {
+    const args = message.content.slice(Config["prefix"].length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
     if (command === 'ping') {
@@ -160,4 +114,4 @@ client.on('message', message => {
 
 });
 
-client.login(token);
+client.login(Config["token"]);
