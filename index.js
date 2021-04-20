@@ -61,8 +61,9 @@ const phrases = [
 ];
 
 /**
+ * Send the "Online Help Chat" message to a channel.
  * 
- * @param {Discord.TextChannel} channel 
+ * @param {Discord.TextChannel} channel The channel to send the message in.
  */
 const alert = (channel) => {
   channel.send({ embed: {
