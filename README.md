@@ -12,4 +12,4 @@ and
 ```npm install fs```
 
 
-![screenshot]()
+![screenshot](https://spbot.ml/sc3.png)
