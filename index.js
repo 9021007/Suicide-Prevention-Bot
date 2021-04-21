@@ -66,6 +66,8 @@ client.on('message', message => { //Message event listener
   LCM = LCM.replace(/\$/g, "s") //Replace $ with s
   LCM = LCM.replace(/1/g, "i") //Replace 1 with i
   LCM = LCM.replace(/4/g, "a") //Replace 4 with a
+  LCM = LCM.replace(/3/g, "e") //Replace 3 with e
+  LCM = LCM.replace(/0/g, "o") //Replace 0 with o
   var args = LCM.trim().split(/ +/);
   args = args.map(x => x.replace(/\t/g, ""))
   var commonElements = args.filter(function (e) {
