@@ -86,7 +86,7 @@ client.on('message', message => { //Message event listener
     .setFooter('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type sp!mute to have the bot ignore your messages.', 'https://spbot.ml/siround.png')
 
     //Mention bot will activate aleart message without triggers
-  if (message.mentions.has(client.user)) {
+  if (message.mentions.has(client.user) && message.content.includes(client.user.id)) {
     message.channel.send(suicide);
   }
 
@@ -113,7 +113,7 @@ client.on('message', message => { //Message event listener
 client.on('message', message => { //Message event listener
 
   //Pings for when somebody pings in a bot-heavy server.
-  if (message.content === '!ping' || message.content === '?ping' || message.content === '.ping' || message.content === '$ping' || message.content === '%ping' || message.content === '-ping' || message.content === '--ping' || message.content === '=ping' || message.content === '+ping' ||message.content === '_ping'||message.content === '/ping'||message.content === '&ping'||message.content === '--ping'||message.content === "`ping") {
+  if (['!ping', '?ping', '.ping', '$ping', '%ping', '-ping', '--ping', '=ping', '+ping', '_ping', '/ping', '&ping', '--ping', "`ping"].includes(message.content.toLowerCase())) {
     message.channel.send('Pinging...').then((msg) => {
       const ping = new Discord.MessageEmbed()
         .setColor('#04d384')
@@ -153,7 +153,7 @@ client.on('message', message => { //Message event listener
       .setDescription('Hi! I’m a helpful bot dedicated to helping those who are at risk of suicide. I watch for key words and phrases, and then act accordingly to direct users to help. I respond with both phone and text lines specific to their country, so they can receive the best help possible. I’m 100% OPEN SOURCE and ANONYMOUS.')
       .addField('What do you respond to?', 'I look for key words related to suicide, as well as commands like !help, !invite, and !ping.')
       .addField('How do I add you to my server?', 'Go to https://spbot.ml/ and click on ADD BOT.')
-      .addField('Are you anonymous?', 'Yes. I am, and have always been, 100% anonmyous. I\'m open source as well.')
+      .addField('Are you anonymous?', 'Yes. I am, and have always been, 100% anonymous. I\'m open source as well.')
       .addField('I have a bug report or feature request.', 'Join my Discord server (link at https://spbot.ml/)')
       .setImage('https://spbot.ml/sc2.png')
       .setFooter('Created by @Bobrobot1#1408 | https://spbot.ml | sp!mute to have the bot ignore your messages', 'https://spbot.ml/siround.png')
@@ -201,7 +201,7 @@ client.login(token);
 Bot developers:
 
   Bobrobot1#1408
-  CactusKing101#2624
+  CactusKing101#2624 the coolest one B)
   Killerjet101#7638
   pengu#1111
 
