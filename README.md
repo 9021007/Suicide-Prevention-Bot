@@ -11,5 +11,7 @@ Setup requires some packeges.
 and
 ```npm install fs```
 
+node.js v12 and above required. LTS version reccommended.
+
 
 ![screenshot](https://spbot.ml/sc2.png)
