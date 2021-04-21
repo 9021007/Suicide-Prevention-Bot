@@ -63,6 +63,9 @@ client.on('message', message => { //Message event listener
   var noSpace = triggers.map(x => x.replace(/\|/g, ""))
   var Space = triggers.map(x => x.replace(/\|/g, " "))
   LCM = LCM.replace(/\s\s+/g, '\t'); //regex for multiple spaces
+  LCM = LCM.replace(/\$/g, "s") //Replace $ with s
+  LCM = LCM.replace(/1/g, "i") //Replace 1 with i
+  LCM = LCM.replace(/4/g, "a") //Replace 4 with a
   var args = LCM.trim().split(/ +/);
   args = args.map(x => x.replace(/\t/g, ""))
   var commonElements = args.filter(function (e) {
