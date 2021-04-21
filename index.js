@@ -126,7 +126,7 @@ client.on('message', message => { //Message event listener
   }
 
   //Command handler: Return if not prefixed
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.toLowerCase().startsWith(prefix)) return;
   const arguments = message.content.slice(prefix.length).trim().split(' ');
   const command = arguments.shift().toLowerCase();
 
