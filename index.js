@@ -83,7 +83,7 @@ client.on('message', message => { //Message event listener
     .addField('Japan', 'Call 810352869090', true)
     .addField('Other Countries?', '[Click Here!](https://www.opencounseling.com/suicide-hotlines)', true)
     .addField('Need Extra Support?', 'Come talk to real people to help you through this! [Join here!](https://discord.gg/sdY4jyY)')
-    .setFooter('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type sp!mute to have the bot ignore your messages.', 'https://spbot.ml/siround.png')
+    .setFooter('We care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type sp!mute to have the bot ignore your messages.', 'https://spbot.ml/siround.png')
 
     //Mention bot will activate alert message without triggers
   if (message.mentions.has(client.user) && message.content.includes(client.user.id)) {
