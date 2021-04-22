@@ -69,7 +69,7 @@ client.on('message', message => { //Message event listener
     return noSpace.indexOf(e) > -1;
   });
 
-  //Main aleart embed
+  //Main alert embed
   const suicide = new Discord.MessageEmbed()
     .setColor('#04d384')
     .setTitle('Suicide Prevention Bot')
@@ -85,14 +85,14 @@ client.on('message', message => { //Message event listener
     .addField('Need Extra Support?', 'Come talk to real people to help you through this! [Join here!](https://discord.gg/sdY4jyY)')
     .setFooter('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type sp!mute to have the bot ignore your messages.', 'https://spbot.ml/siround.png')
 
-    //Mention bot will activate aleart message without triggers
+    //Mention bot will activate alert message without triggers
   if (message.mentions.has(client.user) && message.content.includes(client.user.id)) {
     message.channel.send(suicide);
   }
 
   if (muted.includes(message.author.id)) return; //Check to see if you muted the bot (User side only)
 
-  //Main aleart handler
+  //Main alert handler
   if (commonElements.length > 0) return message.author.send(suicide).catch(e => { message.channel.send(suicide) });
   Space.forEach((phrase, index) => {
     var arr = phrase.split(" ")
@@ -165,7 +165,7 @@ client.on('message', message => { //Message event listener
       .setColor('#04d384')
       .setTitle('Add a Suicide Prevention Bot')
       .setURL('https://spbot.ml/')
-      .setDescription('This Discord bot is an easy-to-use and easy-to-install bot for Discord, that actively prevents suicide and other crisis from occuring. Add it to your Discord server in just 3 clicks.')
+      .setDescription('This Discord bot is an easy-to-use and easy-to-install bot for Discord, that actively prevents suicide and other crisis from ocuring. Add it to your Discord server in just 3 clicks.')
       .setImage('https://www.spbot.ml/suicideicon.png')
     message.channel.send(invite);
 
