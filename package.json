@@ -1,0 +1,15 @@
+{
+  "name": "abc",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "discord.js-multilingual-utils": "^1.3.2",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "simple-json-db": "^1.2.3",
+    "simplest.db": "*"
+  }
+}
