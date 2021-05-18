@@ -76,7 +76,7 @@ client.on('ready', () => {
 
 client.on('message', async message => { //Message event listener
   lastMessage = message;
-  if (message.author.bot) return; // || message.channel.type != 'text'
+  if (message.author.bot || message.channel.type === 'dm') return;
   if (db.get(`lang_${message.guild.id}`) == null) {
     db.set(`lang_${message.guild.id}`, 'en');
   }
@@ -183,7 +183,7 @@ client.on('message', async message => { //Message event listener
 
 client.on('message', async message => { //Message event listener
   lastMessage = message;
-  if (message.author.bot) return; // || message.channel.type != 'text'
+  if (message.author.bot || message.channel.type === 'dm') return;
   if (db.get(`lang_${message.guild.id}`) == null) {
     db.set(`lang_${message.guild.id}`, 'en');
   }
