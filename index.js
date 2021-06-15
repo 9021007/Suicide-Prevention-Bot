@@ -203,8 +203,7 @@ client.on('message', async message => { //Message event listener
         .addField(`${rtping}`, `${msg.createdTimestamp - message.createdTimestamp}ms`)
         .addField(`${wsping}`, `${Math.round(client.ws.ping)}ms`)
         .setFooter(addtoserver)
-      await message.channel.send(ping);
-      await msg.delete();
+      await msg.edit({ content: null, embed: embed });
     }).catch(error => {
       console.log(error);
     })
