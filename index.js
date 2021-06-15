@@ -197,14 +197,14 @@ client.on('message', async message => { //Message event listener
   //Ping command
   const loading = client.emojis.cache.get("838616104687108117");
   if (LCM === '(ping' || LCM === ')ping' || LCM === '\\ping' || LCM === '~ping' || LCM === '|ping' || LCM === '!ping' || LCM === '?ping' || LCM === '.ping' || message.content === '$ping' || LCM === '%ping' || LCM === '-ping' || LCM === '--ping' || LCM === '=ping' || LCM === '+ping' || LCM === '_ping' || LCM === '/ping' || LCM === '&ping' || LCM === '--ping' || LCM === "`ping" || LCM === 'sp!ping') {
-    await message.channel.send(`${loading} ${pinging}`).then(async (msg) => {
+    message.channel.send(`${loading} ${pinging}`).then(async (msg) => {
       const ping = new Discord.MessageEmbed() //No need to be translated!
         .setColor('#04d384')
-        .addField(`${rtping}`, `${Math.floor(msg.createdTimestamp - message.createdTimestamp)}ms`)
+        .addField(`${rtping}`, `${msg.createdTimestamp - message.createdTimestamp}ms`)
         .addField(`${wsping}`, `${Math.round(client.ws.ping)}ms`)
         .setFooter(addtoserver)
-      await msg.edit(ping);
-      await msg.edit("\u200B");
+      await message.channel.send(ping);
+      await msg.delete();
     }).catch(error => {
       console.log(error);
     })
