@@ -55,7 +55,7 @@
     "infofield3heading": "क्या आप गुमनाम हैं?",
     "infofield3": "हाँ। मैं हूं, और हमेशा रहा हूं, 100% अनामी। मैं ओपन सोर्स भी हूं।",
     "infofield4heading": "मेरे पास बग रिपोर्ट या सुविधा अनुरोध है.",
-    "infofield4": "Join the discord!](https://discord.com/invite/YHvfUqVgWS)",
+    "infofield4": "[Join the discord!](https://discord.com/invite/YHvfUqVgWS)",
     "infofooter": "@ Bobrobot1 # 1408 द्वारा बनाया गया | https://spbot.ml | सपा। बॉट आपके संदेशों को नजरअंदाज करें",
 
     "helpcommands": ["help\n bot (alias: neofetch, v)\n info\n invite\n mute\n dmmute\n ping\n dm (user)\n dmmute\n set\n lang\n"],

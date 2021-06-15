@@ -55,7 +55,7 @@
     "infofield3heading": "Are you anonymous?",
     "infofield3": "Yes. I am, and have always been, 100% anonmyous. I'm open source as well.",
     "infofield4heading": "I have a bug report or feature request.",
-    "infofield4": "Join the discord!](https://discord.com/invite/YHvfUqVgWS)",
+    "infofield4": "[Join the discord!](https://discord.com/invite/YHvfUqVgWS)",
     "infofooter": "Created by @Bobrobot1#1408 | https://spbot.ml | sp!ignore to have the bot ignore your messages",
 
     "helpcommands": ["help\n bot (别名: neofetch, v)\n info\n invite\n mute\n dmmute\n ping\n dm (用户)\n dmmute\n set\n lang\n"],

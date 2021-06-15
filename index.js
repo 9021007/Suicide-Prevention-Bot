@@ -353,22 +353,26 @@ client.on('message', async message => { //Message event listener
     if (arguments[0] === 'english' || arguments[0] === 'en') {
       db.delete(`lang_${message.guild.id}`);
       return message.channel.send(langsus); //"Language successfully changed!"
-      //Spanish
+    //Spanish
     } else if (arguments[0] === 'spanish' || arguments[0] === 'espanol' || arguments[0] === 'sp') {
       db.set(`lang_${message.guild.id}`, 'sp');
       return message.channel.send(langsus);
-      //Hindi
+    //Hindi
     } else if (arguments[0] === 'hindi' || arguments[0] === 'हिंदी' || arguments[0] === 'hi') {
       db.set(`lang_${message.guild.id}`, 'hi');
       return message.channel.send(langsus);
+    //Turkish
     }else if (arguments[0] === 'turkish' || arguments[0] === 'türk' || arguments[0] === 'tr') {
       db.set(`lang_${message.guild.id}`, 'tr');
       return message.channel.send(langsus);
-      //Hindi
+    //Chinese
     } else if (arguments[0] === 'chinese' || arguments[0] === '中文' || arguments[0] === 'cn') {
       db.set(`lang_${message.guild.id}`, 'cn');
       return message.channel.send(langsus);
-      //Hindi
+    //Italian
+  } else if (arguments[0] === 'italian' || arguments[0] === 'italiano' || arguments[0] === 'it') {
+    db.set(`lang_${message.guild.id}`, 'it');
+    return message.channel.send(langsus);
     } else {
       message.channel.send(nolang); //"That language is not supported. To see all languages use the command sp!lang"
       return;
