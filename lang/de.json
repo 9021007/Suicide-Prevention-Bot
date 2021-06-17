@@ -59,7 +59,8 @@
     "infofield4": "[Besuche den discord!](https://discord.com/invite/YHvfUqVgWS)",
     "infofooter": "Erstellt von @Bobrobot1#1408 | https://spbot.ml | sp!ignore um keine Nachrichten mehr zu erhalten",
 
-    "helpcommands": ["help\n bot (alias: neofetch, v)\n info\n invite\n mute\n dmmute\n ping\n dm (user)\n dmmute\n set\n lang\n"],
+
+    "helpcommands": ["help\n bot (alias: neofetch, v)\n info\n invite\n mute\n ping\n dm (user)\n dmmute\n set\n lang\n"],
     "helplinks": ["[Webseite](https://spbot.ml/)\n [Discord Einladung](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Seite](https://spbot.freshstatus.io/)\n"],
     "helpauthor": "Suizid Präventions Bot Info",
     "helptitle": "Du hast hilfe angefordert?",

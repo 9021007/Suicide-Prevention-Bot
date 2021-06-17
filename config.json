@@ -1,7 +1,7 @@
 {
 	"prefix": "sp!",
 	"token": "YOUR TOKEN HERE",
-	"version": "1.2.0 Stable",
+	"version": "1.2.2",
 	"langinfo": [
 		["en", "english"],
         ["sp", "spanish", "espanol"],
@@ -10,6 +10,7 @@
 		["tr", "turkish", "türk"],
 		["de", "german", "deutsch"]
 	],
+
 	"langlist": [
 		"🇬🇧 English - en",
 		"🇪🇸 Español - sp",

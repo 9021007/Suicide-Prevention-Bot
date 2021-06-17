@@ -71,7 +71,9 @@ const db = new Database({
 //Ready bot client ;)
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`); //let us know we're good to go
-  client.user.setActivity('chat for suicide. https://spbot.ml/', { type: 'LISTENING' }); //On init, add status
+  setInterval(() => {
+    client.user.setActivity(`chat for suicide. https://spbot.ml/ — ${client.guilds.cache.size} servers/${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users`, { type: 'LISTENING' }); //On init, add status
+  }, 15500);
 });
 
 client.on('message', async message => { //Message event listener
