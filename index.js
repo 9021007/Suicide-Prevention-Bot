@@ -79,11 +79,9 @@ client.on('ready', () => {
 client.on('message', async message => { //Message event listener
   lastMessage = message;
   if (message.author.bot || message.channel.type === 'dm') return;
-  if (db.get(`lang_${message.guild.id}`) == null) {
-    db.set(`lang_${message.guild.id}`, 'en');
-  }
+  var lang = "en";
+  if (db.get(`lang_${message.guild.id}`)) lang = db.get(`lang_${message.guild.id}`); 
   LCM = message.content.toLowerCase(); //Lower Case Message text
-  const lang = db.get(`lang_${message.guild.id}`);
   const { suicidetitle, suicideauthor, suicidedescription, suicidefield1heading, suicidefield1, suicidefield2heading, suicidefield2, suicidefield3heading, suicidefield3, suicidefield4heading, suicidefield4, suicidefield5heading, suicidefield5, suicidefield6heading, suicidefield6, suicidefield7heading, suicidefield7, suicidefield8heading, suicidefield8, suicidefooter, insulttitle, insultauthor, insultdescription, dmembedtitle, dmembedauthor, dmembeddescription, dmembedfield1heading, dmembedfield1, dmembedfield2heading, dmembedfield2, dmembedfield3heading, dmembedfield3, dmembedfield4heading, dmembedfield4, dmembedfield5heading, dmembedfield5, dmembedfield6heading, dmembedfield6, dmembedfield7heading, dmembedfield7, dmembedfield8heading, dmembedfield8, dmembedfooter, infotitle, infoauthor, infodescription, infofield1heading, infofield1, infofield2heading, infofield2, infofield3heading, infofield3, infofield4heading, infofield4, infofooter, helpcommands, helplinks, helpauthor, helptitle, helpfield1heading, helpfield2heading, helpfield3heading, helpfield3, invitetitle, invitedescription, langstitle, langsauthor, langsfield1heading, langsfield1, bot2, bot3, bot4, wsping, rtping, pinging, addtoserver, nolang, langsus, mute2, mute3, dmmute2, dmmute3, dmmute4, dmmute5, mention, sent, seterror, } = require(`./lang/${lang}.json`);
 
   if (message.mentions.users.first() == client.user) {
@@ -108,7 +106,7 @@ client.on('message', async message => { //Message event listener
 
 
   //Map out the message
-  if (db.get(`mute_${message.author.username}`)) return; //Check to see if you muted the bot (User side only)
+  if (db.get(`mute_${message.author.id}`)) return; //Check to see if you muted the bot (User side only)
   LCM = message.content.toLowerCase(); //Lower Case Message text
   LCM = LCM.replace(/\s\s+/g, '\t'); //regex for multiple spaces
   LCM = LCM.replace(/\$/g, "s") //Replace $ with s
@@ -186,11 +184,9 @@ client.on('message', async message => { //Message event listener
 client.on('message', async message => { //Message event listener
   lastMessage = message;
   if (message.author.bot || message.channel.type === 'dm') return;
-  if (db.get(`lang_${message.guild.id}`) == null) {
-    db.set(`lang_${message.guild.id}`, 'en');
-  }
+  var lang = "en"
+  if (db.get(`lang_${message.guild.id}`)) lang = db.get(`lang_${message.guild.id}`); 
   LCM = message.content.toLowerCase(); //Lower Case Message text
-  const lang = db.get(`lang_${message.guild.id}`);
   const { suicidetitle, suicideauthor, suicidedescription, suicidefield1heading, suicidefield1, suicidefield2heading, suicidefield2, suicidefield3heading, suicidefield3, suicidefield4heading, suicidefield4, suicidefield5heading, suicidefield5, suicidefield6heading, suicidefield6, suicidefield7heading, suicidefield7, suicidefield8heading, suicidefield8, suicidefooter, insulttitle, insultauthor, insultdescription, dmembedtitle, dmembedauthor, dmembeddescription, dmembedfield1heading, dmembedfield1, dmembedfield2heading, dmembedfield2, dmembedfield3heading, dmembedfield3, dmembedfield4heading, dmembedfield4, dmembedfield5heading, dmembedfield5, dmembedfield6heading, dmembedfield6, dmembedfield7heading, dmembedfield7, dmembedfield8heading, dmembedfield8, dmembedfooter, infotitle, infoauthor, infodescription, infofield1heading, infofield1, infofield2heading, infofield2, infofield3heading, infofield3, infofield4heading, infofield4, infofooter, helpcommands, helplinks, helpauthor, helptitle, helpfield1heading, helpfield2heading, helpfield3heading, helpfield3, invitetitle, invitedescription, langstitle, langsauthor, langsfield1heading, langsfield1, bot2, bot3, bot4, wsping, rtping, pinging, addtoserver, nolang, langsus, mute2, mute3, dmmute2, dmmute3, dmmute4, dmmute5, mention1, sent, seterror, } = require(`./lang/${lang}.json`);
 
 
@@ -299,21 +295,21 @@ client.on('message', async message => { //Message event listener
     //Mute command
     //main mute command
   } else if (['mute'].includes(command)||['sustur'].includes(command)) {
-    if (db.get(`mute_${message.author.username}`) === message.author.id) {
-      db.delete(`mute_${message.author.username}`)
+    if (db.get(`mute_${message.author.id}`)) { //db.get(`lang_
+      db.delete(`mute_${message.author.id}`)
       message.channel.send(mute2) //"Removed from ignore list"
     } else {
-      db.set(`mute_${message.author.username}`, `${message.author.id}`)
+      db.set(`mute_${message.author.id}`, true)
       message.channel.send(mute3) //"I will now ignore your trigger words"
     }
 
     //dm mute command
   } else if (['dmmute'].includes(command)||['ömsustur'].includes(command)) {
-    if (db.get(`dmmute_${message.author.username}`) === message.author.id) {
-      db.delete(`dmmute_${message.author.username}`)
+    if (db.get(`dmmute_${message.author.id}`)) {
+      db.delete(`dmmute_${message.author.id}`)
       message.channel.send(dmmute2)
     } else {
-      db.set(`dmmute_${message.author.username}`, `${message.author.id}`)
+      db.set(`dmmute_${message.author.id}`, true)
       message.channel.send(dmmute3)
     }
 
@@ -322,7 +318,7 @@ client.on('message', async message => { //Message event listener
     let mention = message.mentions.users.first();
 
     if (!mention) return message.channel.send(mention1); // checking if message don't have a user mention
-    if (db.get(`dmmute_${message.author.username}`)) return message.channel.send(dmmute5); //Check to see if you muted the bot (User side only)
+    if (db.get(`dmmute_${message.author.id}`)) return message.channel.send(dmmute5); //Check to see if you muted the bot (User side only)
     message.channel.send(sent);
     //dm embed ADD THIS. 
     const dmembed = new Discord.MessageEmbed()
