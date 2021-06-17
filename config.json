@@ -1,6 +1,7 @@
 {
 	"prefix": "sp!",
 	"token": "YOUR TOKEN HERE",
+	"botPerms": ["SEND_MESSAGES", "EMBED_LINKS", "READ_MESSAGE_HISTORY"],
 	"version": "1.2.2",
 	"langinfo": [
 		["en", "english"],
@@ -91,6 +92,7 @@
 		"प्रतिबद्ध | मरो",
 		"मार दो | अपने आप को",
 		"suizid",
+		"suisid",
 		"selbst|mord",
 		"bring|mich|um",
 		"töte|mich",
@@ -131,5 +133,3 @@
 		"bring|dich|um"
 	]
 }
-
-
