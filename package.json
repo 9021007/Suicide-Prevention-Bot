@@ -8,9 +8,10 @@
     "discord.js": "^12.5.3",
     "ws": ">=7.4.6",
     "discord.js-multilingual-utils": "^1.3.2",
+    "nodemon": "^2.0.7",
     "os": "^0.1.1",
     "path": "^0.12.7",
     "simple-json-db": "^1.2.3",
-    "simplest.db": "*"
+    "simplest.db": "^1.0.1"
   }
 }

@@ -61,7 +61,7 @@ process
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { prefix, token, triggers, insults, langlist } = require('./config.json');
+const { prefix, token, triggers, insults, langlist, langinfo } = require('./config.json');
 const Database = require('simplest.db');
 const db = new Database({
   path: './data.json'
@@ -205,8 +205,7 @@ client.on('message', async message => { //Message event listener
         .addField(`${rtping}`, `${Math.floor(msg.createdTimestamp - message.createdTimestamp)}ms`)
         .addField(`${wsping}`, `${Math.round(client.ws.ping)}ms`)
         .setFooter(addtoserver)
-      await msg.edit(ping);
-      await msg.edit("\u200B");
+      await msg.edit({content: null, embed: ping});
     }).catch(error => {
       console.log(error);
     })
@@ -351,32 +350,18 @@ client.on('message', async message => { //Message event listener
   } else if (['set'].includes(command)||['ayarla'].includes(command)) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
 
-    //English
-    if (arguments[0] === 'english' || arguments[0] === 'en') {
-      db.delete(`lang_${message.guild.id}`);
-      return message.channel.send(langsus); //"Language successfully changed!"
-      //Spanish
-    } else if (arguments[0] === 'spanish' || arguments[0] === 'espanol' || arguments[0] === 'sp') {
-      db.set(`lang_${message.guild.id}`, 'sp');
-      return message.channel.send(langsus);
-      //Hindi
-    } else if (arguments[0] === 'hindi' || arguments[0] === 'हिंदी' || arguments[0] === 'hi') {
-      db.set(`lang_${message.guild.id}`, 'hi');
-      return message.channel.send(langsus);
-    }else if (arguments[0] === 'turkish' || arguments[0] === 'türk' || arguments[0] === 'tr') {
-      db.set(`lang_${message.guild.id}`, 'tr');
-      return message.channel.send(langsus);
-      //Hindi
-    } else if (arguments[0] === 'chinese' || arguments[0] === '中文' || arguments[0] === 'cn') {
-      db.set(`lang_${message.guild.id}`, 'cn');
-      return message.channel.send(langsus);
-      //Hindi
-    } else {
-      message.channel.send(nolang); //"That language is not supported. To see all languages use the command sp!lang"
-      return;
+    //Array for checking which language the user selected
+    var langShort;
+    for (l of langinfo) {
+      if (l.includes(arguments[0])) {
+        langShort = l[0];
+      }
     }
-
-    //See all languages
+    if (!langShort) return message.channel.send(nolang);
+    if (langShort != "en") db.set(`lang_${message.guild.id}`, langShort);
+    else db.delete(`lang_${message.guild.id}`);
+    return message.channel.send(require(`./lang/${langShort}.json`).langsus);
+    
   } else if (['lang'].includes(command)) {
     const langs = new Discord.MessageEmbed()
     .setColor('#04d384')
@@ -404,6 +389,7 @@ Bot developers:
   Killerjet101#7638
   pengu#1111
   HAHALOSAH#4627
+  Parotay | Luke#3210
 
 Message from developers:
 
