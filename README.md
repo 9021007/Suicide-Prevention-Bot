@@ -17,3 +17,10 @@ node.js v12 and above required. LTS version reccommended.
 
 
 ![screenshot](https://spbot.ml/sc2.png)
+
+## Links
+[Website](https://spbot.ml)
+
+[Status Website](https://spbot.freshstatus.io )
+
+[Discord Server](https://discord.com/invite/YHvfUqVgWS)
