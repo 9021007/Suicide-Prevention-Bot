@@ -50,12 +50,10 @@ var lastMessage = null;
 //Error handler
 process
   .on('unhandledRejection', (reason, p) => {
-    if (lastMessage != null) lastMessage.channel.send("```\nPromise Rejection: " + reason.stack + "\n```\nThis error occured in file " + reason.stack.split("\n")[1].split(/[\(\):]/)[1] + " on line " + reason.stack.split("\n")[1].split(/:/)[1] + ", column " + reason.stack.split("\n")[1].split(/:/)[2].split(")")[0])
     console.error(reason, 'Unhandled Rejection at Promise', p);
   })
   .on('uncaughtException', err => {
 
-    if (lastMessage != null) lastMessage.channel.send("```\nException: " + err.stack + "\n```")
     console.error(err, 'Uncaught Exception caught');
   });
 
