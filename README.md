@@ -7,11 +7,7 @@ A Discord bot to prevent suicide. It works by taking a list of phrases, and it c
 
 [![CodeQL](https://github.com/Bobrobot1/Suicide-Prevention-Bot/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Bobrobot1/Suicide-Prevention-Bot/actions/workflows/codeql-analysis.yml)
 
-Setup requires some packeges.
-
-```npm install discord.js```
-and
-```npm install fs```
+Create a blank data.json file to use as the database.
 
 node.js v12 and above required. LTS version reccommended.
 
@@ -21,6 +17,6 @@ node.js v12 and above required. LTS version reccommended.
 ## Links
 [Website](https://spbot.ml)
 
-[Status Website](https://spbot.freshstatus.io )
+[Status Website](https://spbot.freshstatus.io)
 
 [Discord Server](https://discord.com/invite/YHvfUqVgWS)
