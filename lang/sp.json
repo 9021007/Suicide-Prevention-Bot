@@ -1,5 +1,5 @@
 {
-    "suicidetitle": "Bot de Prevención del suicidiot",
+    "suicidetitle": "Bot para la prevención del suicidio",
     "suicideauthor": "Por favor, dé a la línea de ayuda sólo una oportunidad",
     "suicidedescription": "Este bot ha detectado automáticamente una palabra clave relacionada con el suicidio\n",
     "suicidefield1heading": "Por favor, escúchame.",
@@ -15,12 +15,12 @@
     "suicidefield6heading": "Japón",
     "suicidefield6": "Llame 810352869090",
     "suicidefield7heading": "¿Otros países?",
-    "suicidefield7": "[Hacer clic aquí.](https://spbot.ml/hotlines)",
+    "suicidefield7": "[Haz click aquí.](https://spbot.ml/hotlines)",
     "suicidefield8heading": "¿Necesita soporte adicional?",
-    "suicidefield8": "¡Ven a hablar con gente real para ayudarte a en esta discordia! [Hacer clic aquí.](https://discord.gg/sdY4jyY)",
+    "suicidefield8": "¡Ve a hablar con personas reales para ayudarte en esta comunidad de discord! [Haz click aquí.](https://discord.gg/sdY4jyY)",
     "suicidefooter": "Me preocupo por ti. Por favor, trate de dar a las líneas de ayuda sólo una oportunidad. Sé que puedes superar esto. Notificar un error: https://discord.gg/YHvfUqVgWS. Sitio web: https://spbot.ml/. Escriba sp!mute para que el bot ignore sus mensajes.",
 
-    "insulttitle": "Bot de Prevención del suicidiot",
+    "insulttitle": "Bot para la prevención del suicidio",
     "insultauthor": "Por favor, no insultes a los demás.",
     "insultdescription": "Esto no es un asunto de risa",
 
@@ -65,10 +65,10 @@
     "helpfield1heading": "Comandos - prefijo es sp! [comando aquí]",
     "helpfield2heading": "Enlaces",
     "helpfield3heading": "¿Pediste ayuda? ¿Encontraste un error?",
-    "helpfield3": "[¡Únete a la discordia!](https://discord.com/invite/YHvfUqVgWS)",
+    "helpfield3": "[¡Únete al servidor de Discord!](https://discord.com/invite/YHvfUqVgWS)",
 
-    "invitetitle": "Añadir un bot de prevención del suicidio",
-    "invitedescription": "Este bot discord es un bot fácil de usar y fácil de instalar para Discord, que evita activamente que ocurran suicidios y otras crisis. Agréguelo a su servidor discord en solo 3 clics.",
+    "invitetitle": "¡Añádeme a un nuevo servidor!",
+    "invitedescription": "Este bot de discord es un bot fácil de usar y fácil de instalar en Discord, además de que activamente previene que ocurran suicidios y otras crisis. Agréguelo a su servidor discord en solo 3 clics.",
 
     "langstitle": "Aquí están todos los idiomas compatibles",
     "langsauthor": "Información del bot de prevención del suicidio",
@@ -92,5 +92,5 @@
     "dmmute5": "Usuario mencionado ha optado por no usar DMs bot dirigidos por el usuario",
     "mention1": "Debe mencionar a un usuario.",
     "sent": "¡Enviado!",
-    "seterror": "¡Debe ser administrador de este servidor para cambiar el idioma!"
+    "seterror": "¡Debe tener el permiso de administrador de este servidor para cambiar el idioma!"
 }

@@ -46,7 +46,6 @@ MMMMMMMMMMMMMMNXWMMMMMMMMMMMMMMMMWMMMMMMMMMMM
 
 
 //required libraries and files
-var lastMessage = null;
 //Error handler
 process
   .on('unhandledRejection', (reason, p) => {
@@ -57,27 +56,25 @@ process
     console.error(err, 'Uncaught Exception caught');
   });
 
-
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Intents, MessageEmbed } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES] });
 const { prefix, token, triggers, insults, langlist, langinfo, botPerms } = require('./config.json');
 const Database = require('simplest.db');
 const db = new Database({
   path: './data.json'
-})
-
-
+});
+var lastMessage = null;
 //Ready bot client ;)
-client.on('ready', () => {
+client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`); //let us know we're good to go
   setInterval(() => {
     client.user.setActivity(`chat for suicide. https://spbot.ml/ — ${client.guilds.cache.size} servers/${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users`, { type: 'LISTENING' }); //On init, add status
   }, 15000); //Update every 15 sec
 });
 
-client.on('message', async message => { //Message event listener
+client.on('messageCreate', async message => { //Message event listener
   lastMessage = message;
-  if (message.author.bot || message.channel.type === 'dm' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
+  if (message.author.bot || message.channel.type == 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
   var lang = "en";
   if (db.get(`lang_${message.guild.id}`)) lang = db.get(`lang_${message.guild.id}`);
   LCM = message.content.toLowerCase(); //Lower Case Message text
@@ -107,7 +104,7 @@ client.on('message', async message => { //Message event listener
 
   //Mention bot will activate aleart message without triggers
   if (message.mentions.users.first() == client.user) {
-    const suicide = new Discord.MessageEmbed()
+    const suicide = new MessageEmbed()
       .setColor('#04d384')
       .setTitle(`${suicidetitle}`)
       .setAuthor(`${suicideauthor}`, 'https://spbot.ml/siround.png')
@@ -122,7 +119,7 @@ client.on('message', async message => { //Message event listener
       .addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
       .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png')
 
-    message.channel.send(suicide);
+    message.channel.send({ embeds: [suicide] });
   }
 
   if (db.get(`mute_${message.author.id}`) == null) { //Check to see if you muted the bot (User side only)
@@ -134,7 +131,7 @@ client.on('message', async message => { //Message event listener
       }
     })
     if (commonElements.length > 0) {
-      const suicide = new Discord.MessageEmbed()
+      const suicide = new MessageEmbed()
         .setColor('#04d384')
         .setTitle(`${suicidetitle}`)
         .setAuthor(`${suicideauthor}`, 'https://spbot.ml/siround.png')
@@ -148,7 +145,7 @@ client.on('message', async message => { //Message event listener
         .addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
         .addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
         .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png')
-      return message.author.send(suicide).catch(e => { message.channel.send(suicide) });
+      return message.author.send({ embeds: [suicide] }).catch(e => { message.channel.send(suicide) });
 
     }
     var args = LCM.trim().split(/ +/);
@@ -162,12 +159,12 @@ client.on('message', async message => { //Message event listener
         }
       })
       if (commonElements.length > 0) {
-        const insult = new Discord.MessageEmbed()
+        const insult = new MessageEmbed()
           .setColor('#04d384')
           .setTitle(`${insulttitle}`)
           .setAuthor(`${insultauthor}`, 'https://spbot.ml/siround.png')
           .setDescription(`${insultdescription}`)
-        message.channel.send(insult).catch(console.err)
+        message.channel.send({ embeds: [insult] }).catch(console.err)
       };
     }
   } 
@@ -180,16 +177,14 @@ client.on('message', async message => { //Message event listener
   //Ping command
   const loading = client.emojis.cache.get("838616104687108117");
   if (LCM === '(ping' || LCM === ')ping' || LCM === '\\ping' || LCM === '~ping' || LCM === '|ping' || LCM === '!ping' || LCM === '?ping' || LCM === '.ping' || message.content === '$ping' || LCM === '%ping' || LCM === '-ping' || LCM === '--ping' || LCM === '=ping' || LCM === '+ping' || LCM === '_ping' || LCM === '/ping' || LCM === '&ping' || LCM === '--ping' || LCM === "`ping" || LCM === 'sp!ping') {
-    await message.channel.send(`${loading} ${pinging}`).then(async (msg) => {
-      const ping = new Discord.MessageEmbed() //No need to be translated!
+    message.channel.send(`${loading} Pinging...`).then((msg) => {
+      msg.edit("\u200B");
+      const ping = new MessageEmbed()
         .setColor('#04d384')
-        .addField(`${rtping}`, `${Math.floor(msg.createdTimestamp - message.createdTimestamp)}ms`)
-        .addField(`${wsping}`, `${Math.round(client.ws.ping)}ms`)
-        .setFooter(addtoserver)
-      await msg.edit({ content: null, embed: ping });
-    }).catch(error => {
-      console.log(error);
-    })
+        .setTitle('Here is my ping young one')
+        .setDescription(`Roundtrip latency is ${Math.floor(msg.createdTimestamp - message.createdTimestamp)}ms \nAPI Latency is ${Math.round(client.ws.ping)}ms`)
+      msg.edit({ embeds: [ping] });
+    });
     return;
   }
 
@@ -209,7 +204,7 @@ client.on('message', async message => { //Message event listener
     const core = os.cpus()[0];
     const { version: djsversion } = require("discord.js");
     const { version } = require('./config.json');
-    const bot = new Discord.MessageEmbed() //No need to be translated!
+    const bot = new MessageEmbed() //No need to be translated!
       .setColor('#04d384')
       .setFooter(bot2)
       .addField('General', [
@@ -230,11 +225,11 @@ client.on('message', async message => { //Message event listener
         `\u3000 ${logoemoji}: v${version}`,
       ])
       .setTimestamp();
-    message.channel.send(bot);
+    message.channel.send({ embeds: [bot] });
 
     //Info command
   } else if (['info'].includes(command) || ['bilgi'].includes(command)) {
-    const info = new Discord.MessageEmbed()
+    const info = new MessageEmbed()
       .setColor('#04d384')
       .setAuthor(infoauthor, 'https://spbot.ml/siround.png')
       .setTitle(infotitle)
@@ -246,12 +241,12 @@ client.on('message', async message => { //Message event listener
       .addField(infofield4heading, infofield4)
       .setImage('https://spbot.ml/sc2.png')
       .setFooter(infofooter)
-    message.channel.send(info);
+    message.channel.send({ embeds: [info] });
 
 
     //Help command
   } else if (['help'].includes(command) || ['yardım'].includes(command)) {
-    const help = new Discord.MessageEmbed()
+    const help = new MessageEmbed()
       .setColor('#04d384')
       .setAuthor(helpauthor, 'https://spbot.ml/siround.png')
       .setTitle(helptitle)
@@ -259,17 +254,17 @@ client.on('message', async message => { //Message event listener
       .addField(helpfield1heading, helpcommands)
       .addField(helpfield2heading, helplinks)
       .addField(helpfield3heading, helpfield3)
-    message.channel.send(help);
+    message.channel.send({ embeds: [help] });
 
     //Invite command
   } else if (['invite'].includes(command) || ['davet'].includes(command)) {
-    const invite = new Discord.MessageEmbed()
+    const invite = new MessageEmbed()
       .setColor('#04d384')
       .setTitle(invitetitle)
       .setURL('https://spbot.ml/')
       .setDescription(invitedescription)
       .setImage('https://www.spbot.ml/suicideicon.png')
-    message.channel.send(invite);
+    message.channel.send({ embeds: [invite] });
 
 
 
@@ -306,7 +301,7 @@ client.on('message', async message => { //Message event listener
     if (db.get(`dmmute_${message.author.id}`)) return message.channel.send(dmmute5); //Check to see if you muted the bot (User side only)
     message.channel.send(sent);
     //dm embed ADD THIS. 
-    const dmembed = new Discord.MessageEmbed()
+    const dmembed = new MessageEmbed()
       .setColor('#04d384')
       .setTitle(`${dmembedtitle}`)
       .setURL('https://spbot.ml/')
@@ -323,7 +318,7 @@ client.on('message', async message => { //Message event listener
       .addField(`${dmembedfield8heading}`, `${dmembedfield8}`, false)
       .setFooter('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type sp!dmmute to prevent others from telling me to send you DMs', 'https://spbot.ml/siround.png')
 
-    mention.send(dmembed).catch(e => {
+    mention.send({ embeds: [dmembed] }).catch(e => {
       message.channel.send(dmmute4); //If dm command has an error
     });
 
@@ -344,7 +339,7 @@ client.on('message', async message => { //Message event listener
     return message.channel.send(require(`./lang/${langShort}.json`).langsus);
 
   } else if (['lang'].includes(command)) {
-    const langs = new Discord.MessageEmbed()
+    const langs = new MessageEmbed()
       .setColor('#04d384')
       .setTitle(langstitle)
       .setAuthor(langsauthor)
@@ -352,7 +347,7 @@ client.on('message', async message => { //Message event listener
       .setURL('https://spbot.ml/')
       .addField(langsfield1heading, langsfield1)
       .setImage('https://www.spbot.ml/suicideicon.png')
-    message.channel.send(langs);
+    message.channel.send({ embeds: [langs] });
   }
 });
 
