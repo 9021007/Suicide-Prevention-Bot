@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
+
+body {
+  background: rgb(26,26,73);
+background: linear-gradient(333deg, rgba(26,26,73,1) 0%, rgba(0,212,255,1) 100%);
+font-family: 'Varela Round', sans-serif;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#section {
+  \\background-color:blue;
+  \\border: 4px solid white;
+  padding-top:20vh;
+}
+
+#one {
+\\background-color:red;
+height: 100vh;
+}
+#two {
+\\background-color:green;
+height: 100vh;
+}
+#three {
+\\background-color:blue;
+height: 150vh;
+}
+#four {
+\\background-color:yellow;
+height: 100vh;
+}
+
+h1, h2 {
+text-align: center;
+font-size: 6vw;
+}
+
+#footer a {
+  font-size: 3vh !important;
+  text-decoration: none;
+  color: white;
+  text-align: left !important;
+  float: left;
+
+}
+
+
+p {
+  font-size: 3vw;
+  text-align: center;
+}
+
+button {
+background-color:#7289DA;
+padding: 3vh;
+font-size: 3vh;
+border-radius: 1.5vh;
+}
+
+img[alt="Free Web Hosting"] {
+  display:none !important;
+  width:0px !important;
+  height: 0px !important;
+}

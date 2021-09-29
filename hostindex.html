@@ -1,0 +1,5 @@
+<html>
+New Account, upload your files!<br>
+Valid indexes: index.php index.html index.htm index.shtml Index.htm Index.html INDEX.HTML INDEX.HTM default.htm default.html home.htm home.html Home.html Home.htm<br><br>
+Attention! File name is case sensitive.
+</html>

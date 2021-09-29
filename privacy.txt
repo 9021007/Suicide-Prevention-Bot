@@ -1,0 +1,72 @@
+PRIVACY NOTICE
+
+Last updated May 14, 2021
+
+
+
+Thank you for choosing to be part of our community at Suicide Prevention Discord Bot ("Community", "we", "us", "our"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at our Discord server.
+
+When you use our Discord Application, as the case may be (the "bot") and more generally, use any of our services (the "Services", which include the bot), we appreciate that you are trusting us with nothing, because we don't steal your data. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect (none), how we use it (we don't) and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of the bot immediately.
+
+This privacy notice applies to all information collected through our Services (which, as described above, includes our App), as well as, any related services, sales, marketing or events.
+
+Please read this privacy notice carefully as it will help you understand what we do with the information that we collect.
+
+TABLE OF CONTENTS
+
+1. WHAT INFORMATION DO WE COLLECT?
+2. WILL YOUR INFORMATION BE SHARED WITH ANYONE?
+3. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?
+4. HOW LONG DO WE KEEP YOUR INFORMATION?
+5. HOW DO WE KEEP YOUR INFORMATION SAFE?
+6. WHAT ARE YOUR PRIVACY RIGHTS?
+7. CONTROLS FOR DO-NOT-TRACK FEATURES
+8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
+9. DO WE MAKE UPDATES TO THIS NOTICE?
+10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+11. HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?
+
+1. WHAT INFORMATION DO WE COLLECT?
+
+None, except for your user ID, if you type sp!mute, or sp!dmmute.
+
+2. WILL YOUR INFORMATION BE SHARED WITH ANYONE?
+
+No. We don't share your information, with anybody, ever.
+
+3. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?
+
+No.
+
+4. HOW LONG DO WE KEEP YOUR INFORMATION?
+
+About zero seconds in total, unless you're on a mute list, in which case we only keep your user ID.
+
+5. HOW DO WE KEEP YOUR INFORMATION SAFE?
+
+We don't store any personal information. Our bot is open source. Our website passes security checks with flying colors.
+
+6. WHAT ARE YOUR PRIVACY RIGHTS?
+
+You have a right to enjoy the fact that your personal information isn't collected by us. :D
+
+7. CONTROLS FOR DO-NOT-TRACK FEATURES
+
+Why don't we have a cookie opt-out/Do not track window? Because we don't track it anyway. We don't use cookies or trackers of any kind. To remove yourself from the mute list, type sp!mute, and type sp!dmmute to remove yourself from the direct message mute list. Easy as that.
+
+8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
+
+We don't track you anyway, so there's nothing to opt out of. California residents do have a right to stay cool, because those beaches are sick. Come visit some time! It's fun.
+
+9. DO WE MAKE UPDATES TO THIS NOTICE?
+
+We hope to never need to change this notice, but we might update it occasionally, typically around the time a bot update happens.
+
+10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+
+If you have questions or comments about this notice, you may contact us on our Discord server.
+
+11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
+
+We can't. We don't collect any personal data whatsoever from you. Enjoy :)
+If you want your player ID removed from the mute databases, simply remove yourself using the bot commands, the same command you used to mute yourself will also unmute you.
