@@ -43,12 +43,17 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./style.css"  >
   <!-- Change the content attribute's value to your name -->
   <meta name="author" content="Bobrobot1">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" integrity="sha384-hCzmBqsXufs1ZF1cGbvalFZ/xr7o2aJEuw0/879OFd33kqasOkGiS1nc3DK7NFV9" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 
 <body class="bg-shinyGray overflow-x-hidden">
+  <script src="./aos.js"></script>
   <nav id="navigationBar" class="flex flex-row items-center justify-between p-6 bg-sweetBlack">
     <div class="left flex flex-row items-center ml-10 md:ml-20 text-white">
       <img src="https://spbot.ml/siround.png" width="48px" height="48px" alt="Suicide Prevention Bot Icon" class="mr-2 hidden md:inline pointer-events-none noselect" />
@@ -68,8 +73,12 @@
         <a href="https://discord.gg/YHvfUqVgWS" rel="noreferrer" target="_blank" class="text-2xl hvr-grow text-white bg-sweetBlack p-4 md:px-8 mx-4 my-4 rounded-lg border-blurple border-2">Join Support Server</a>
         <a href="https://github.com/Bobrobot1/Suicide-Prevention-Bot" rel="noreferrer" target="_blank" class="text-2xl hvr-grow text-white bg-sweetBlack p-4 md:px-8 mx-4 my-4 rounded-lg border-blurple border-2">See Source Code</a>
       </div>
+      <div data-aos="fade-down" data-aos-duration="1500">
+        <img class="scrollicon" src="scroll.svg">
+      </div>
     </div>
-    <svg class="bg-blurple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1D1E23" fill-opacity="1" d="M0,160L48,138.7C96,117,192,75,288,74.7C384,75,480,117,576,160C672,203,768,245,864,261.3C960,277,1056,267,1152,240C1248,213,1344,171,1392,149.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    <img class="bg-blurple desktopwaves" src="./wavestop-desktop.svg">
+    <img class="bg-blurple mobilewaves" src="./wavestop-mobile.svg">
     <div class="flex flex-col md:flex-row items-center justify-center w-full bg-blurple">
       <img src="https://spbot.ml/sc2.png" alt="Screenshot of Suicide Prevention Bot response" class="max-w-xs md:max-w-5xl noselect pointer-events-none" />
       <div class="flex flex-col items-center justify-center noselect">
@@ -87,7 +96,8 @@
         </div>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#7289DA" fill-opacity="1" d="M0,224L48,240C96,256,192,288,288,304C384,320,480,320,576,288C672,256,768,192,864,138.7C960,85,1056,43,1152,48C1248,53,1344,107,1392,133.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    <img class="bg-blurple desktopwaves" src="./wavesbottom-desktop.svg">
+    <img class="bg-blurple mobilewaves" src="./wavesbottom-mobile.svg">
     <div class="flex flex-row items-center justify-center mb-10">
       <span class="text-lg text-gray-400 font-semibold"><h3>Suicide Prevention Bot is available under the<br>GPL-2.0 License as Open Source Software.</h3></span>
     </div>
@@ -97,7 +107,6 @@
 <div class="flex flex-row items-center justify-center mb-10">
   <span class="text-lg text-gray-400 font-semibold"><a href="https://www.hardenize.com/report/spbot.ml?summary" target="_blank" referrerpolicy="origin" rel="noopener"><img referrerpolicy="origin" border="0" src="https://badge.hardenize.com/v2/images/hardenize-badge-spbot.ml.png" width="70" height="110" hspace="10" vspace="0" alt="Hardenize Security Badge"></a></span>
   <a href="https://cloudflare.com" rel="noopener" target="_blank"><img id="CFLogo" hspace="10" src="/cflogo.png" alt="Protected by CloudFlare"></a>
-  <a href="https://freewha.com" rel="noopener" target="_blank"><img hspace="10" src="https://www.freewebhostingarea.com/images/poweredby.png" alt="Hosted by FreeWHA"></a>
 </div>
   <link rel="stylesheet" href="styles/theTrendingStyle.css" async >
 
