@@ -207,23 +207,16 @@ client.on('messageCreate', async message => { //Message event listener
     const bot = new MessageEmbed() //No need to be translated!
       .setColor('#04d384')
       .setFooter(bot2)
-      .addField('General', [
-        `**❯ ${bot3}** ${client.user.tag} (${client.user.id})`,
-        `**❯ ${bot4}** ${client.guilds.cache.size.toLocaleString()} `,
-        '\u200b'
-      ])
-      .addField('System', [
-        `**❯ ${pcemoji}:** ${Math.floor(client.uptime / 86400000)}d ${Math.floor(client.uptime / 3600000) % 24}hr ${Math.floor(client.uptime / 60000) % 60}min ${Math.floor(client.uptime / 1000) % 60}sec`,
-        `**❯ ${hddemoji}:** ${os.platform()},${os.release()}`,
-        `**❯ ${cpuemoji}:**`,
-        `\u3000 ${core.model}`,
-        `\u3000 ${os.cpus().length} x ${core.speed}MHz`,
-        `**❯ ${ramemoji}:** ${Math.floor(((os.freemem()) / 10000000)) / 100}GiB/${Math.floor(((os.totalmem()) / 10000000)) / 100}GiB`,
-        `**❯ Bot:**`,
-        `\u3000 Node.js: ${process.version}`,
-        `\u3000 Discord.js: v${djsversion}`,
-        `\u3000 ${logoemoji}: v${version}`,
-      ])
+      .addFields(
+        {name: `**❯ ${bot3}** ${client.user.tag} (${client.user.id})`,value: `**❯ ${bot4}** ${client.guilds.cache.size.toLocaleString()} `},
+      )
+      .addFields(
+        {name: `**❯ ${pcemoji}:** ${Math.floor(client.uptime / 86400000)}d ${Math.floor(client.uptime / 3600000) % 24}hr ${Math.floor(client.uptime / 60000) % 60}min ${Math.floor(client.uptime / 1000) % 60}sec`,value: '\u200b'},
+        {name: `**❯ ${hddemoji}:** ${os.platform()},${os.release()}`,value: '\u200b'},
+        {name: `❯ ${core.model}`,value: `${os.cpus().length} x ${core.speed}MHz`},
+        {name: `**❯ ${ramemoji}:** ${Math.floor(((os.freemem()) / 10000000)) / 100}GiB/${Math.floor(((os.totalmem()) / 10000000)) / 100}GiB`,value: '\u200b'},
+        {name: `**❯ Bot:**`,value: `Node.js: ${process.version} - Discord.js: v${djsversion} - ${logoemoji}: v${version}`},
+      )
       .setTimestamp();
     message.channel.send({ embeds: [bot] });
 
@@ -324,7 +317,7 @@ client.on('messageCreate', async message => { //Message event listener
 
     //Change language command
   } else if (['set'].includes(command) || ['ayarla'].includes(command)) {
-    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
+    if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
 
     //Array for checking which language the user selected
     var langShort;
@@ -343,7 +336,7 @@ client.on('messageCreate', async message => { //Message event listener
       .setColor('#04d384')
       .setTitle(langstitle)
       .setAuthor(langsauthor)
-      .setDescription(langlist)
+      .setDescription(langlist.toString())
       .setURL('https://spbot.ml/')
       .addField(langsfield1heading, langsfield1)
       .setImage('https://www.spbot.ml/suicideicon.png')
