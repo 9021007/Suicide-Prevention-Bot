@@ -9,7 +9,8 @@
 		["hi", "hindi", "हिंदी"],
 		["cn", "chinese", "中文"],
 		["tr", "turkish", "türk"],
-		["de", "german", "deutsch"]
+		["de", "german", "deutsch"],
+		["cs", "czech", "čeština"]
 	],
 
 	"langlist": [
@@ -18,7 +19,8 @@
 		" - 🇮🇳 हिंदी (hi)",
 		" - 🇨🇳 中文 (cn)",
 		" - 🇹🇷 Türk (tr)",
-		" - 🇩🇪 Deutsch (de)"
+		" - 🇩🇪 Deutsch (de)",
+		" - 🇨🇿 Čeština (cs)"
 	],
 	"triggers": [
 		"suicide",
@@ -96,7 +98,18 @@
 		"selbst|mord",
 		"bring|mich|um",
 		"töte|mich",
-		"kill|mich"
+		"kill|mich",
+		"zabít|se",
+		"se|zabít",
+		"spáchat|sebevraždu",
+		"chci|umřít",
+		"se|zastřelit",
+		"se|odstřelit",
+		"chci|zemřít",
+		"sebevražda",
+		"sebevražedný",
+		"sebevražedná",
+		"sebevražední"
 		
 	],
 	"insults": [
@@ -130,6 +143,16 @@
 		"stirb",
 		"sterb",
 		"töte|dich",
-		"bring|dich|um"
+		"bring|dich|um",
+		"zabij|se",
+		"umři",
+		"prostě|umři",
+		"spáchej|sebevraždu",
+		"spachej|sebevrazdu",
+		"tvůj|život|je|zbytečný",
+		"zab|se",
+		"zastřel|se",
+		"doufám|že|umřeš",
+		"se|zabij"
 	]
 }
