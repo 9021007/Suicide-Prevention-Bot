@@ -63,7 +63,7 @@ const Database = require('simplest.db');
 const db = new Database({
   path: './data.json'
 });
-var lastMessage = null;
+let lastMessage = null;
 //Ready bot client ;)
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`); //let us know we're good to go
@@ -74,10 +74,10 @@ client.once('ready', () => {
 
 client.on('messageCreate', async message => { //Message event listener
   lastMessage = message;
-  if (message.author.bot || message.channel.type == 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
-  var lang = "en";
+  if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
+  let lang = "en";
   if (db.get(`lang_${message.guild.id}`)) lang = db.get(`lang_${message.guild.id}`);
-  LCM = message.content.toLowerCase(); //Lower Case Message text
+  let LCM = message.content.toLowerCase(); //Lower Case Message text
   const { suicidetitle, suicideauthor, suicidedescription, suicidefield1heading, suicidefield1, suicidefield2heading, suicidefield2, suicidefield3heading, suicidefield3, suicidefield4heading, suicidefield4, suicidefield5heading, suicidefield5, suicidefield6heading, suicidefield6, suicidefield7heading, suicidefield7, suicidefield8heading, suicidefield8, suicidefooter, insulttitle, insultauthor, insultdescription, dmembedtitle, dmembedauthor, dmembeddescription, dmembedfield1heading, dmembedfield1, dmembedfield2heading, dmembedfield2, dmembedfield3heading, dmembedfield3, dmembedfield4heading, dmembedfield4, dmembedfield5heading, dmembedfield5, dmembedfield6heading, dmembedfield6, dmembedfield7heading, dmembedfield7, dmembedfield8heading, dmembedfield8, dmembedfooter, infotitle, infoauthor, infodescription, infofield1heading, infofield1, infofield2heading, infofield2, infofield3heading, infofield3, infofield4heading, infofield4, infofooter, helpcommands, helplinks, helpauthor, helptitle, helpfield1heading, helpfield2heading, helpfield3heading, helpfield3, invitetitle, invitedescription, langstitle, langsauthor, langsfield1heading, langsfield1, bot2, bot3, bot4, wsping, rtping, pinging, addtoserver, nolang, langsus, mute2, mute3, dmmute2, dmmute3, dmmute4, dmmute5, mention, mention1, sent, seterror, } = require(`./lang/${lang}.json`);
 
   //Map out the message
@@ -98,12 +98,12 @@ client.on('messageCreate', async message => { //Message event listener
   LCM = LCM.replace(/your/g, "👇")  //WHY
   LCM = LCM.replace(/ur/g, "your") //Replace ur with your
   LCM = LCM.replace(/👇/g, "your") //replace 👇 with your
-  LCM = LCM.replace(/\-+/g, " ") //Replace - with <space> // DO NOT MERGE //
-  LCM = LCM.replace(/\–+/g, " ") //Replace – with <space> // THESE THREE ARE DIFFERENT CHARACTERS //
-  LCM = LCM.replace(/\—+/g, " ") //Replace – with <space> // DO NOT REPLACE //
+  LCM = LCM.replace(/-+/g, " ") //Replace - with <space> // DO NOT MERGE //
+  LCM = LCM.replace(/–+/g, " ") //Replace – with <space> // THESE THREE ARE DIFFERENT CHARACTERS //
+  LCM = LCM.replace(/—+/g, " ") //Replace – with <space> // DO NOT REPLACE //
 
   //Mention bot will activate aleart message without triggers
-  if (message.mentions.users.first() == client.user) {
+  if (message.mentions.users.first() === client.user) {
     const suicide = new MessageEmbed()
       .setColor('#04d384')
       .setTitle(`${suicidetitle}`)
@@ -123,8 +123,8 @@ client.on('messageCreate', async message => { //Message event listener
   }
 
   if (db.get(`mute_${message.author.id}`) == null) { //Check to see if you muted the bot (User side only)
-    var commonElements = [];
-    var parsedTriggers = triggers.map(x => x.replace(/\|/g, " *"))
+    const commonElements = [];
+    const parsedTriggers = triggers.map(x => x.replace(/\|/g, " *"));
     parsedTriggers.forEach(trigger => {
       if (new RegExp(trigger, "g").test(LCM)) {
         commonElements.push(true)
@@ -148,10 +148,10 @@ client.on('messageCreate', async message => { //Message event listener
       return message.author.send({ embeds: [suicide] }).catch(e => { message.channel.send(suicide) });
 
     }
-    var args = LCM.trim().split(/ +/);
+    let args = LCM.trim().split(/ +/);
     args = args.map(x => x.replace(/\t/g, ""))
     if (commonElements.length < 1) {
-      var parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"))
+      const parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"));
       //console.log(parsedTriggers)
       parsedInsultTriggers.forEach(trigger => {
         if (new RegExp(trigger, "g").test(LCM)) {
@@ -165,7 +165,7 @@ client.on('messageCreate', async message => { //Message event listener
           .setAuthor(`${insultauthor}`, 'https://spbot.ml/siround.png')
           .setDescription(`${insultdescription}`)
         message.channel.send({ embeds: [insult] }).catch(console.err)
-      };
+      }
     }
   } 
 
@@ -320,14 +320,14 @@ client.on('messageCreate', async message => { //Message event listener
     if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
 
     //Array for checking which language the user selected
-    var langShort;
+    let langShort;
     for (l of langinfo) {
       if (l.includes(arguments[0])) {
         langShort = l[0];
       }
     }
     if (!langShort) return message.channel.send(nolang);
-    if (langShort != "en") db.set(`lang_${message.guild.id}`, langShort);
+    if (langShort !== "en") db.set(`lang_${message.guild.id}`, langShort);
     else db.delete(`lang_${message.guild.id}`);
     return message.channel.send(require(`./lang/${langShort}.json`).langsus);
 
