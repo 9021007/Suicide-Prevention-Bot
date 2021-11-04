@@ -46,12 +46,13 @@ MMMMMMMMMMMMMMNXWMMMMMMMMMMMMMMMMWMMMMMMMMMMM
 
 
 //required libraries and files
+require('colors')
 //Error handler
 process
   .on('unhandledRejection', (reason, p) => {
-    console.error(reason, 'Unhandled Rejection at Promise', p);
+    console.error(reason, 'Unhandled Rejection at Promise'.red, p);
   })
-  .on('uncaughtException', err => {
+  .on('uncaughtException'.red, err => {
 
     console.error(err, 'Uncaught Exception caught');
   });
@@ -66,10 +67,29 @@ const db = new Database({
 let lastMessage = null;
 //Ready bot client ;)
 client.once('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`); //let us know we're good to go
+  console.log(`Logged in as: `.green + `${client.user.tag}!`); //let us know we're good to go
+
+  /* Auto status update that Copilot did */
   setInterval(() => {
-    client.user.setActivity(`chat for suicide. https://spbot.ml/ — ${client.guilds.cache.size} servers/${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users`, { type: 'LISTENING' }); //On init, add status
-  }, 15000); //Update every 15 sec
+    const rnd = Math.floor(Math.random() * 2);
+    switch (rnd) {
+      case 1:
+      {
+        client.user.setActivity(`chat for suicide.`, {
+          type: "WATCHING",
+        });
+      }
+        break;
+      default:
+      {
+        client.user.setActivity(`${client.guilds.cache.size} servers/${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users`, {
+          type: "WATCHING",
+        });
+      }
+
+        break;
+    }
+  }, 15000);
 });
 
 client.on('messageCreate', async message => { //Message event listener
