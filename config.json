@@ -1,6 +1,6 @@
 {
 	"prefix": "sp!",
-	"token": "TOKEN GOES HERE",
+	"token": "",
 	"botPerms": ["SEND_MESSAGES", "EMBED_LINKS", "READ_MESSAGE_HISTORY"],
 	"version": "2.0.0",
 	"langinfo": [
