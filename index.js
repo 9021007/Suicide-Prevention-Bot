@@ -60,6 +60,7 @@ const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES] });
 const { prefix, token, triggers, insults, langlist, langinfo, botPerms } = require('./config.json');
 const Database = require('simplest.db');
+const unleet = import("@cityssm/unleet");
 const db = new Database({
   path: './data.json'
 });
@@ -80,27 +81,7 @@ client.on('messageCreate', async message => { //Message event listener
   let LCM = message.content.toLowerCase(); //Lower Case Message text
   const { suicidetitle, suicideauthor, suicidedescription, suicidefield1heading, suicidefield1, suicidefield2heading, suicidefield2, suicidefield3heading, suicidefield3, suicidefield4heading, suicidefield4, suicidefield5heading, suicidefield5, suicidefield6heading, suicidefield6, suicidefield7heading, suicidefield7, suicidefield8heading, suicidefield8, suicidefooter, insulttitle, insultauthor, insultdescription, dmembedtitle, dmembedauthor, dmembeddescription, dmembedfield1heading, dmembedfield1, dmembedfield2heading, dmembedfield2, dmembedfield3heading, dmembedfield3, dmembedfield4heading, dmembedfield4, dmembedfield5heading, dmembedfield5, dmembedfield6heading, dmembedfield6, dmembedfield7heading, dmembedfield7, dmembedfield8heading, dmembedfield8, dmembedfooter, infotitle, infoauthor, infodescription, infofield1heading, infofield1, infofield2heading, infofield2, infofield3heading, infofield3, infofield4heading, infofield4, infofooter, helpcommands, helplinks, helpauthor, helptitle, helpfield1heading, helpfield2heading, helpfield3heading, helpfield3, invitetitle, invitedescription, langstitle, langsauthor, langsfield1heading, langsfield1, bot2, bot3, bot4, wsping, rtping, pinging, addtoserver, nolang, langsus, mute2, mute3, dmmute2, dmmute3, dmmute4, dmmute5, mention, mention1, sent, seterror, } = require(`./lang/${lang}.json`);
 
-  //Map out the message
-  LCM = message.content.toLowerCase(); //Lower Case Message text
-  LCM = LCM.replace(/\s\s+/g, '\t'); //regex for multiple spaces
-  LCM = LCM.replace(/\$/g, "s") //Replace $ with s
-  LCM = LCM.replace(/1/g, "i") //Replace 1 with i
-  LCM = LCM.replace(/3/g, "e") //Replace 3 with e
-  LCM = LCM.replace(/4/g, "a") //Replace 4 with a
-  LCM = LCM.replace(/5/g, "s") //Replace 5 with s
-  LCM = LCM.replace(/6/g, "g") //Replace 6 with g
-  LCM = LCM.replace(/ñ/g, "n") //Replace ñ with n
-  LCM = LCM.replace(/7/g, "t") //Replace 7 with t
-  LCM = LCM.replace(/0/g, "o") //Replace 0 with o
-  LCM = LCM.replace(/8/g, "b") //Replace 8 with b
-  LCM = LCM.replace(/z/g, "s") //Replace z with s
-  LCM = LCM.replace(/wanna/g, "want to") //Replace wanna with want to
-  LCM = LCM.replace(/your/g, "👇")  //WHY
-  LCM = LCM.replace(/ur/g, "your") //Replace ur with your
-  LCM = LCM.replace(/👇/g, "your") //replace 👇 with your
-  LCM = LCM.replace(/-+/g, " ") //Replace - with <space> // DO NOT MERGE //
-  LCM = LCM.replace(/–+/g, " ") //Replace – with <space> // THESE THREE ARE DIFFERENT CHARACTERS //
-  LCM = LCM.replace(/—+/g, " ") //Replace – with <space> // DO NOT REPLACE //
+  var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
 
   //Mention bot will activate aleart message without triggers
   if (message.mentions.users.first() === client.user) {
@@ -125,10 +106,12 @@ client.on('messageCreate', async message => { //Message event listener
   if (db.get(`mute_${message.author.id}`) == null) { //Check to see if you muted the bot (User side only)
     const commonElements = [];
     const parsedTriggers = triggers.map(x => x.replace(/\|/g, " *"));
-    parsedTriggers.forEach(trigger => {
-      if (new RegExp(trigger, "g").test(LCM)) {
-        commonElements.push(true)
-      }
+    parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
+      possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
+        if (new RegExp(trigger, "g").test(unleeted_LCM)) {
+          commonElements.push(true)
+        }
+      });
     })
     if (commonElements.length > 0) {
       const suicide = new MessageEmbed()
@@ -153,10 +136,12 @@ client.on('messageCreate', async message => { //Message event listener
     if (commonElements.length < 1) {
       const parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"));
       //console.log(parsedTriggers)
-      parsedInsultTriggers.forEach(trigger => {
-        if (new RegExp(trigger, "g").test(LCM)) {
-          commonElements.push(true)
-        }
+      parsedInsultTriggers.forEach(trigger => { // Loop ever each insult and check if they match the message
+        possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with insult
+          if (new RegExp(trigger, "g").test(unleeted_LCM)) {
+            commonElements.push(true)
+          }
+        });
       })
       if (commonElements.length > 0) {
         const insult = new MessageEmbed()
