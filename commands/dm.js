@@ -1,4 +1,22 @@
+/*
+
+for the record bobrobot told me to do this
+if this breaks it's not my fault
+
+*/
+var DMTimeoutArray = [];
+
 module.exports = async (message, lang) => {
+     let mention = message.mentions.users.first();
+
+     if(DMTimeoutArray.includes(mention.id)) return message.channel.send("This user has already been messaged in the last 15 minutes, please wait and try again.");
+     
+     DMTimeoutArray.push(mention.id);
+     setTimeout(() => {
+          const index = DMTimeoutArray.findIndex(item => item == mention.id);
+          DMTimeoutArray = DMTimeoutArray.splice(index);
+     }, 15 * 60 * 1000);
+
      const { MessageEmbed } = require('discord.js');
      const {
           dmembedtitle, 
@@ -26,8 +44,6 @@ module.exports = async (message, lang) => {
           mention1, 
           sent
      } = require(`../lang/${lang}.json`);
-
-     let mention = message.mentions.users.first();
 
      if (!mention) return message.channel.send(mention1); // checking if message don't have a user mention
      if (db.get(`dmmute_${message.author.id}`)) return message.channel.send(dmmute5); //Check to see if you muted the bot (User side only)
