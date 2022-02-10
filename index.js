@@ -86,7 +86,7 @@ client.on('messageCreate', async message => {
   if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
 
   let lang = "en";
-  const server_language = db.get(`lang_${message.guild.id}`)
+  const server_language = db.get(`lang_${message.guild.id}`);
   if (typeof server_language === 'string') lang = server_language;
 
   let LCM = message.content.toLowerCase(); //Lower case message text
