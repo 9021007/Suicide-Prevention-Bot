@@ -1,5 +1,5 @@
+// #region Beginning ASCII Art
 /*
-
 HEY! IF you're reading this, you clearly know how to code. Come help us! Join our discord: https://discord.gg/YHvfUqVgWS
 
 MMMMMMMMMMMMMMMMMWNKK000KXNWMMMMMMMMMMMMMMMMM
@@ -34,19 +34,12 @@ MMMMMMMMMWKc.   .'kWMMMMMMMMMKc.  .'xNMMMMMMM
 MMMMMMMMMMMNk,..'kWMMMMMMMMMMMXo..:0WMMMMMMMM
 MMMMMMMMMMMMWKl;kWMMMMMMMMMMMMMNkdXMMMMMMMMMM
 MMMMMMMMMMMMMMNXWMMMMMMMMMMMMMMMMWMMMMMMMMMMM
-
 */
+// #endregion
 
 
-
-
-
-
-
-
-
-//required libraries and files
-//Error handler
+// #region Initialization
+// #region Error handling
 process
   .on('unhandledRejection', (reason, p) => {
     console.error(reason, 'Unhandled Rejection at Promise', p);
@@ -55,35 +48,53 @@ process
 
     console.error(err, 'Uncaught Exception caught');
   });
+// #endregion
 
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES] });
-const { prefix, token, triggers, insults, langlist, langinfo, botPerms } = require('./config.json');
+const { prefix, token, triggers, insults, langlist, langinfo, botPerms, activityResetTimeout_SECONDS} = require('./config.json');
 const Database = require('simplest.db');
 const unleet = import("@cityssm/unleet");
+
 const db = new Database({
   path: './data.json'
 });
 let lastMessage = null;
-//Ready bot client ;)
+
+activityResetTimeout_SECONDS *= 1000;
+
+// Setup bot ready callback
 client.once('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`); //let us know we're good to go
+  console.log(`Logged in as ${client.user.tag}!`); // Console log for verbosity
   setInterval(() => {
-    client.user.setActivity(`chat for suicide. https://spbot.ml/ — ${client.guilds.cache.size} servers/${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users`, { type: 'LISTENING' }); //On init, add status
-  }, 15000); //Update every 15 sec
+    const users = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
+    const servers = client.guilds.cache.size;
+    client.user.setActivity(
+	    `chat for suicide. https://spbot.ml/ — ${servers} servers/${users} users`, 
+	    { type: 'LISTENING'}
+	); 
+  }, activityResetTimeout_SECONDS); // Update status every 15 seconds.
 });
 
-client.on('messageCreate', async message => { //Message event listener
+// #endregion
+
+// Message event listener
+client.on('messageCreate', async message => { 
   lastMessage = message;
+
+  // Verify permissions of user who sent message before continuing.
   if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
+
   let lang = "en";
-  if (db.get(`lang_${message.guild.id}`)) lang = db.get(`lang_${message.guild.id}`);
-  let LCM = message.content.toLowerCase(); //Lower Case Message text
+  const server_language = db.get(`lang_${message.guild.id}`)
+  if (typeof server_language === 'string') lang = server_language;
+
+  let LCM = message.content.toLowerCase(); //Lower case message text
   const { suicidetitle, suicideauthor, suicidedescription, suicidefield1heading, suicidefield1, suicidefield2heading, suicidefield2, suicidefield3heading, suicidefield3, suicidefield4heading, suicidefield4, suicidefield5heading, suicidefield5, suicidefield6heading, suicidefield6, suicidefield7heading, suicidefield7, suicidefield8heading, suicidefield8, suicidefooter, insulttitle, insultauthor, insultdescription, dmembedtitle, dmembedauthor, dmembeddescription, dmembedfield1heading, dmembedfield1, dmembedfield2heading, dmembedfield2, dmembedfield3heading, dmembedfield3, dmembedfield4heading, dmembedfield4, dmembedfield5heading, dmembedfield5, dmembedfield6heading, dmembedfield6, dmembedfield7heading, dmembedfield7, dmembedfield8heading, dmembedfield8, dmembedfooter, infotitle, infoauthor, infodescription, infofield1heading, infofield1, infofield2heading, infofield2, infofield3heading, infofield3, infofield4heading, infofield4, infofooter, helpcommands, helplinks, helpauthor, helptitle, helpfield1heading, helpfield2heading, helpfield3heading, helpfield3, invitetitle, invitedescription, langstitle, langsauthor, langsfield1heading, langsfield1, bot2, bot3, bot4, wsping, rtping, pinging, addtoserver, nolang, langsus, mute2, mute3, dmmute2, dmmute3, dmmute4, dmmute5, mention, mention1, sent, seterror, } = require(`./lang/${lang}.json`);
 
   var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
 
-  //Mention bot will activate aleart message without triggers
+  // Mention bot will activate alert message without triggers
   if (message.mentions.users.first() === client.user) {
     const suicide = new MessageEmbed()
       .setColor('#04d384')
@@ -100,7 +111,7 @@ client.on('messageCreate', async message => { //Message event listener
       .addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
       .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png')
 
-    message.channel.send({ embeds: [suicide] });
+    return message.channel.send({ embeds: [suicide] });
   }
 
   if (db.get(`mute_${message.author.id}`) == null) { //Check to see if you muted the bot (User side only)
@@ -272,7 +283,7 @@ client.on('messageCreate', async message => { //Message event listener
     }
 
     //Dm Command
-  } else if (['dm'].includes(command) || ['öm'].includes(command)) {
+  } else if (command == 'dm' || command == 'öm') {
     let mention = message.mentions.users.first();
 
     if (!mention) return message.channel.send(mention1); // checking if message don't have a user mention
@@ -301,7 +312,7 @@ client.on('messageCreate', async message => { //Message event listener
     });
 
     //Change language command
-  } else if (['set'].includes(command) || ['ayarla'].includes(command)) {
+  } else if (command == 'set' || command == 'ayarla') {
     if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
 
     //Array for checking which language the user selected

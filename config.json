@@ -1,6 +1,7 @@
 {
 	"prefix": "sp!",
 	"token": "TOKEN GOES HERE",
+	"activityResetTimeout_SECONDS": 15,
 	"botPerms": [
 		"SEND_MESSAGES",
 		"EMBED_LINKS",
