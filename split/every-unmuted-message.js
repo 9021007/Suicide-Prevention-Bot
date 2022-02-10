@@ -36,7 +36,7 @@ module.exports = async (message, lang) => {
     	parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
 	 	possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
 	   		if (new RegExp(trigger, "g").test(unleeted_LCM)) {
-				commonElements.push(true)
+				commonElements.push(true);
 	   		}
 	 	});
     	});
@@ -54,8 +54,8 @@ module.exports = async (message, lang) => {
 	   		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
 	   		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
 			.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
-			.setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png')
-		return message.author.send({ embeds: [suicide] }).catch(e => { message.channel.send(suicide) });
+			.setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png');
+		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send(suicide));
 
 	}
 	let args = LCM.trim().split(/ +/);
@@ -65,7 +65,7 @@ module.exports = async (message, lang) => {
 		parsedInsultTriggers.forEach(trigger => { // Loop ever each insult and check if they match the message
 	   		possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with insult
 				if (new RegExp(trigger, "g").test(unleeted_LCM))
-					commonElements.push(true)
+					commonElements.push(true);
 			});
 		});
 		if (commonElements.length > 0) {

@@ -38,4 +38,4 @@ module.exports = async (message, lang) => {
       .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png');
 
     return message.channel.send({ embeds: [suicide] });
-}
+};

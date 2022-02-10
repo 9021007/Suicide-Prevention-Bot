@@ -11,4 +11,4 @@ module.exports = async (message, lang) => {
           msg.edit({ embeds: [ping] });
      });
      return;
-}
+};
