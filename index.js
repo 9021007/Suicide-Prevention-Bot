@@ -109,7 +109,7 @@ client.on('messageCreate', async message => {
       .addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
       .addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
       .addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
-      .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png')
+      .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png');
 
     return message.channel.send({ embeds: [suicide] });
   }
