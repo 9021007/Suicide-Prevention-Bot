@@ -42,15 +42,15 @@ module.exports = {
 **• Users** : ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}
 **• Discord.js** : v${djsversion}
 **• Node.js** : ${process.version}
-**• ${logoemoji} : v${version}
+**• ${logoemoji}** : v${version}
 \u200b
 **= SYSTEM =**
-**• ${hddemoji}** : ${os.type}
+**• ${hddemoji}** : ${os.platform()} | ${os.release()}
 **• ${pcemoji}** : ${moment.duration(interaction.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}
 **• ${cpuemoji}** :
 > **• Model** : ${os.cpus()[0].model} 
 > **• Speed** : ${os.cpus()[0].speed} MHz
-**• ${ramemoji}** :
+**•** ${ramemoji} :
 > **• Total Memory** : ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps
 > **• Free Memory** : ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps
 > **• Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps
