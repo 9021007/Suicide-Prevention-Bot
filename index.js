@@ -58,7 +58,7 @@ activityResetTimeout_SECONDS *= 1000;
 const Database = require('simplest.db');
 
 const db = new Database({
-  path: './data.json'
+  path: './database/mutes.json'
 });
 let lastMessage = null;
 
@@ -86,7 +86,8 @@ client.once('ready', async () => {
 		require("./commands/help").command,
 		require("./commands/set").command,
 		require("./commands/lang").command,
-		require("./commands/mute").command
+		require("./commands/mute").command,
+		require("./commands/ignore").command
 	];
 
 	// Get dev guild ID for slash commands, comment to use global slash commands
@@ -105,7 +106,7 @@ client.once('ready', async () => {
 */
 client.on('messageCreate', async message => {
 	lastMessage = message;
-
+	
 	// Verify permissions of user who sent message before continuing.
 	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
 
@@ -115,12 +116,13 @@ client.on('messageCreate', async message => {
 
 	let LCM = message.content.toLowerCase(); //Lower case message text
 
+
 	// Mention bot will activate alert message without triggers
 	if (message.mentions.users.first() === client.user)
 	return require('./split/bot-mentioned')(message, lang);
 
 	//Check to see if you muted the bot (User side only)
-	if (db.get(`mute_${message.author.id}`) == null) 
+	if (db.get(`mute_${message.author.id}`) == null && !require("./commands/ignore.js").checkIfIgnored(message)) 
 	require('./split/every-unmuted-message')(message, lang);
 
 	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
@@ -160,6 +162,8 @@ client.on("interactionCreate", async (interaction) => {
 		return require("./commands/lang").default(interaction, lang);
 	case "mute":
 		return require("./commands/mute").default(interaction, lang);
+	case "blacklist":
+		return require("./commands/ignore").default(interaction, lang)
   }
 });
 

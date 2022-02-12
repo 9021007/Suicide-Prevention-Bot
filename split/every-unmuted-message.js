@@ -26,7 +26,7 @@ module.exports = async (message, lang) => {
 		insultdescription,
 	} = require(`../lang/${lang}.json`);
 	const unleet = import('@cityssm/unleet');
-	const {triggers, insults} = require('../config.json');
+	const {triggers, insults} = require('../database/triggers.json');
 
 	let LCM = message.content.toLowerCase(); //Lower case message text
   	var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)

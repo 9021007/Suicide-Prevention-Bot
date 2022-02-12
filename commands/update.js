@@ -6,7 +6,7 @@ module.exports = (message, lang) => {
 			new MessageButton()
 				.setLabel('Add Slash Commands')
 				.setStyle('LINK')
-				.setURL(`https://discord.com/api/oauth2/authorize?client_id=${message.client.application.id}&permissions=83968&scope=bot%20applications.commands&guild_id=${message.guild.id}`),
+				.setURL(`https://discord.com/api/oauth2/authorize?client_id=${message.client.application.id}&permissions=92160&scope=bot%20applications.commands&guild_id=${message.guild.id}`),
 			new MessageButton()
 				.setLabel('Support Server')
 				.setStyle('LINK')
