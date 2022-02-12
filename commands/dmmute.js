@@ -15,10 +15,10 @@ module.exports = {
 
 		if (db.get(`dmmute_${interaction.user.id}`)) {
 			db.delete(`dmmute_${interaction.user.id}`);
-			interaction.reply(dmmute2);
+			interaction.reply({ content: dmmute2, ephemeral: true });
 		} else {
 			db.set(`dmmute_${interaction.user.id}`, true);
-			interaction.reply(dmmute3);
+			interaction.reply({ content: dmmute3, ephemeral: true });
 		}
 	}
 }

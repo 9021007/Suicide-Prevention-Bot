@@ -87,7 +87,7 @@ client.once('ready', async () => {
 		require("./commands/set").command,
 		require("./commands/lang").command,
 		require("./commands/mute").command,
-		require("./commands/ignore").command
+		require("./commands/blacklist").command
 	];
 
 	// Get dev guild ID for slash commands, comment to use global slash commands
@@ -122,7 +122,7 @@ client.on('messageCreate', async message => {
 	return require('./split/bot-mentioned')(message, lang);
 
 	//Check to see if you muted the bot (User side only)
-	if (db.get(`mute_${message.author.id}`) == null && !require("./commands/ignore.js").checkIfIgnored(message)) 
+	if (db.get(`mute_${message.author.id}`) == null && !require("./commands/blacklist.js").checkIfIgnored(message)) 
 	require('./split/every-unmuted-message')(message, lang);
 
 	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
@@ -163,7 +163,7 @@ client.on("interactionCreate", async (interaction) => {
 	case "mute":
 		return require("./commands/mute").default(interaction, lang);
 	case "blacklist":
-		return require("./commands/ignore").default(interaction, lang)
+		return require("./commands/blacklist").default(interaction, lang)
   }
 });
 

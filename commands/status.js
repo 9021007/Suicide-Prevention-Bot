@@ -2,7 +2,6 @@ const { MessageEmbed, CommandInteraction, Client } = require("discord.js")
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os')
-const si = require('systeminformation');
 
 module.exports = {
 	command: {

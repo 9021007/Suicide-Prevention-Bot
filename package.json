@@ -15,7 +15,6 @@
     "path": "^0.12.7",
     "simple-json-db": "^1.2.3",
     "simplest.db": "^1.0.1",
-    "systeminformation": "^5.11.2",
     "ws": ">=8.1.0"
   }
 }
