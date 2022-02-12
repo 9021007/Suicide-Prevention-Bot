@@ -1,18 +1,26 @@
-module.exports = async (message, lang) => {
-     const { MessageEmbed } = require('discord.js');
-     const {
-          infotitle, 
-          infoauthor, 
-          infofield1heading, 
-          infofield1, 
-          infofield2heading, 
-          infofield2, 
-          infofield3heading, 
-          infofield3, 
-          infofield4heading, 
-          infofield4, 
-          infofooter
-     } = require(`../lang/${lang}.json`);
+const { MessageEmbed } = require('discord.js');
+
+module.exports = {
+     command: {
+		name: "info",
+		description: "Displays information about the bot.",
+		options: []
+	},
+
+     default: async (interaction, lang) => {
+          const {
+               infotitle, 
+               infoauthor, 
+               infofield1heading, 
+               infofield1, 
+               infofield2heading, 
+               infofield2, 
+               infofield3heading, 
+               infofield3, 
+               infofield4heading, 
+               infofield4, 
+               infofooter
+          } = require(`../lang/${lang}.json`);
 
      const info = new MessageEmbed()
           .setColor('#04d384')
@@ -26,5 +34,8 @@ module.exports = async (message, lang) => {
           .addField(infofield4heading, infofield4)
           .setImage('https://spbot.ml/sc2.png')
           .setFooter(infofooter);
-     message.channel.send({ embeds: [info] });
+     interaction.reply({ embeds: [info] });
+     }
+
+     
 };

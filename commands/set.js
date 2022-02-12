@@ -1,26 +1,83 @@
-module.exports = async (message, lang) => {
-     const {db} = require('../index');
-     const {
-          nolang, 
-          seterror
-     } = require(`../lang/${lang}.json`);
+const { Constants, MessageEmbed } = require('discord.js');
 
-     const { prefix, langinfo } = require('../config.json');
+module.exports = {
+	command: {
+		name: "language",
+		description: "Set language to use for the bot",
+		options: [
+			{
+				name: "language",
+				description: "The language to use",
+				required: true,
+				type: Constants.ApplicationCommandOptionTypes.STRING,
+				choices: [
+					{
+						name: "english",
+						value: "en",	
+					},
+					{
+						name: "espanol",
+						value: "sp",	
+					},
+					{
+						name: "हिंदी",
+						value: "hi",	
+					},
+					{
+						name: "中文",
+						value: "cn",	
+					},
+					{
+						name: "türk",
+						value: "tr",	
+					},
+					{
+						name: "deutsch",
+						value: "de",	
+					},
+					{
+						name: "עברית",
+						value: "hb",	
+					},
+					{
+						name: "italiano",
+						value: "it",	
+					},
+					{
+						name: "čeština",
+						value: "cs"
+					}
+				]
+			}
+		]
+	},
 
-     if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(`:x: | ${seterror}`); //Checks to see if you have admin perms
+	default: async (interaction, lang) => {
+		const { commandName, options } = interaction;
 
-     const arguments = message.content.toLowerCase().slice(prefix.length).trim().split(' ');
+		const { db } = require('../index');
+		const { nolang, seterror } = require(`../lang/${lang}.json`);
+		const { prefix, langinfo } = require('../config.json');
 
-     // Array for checking which language the user selected
-     let langShort;
-     for (l of langinfo) {
-          if (l.includes(arguments[1])) {
-               langShort = l[0];
-          }
-     }
+		if (!interaction.member.permissions.has("ADMINISTRATOR")) return interaction.reply({
+			content: `:x: | ${seterror}`,
+			ephemeral: true
+		}); //Checks to see if you have admin perms
 
-     if (!langShort) return message.channel.send(nolang);
-     if (langShort !== "en") db.set(`lang_${message.guild.id}`, langShort);
-     else db.delete(`lang_${message.guild.id}`);
-     message.channel.send(require(`../lang/${langShort}.json`).langsus);
-};
+		const language = options.getString("language");
+
+		// Checks if language is in the accepted languages list
+		// Someone might use HTTP requests to send arbitrary values to the bot for some reason, so we verify the language
+		var languageValidated = false;
+		for (l of langinfo) {
+			if (l.includes(language)) {
+				languageValidated = true;
+			}
+		}
+
+		if (!languageValidated) return message.channel.send(nolang); 
+		if (language !== "en") db.set(`lang_${interaction.guild.id}`, language);
+		else db.delete(`lang_${interaction.guild.id}`);
+		interaction.reply(require(`../lang/${language}.json`).langsus);
+	}
+}

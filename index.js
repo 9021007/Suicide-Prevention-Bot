@@ -65,90 +65,66 @@ let lastMessage = null;
 
 // Setup bot ready callback
 client.once('ready', async () => {
-  console.log(`[+] Logged in as ${client.user.tag}!`); // Console log for verbosity
-  setInterval(() => {
-    const users = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
-    const servers = client.guilds.cache.size.toLocaleString();
-    client.user.setActivity(
-      `chat for suicide. https://spbot.ml/ — ${servers} servers/${users} users`, {
-      type: 'LISTENING'
-    }
-    );
-  }, activityResetTimeout_SECONDS); // Update status every 15 seconds.
+	console.log(`[+] Logged in as ${client.user.tag}!`); // Console log for verbosity
+	setInterval(() => {
+		const users = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
+		const servers = client.guilds.cache.size.toLocaleString();
+		client.user.setActivity(
+			`chat for suicide. https://spbot.ml/ — ${servers} servers/${users} users`, {
+			type: 'LISTENING'
+		});
+	}, activityResetTimeout_SECONDS); // Update status every 15 seconds.
 
-  // Registers commands
-  var commands = [
-    require('./commands/dm').command,
-    require("./commands/ping").command,
-    require("./commands/status").command,
-	require("./commands/dmmute").command,
-  ];
+	// Registers commands
+	var commands = [
+		require('./commands/dm').command,
+		require("./commands/ping").command,
+		require("./commands/status").command,
+		require("./commands/dmmute").command,
+		require("./commands/invite").command,
+		require("./commands/info").command,
+		require("./commands/help").command,
+		require("./commands/set").command,
+		require("./commands/lang").command,
+		require("./commands/mute").command
+	];
 
-  // Get dev guild ID for slash commands, comment to use global slash commands
-  const devGuild = client.guilds.cache.get(devGuildId);
-  if (typeof devGuild == "undefined") {
-    client.application.commands.set(commands);
-    console.log("[+] Set global commands");
-  } else {
-    devGuild.commands.set(commands);
-    console.log("[+] Set guild commands");
-  }
+	// Get dev guild ID for slash commands, comment to use global slash commands
+	const devGuild = client.guilds.cache.get(devGuildId);
+	if (typeof devGuild == "undefined") {
+		client.application.commands.set(commands);
+		console.log("[+] Set global commands");
+	} else {
+		devGuild.commands.set(commands);
+		console.log("[+] Set guild commands");
+	}
 });
 
 /**
 * Commands
 */
 client.on('messageCreate', async message => {
-  lastMessage = message;
+	lastMessage = message;
 
-  // Verify permissions of user who sent message before continuing.
-  if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
+	// Verify permissions of user who sent message before continuing.
+	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
 
-  let lang = "en";
-  const server_language = db.get(`lang_${message.guild.id}`);
-  if (typeof server_language === 'string') lang = server_language;
+	let lang = "en";
+	const server_language = db.get(`lang_${message.guild.id}`);
+	if (typeof server_language === 'string') lang = server_language;
 
-  let LCM = message.content.toLowerCase(); //Lower case message text
+	let LCM = message.content.toLowerCase(); //Lower case message text
 
-  // Mention bot will activate alert message without triggers
-  if (message.mentions.users.first() === client.user)
-    return require('./split/bot-mentioned')(message, lang);
+	// Mention bot will activate alert message without triggers
+	if (message.mentions.users.first() === client.user)
+	return require('./split/bot-mentioned')(message, lang);
 
-  //Check to see if you muted the bot (User side only)
-  if (db.get(`mute_${message.author.id}`) == null) 
-    require('./split/every-unmuted-message')(message, lang);
+	//Check to see if you muted the bot (User side only)
+	if (db.get(`mute_${message.author.id}`) == null) 
+	require('./split/every-unmuted-message')(message, lang);
 
-  if (!LCM.startsWith(prefix)) return; //Return if not prefixed
-
-  const arguments = LCM.slice(prefix.length).trim().split(" ");
-  const command = arguments[0].toLowerCase();
-
-  switch (command) {
-    case 'bot':
-      return require('./commands/status')(message, lang);
-    case 'info':
-      return require('./commands/info')(message, lang);
-    case 'bilgi':
-      return require('./commands/info')(message, lang);
-    case 'help':
-      return require('./commands/help')(message, lang);
-    case 'yardım':
-      return require('./commands/info')(message, lang);
-    case 'invite':
-      return require('./commands/invite')(message, lang);
-    case 'davet':
-      return require('./commands/invite')(message, lang);
-    case 'mute':
-      return require('./commands/mute')(message, lang);
-    case 'sustur':
-      return require('./commands/mute')(message, lang);
-    case 'set':
-      return require('./commands/set')(message, lang);
-    case 'ayarla':
-      return require('./commands/set')(message, lang);
-    case 'lang':
-      return require('./commands/lang')(message, lang);
-  };
+	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
+	require("./commands/update")(message, lang) // Ask to add slash commands if the old prefix is used
 });
 
 
@@ -172,6 +148,18 @@ client.on("interactionCreate", async (interaction) => {
     	return require('./commands/status').default(interaction, lang);
 	case "dmmute":
 	    return require("./commands/dmmute").default(interaction, lang);
+	case "invite":
+		return require("./commands/invite").default(interaction, lang);
+	case "info":
+		return require("./commands/info").default(interaction, lang);
+	case "help":
+		return require("./commands/help").default(interaction, lang);
+	case "language":
+		return require("./commands/set").default(interaction, lang);
+	case "languages":
+		return require("./commands/lang").default(interaction, lang);
+	case "mute":
+		return require("./commands/mute").default(interaction, lang);
   }
 });
 
