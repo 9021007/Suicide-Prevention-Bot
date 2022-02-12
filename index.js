@@ -81,6 +81,7 @@ client.once('ready', async () => {
     require('./commands/dm').command,
     require("./commands/ping").command,
     require("./commands/status").command,
+	require("./commands/dmmute").command,
   ];
 
   // Get dev guild ID for slash commands, comment to use global slash commands
@@ -141,10 +142,6 @@ client.on('messageCreate', async message => {
       return require('./commands/mute')(message, lang);
     case 'sustur':
       return require('./commands/mute')(message, lang);
-    case 'dmmute':
-      return require('./commands/dmmute')(message, lang);
-    case 'ömsustur':
-      return require('./commands/dmmute')(message, lang);
     case 'set':
       return require('./commands/set')(message, lang);
     case 'ayarla':
@@ -168,11 +165,13 @@ client.on("interactionCreate", async (interaction) => {
   const { commandName, options } = interaction;
   switch (commandName) {
     case "dm":
-      return require('./commands/dm').default(interaction, lang);
+    	return require('./commands/dm').default(interaction, lang);
     case "ping":
-      return require('./commands/ping').default(interaction, lang);
+    	return require('./commands/ping').default(interaction, lang);
     case "status":
-      return require('./commands/status').default(interaction, lang);
+    	return require('./commands/status').default(interaction, lang);
+	case "dmmute":
+	    return require("./commands/dmmute").default(interaction, lang);
   }
 });
 

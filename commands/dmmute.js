@@ -1,15 +1,24 @@
-module.exports = async (message, lang) => {
-     const {db} = require('../index');
-     const {
-          dmmute2, 
-          dmmute3
-     } = require(`../lang/${lang}.json`);
+module.exports = {
+	command: {
+		name: "dmmute",
+		description: "Mutes DMs for you",
+		options: []
+	},
 
-     if (db.get(`dmmute_${message.author.id}`)) {
-          db.delete(`dmmute_${message.author.id}`);
-          message.channel.send(dmmute2);
-     } else {
-          db.set(`dmmute_${message.author.id}`, true);
-          message.channel.send(dmmute3);
-     }
-};
+	//Timeout
+	default: async (interaction, lang) => {
+		const {db} = require('../index');
+		const {
+			dmmute2, 
+			dmmute3
+		} = require(`../lang/${lang}.json`);
+
+		if (db.get(`dmmute_${interaction.user.id}`)) {
+			db.delete(`dmmute_${interaction.user.id}`);
+			interaction.reply(dmmute2);
+		} else {
+			db.set(`dmmute_${interaction.user.id}`, true);
+			interaction.reply(dmmute3);
+		}
+	}
+}
