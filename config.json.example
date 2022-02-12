@@ -1,7 +1,7 @@
 {
 	"prefix": "sp!",
-	"token": "OTMyMTk4ODQ2ODc5MTIxNDE4.YePf1A.4WT25wwXMQHvFxWa1ImYLsdsC20",
-	"devGuildId": "906159427390935121",
+	"token": "",
+	"devGuildId": "",
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
 	"botPerms": [
