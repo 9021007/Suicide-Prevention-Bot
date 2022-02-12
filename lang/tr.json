@@ -58,7 +58,7 @@
     "infofield4": "[Discord'a Katıl!](https://discord.com/invite/YHvfUqVgWS)",
     "infofooter": "@Bobrobot1#1408 tarafından yapıldı | https://spbot.ml | botun mesajlarınızı yoksayması için sp!ignore yaz",
  
-    "helpcommands": ["yardım\n bot (alias: neofetch, v)\n bilgi\n davet\n sustur\n ömsustur\n ping\n öm (kullanıcı)\n ömsustur\n ayarla\n dil\n"],
+    "helpcommands": ["yardım\n bot (alias: neofetch, v)\n bilgi\n davet\n sustur\n ping\n öm (kullanıcı)\n ömsustur\n ayarla\n dil\n"],
     "helplinks": ["[İnternet Sitesi](https://spbot.ml/)\n [Discord Daveti](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Durum Sayfası](https://spbot.freshstatus.io/)\n"],
     "helpauthor": "İntihar Önleme Botu Hakkında Bilgi",
     "helptitle": "Yardım mı istedin?",
