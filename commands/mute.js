@@ -62,7 +62,6 @@ module.exports = {
 				}
 				const { channel_mutes_db: db } = require('../index');
 				
-
 				if (db.get(`mute_${interaction.channel.id}`)) {
 					db.delete(`mute_${interaction.channel.id}`);
 					interaction.reply({ content: "Channel has been unmuted" });
