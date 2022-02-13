@@ -19,4 +19,13 @@ node.js v16 and above required. LTS version reccommended.
 
 [Status Website](https://spbot.freshstatus.io)
 
-[Discord Server](https://discord.com/invite/YHvfUqVgWS)
+[Terms of Service](https://spbot.ml/terms.txt)
+
+[Privacy Policy](https://spbot.ml/privacy.txt)
+
+## Socials
+[Discord](https://discord.com/invite/YHvfUqVgWS)
+
+[Github](https://github.com/Bobrobot1/Suicide-Prevention-Bot)
+
+[Reddit](https://www.reddit.com/r/SuicidePreventionBot)
