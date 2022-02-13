@@ -55,7 +55,7 @@ module.exports = {
 	default: async (interaction, lang) => {
 		const { commandName, options } = interaction;
 
-		const { db } = require('../index');
+		const { lang_db: db } = require('../index');
 		const { nolang, seterror } = require(`../lang/${lang}.json`);
 		const { prefix, langinfo } = require('../config.json');
 

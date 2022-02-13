@@ -48,11 +48,10 @@ module.exports = {
 			return interaction.reply({ content: 'Only admins can use this', ephemeral: true });
 		}
 
+		const { blacklist_db: db } = require('../index');
+
 		switch (options.getSubcommand()) {
 			case "add": {
-				const db = new Database({
-					path: './database/blacklist.json'
-				});
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
 				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
 				let word = options.getString("word");
@@ -63,9 +62,6 @@ module.exports = {
 				return interaction.reply({ content: `Word \`${word}\` has been added to the blacklist`, ephemeral: true });
 			}
 			case "remove": {
-				const db = new Database({
-					path: './database/blacklist.json'
-				});
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
 				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
 				let word = options.getString("word");
@@ -76,12 +72,9 @@ module.exports = {
 				return interaction.reply({ content: `Word \`${word}\` has been removed from the blacklist`, ephemeral: true });
 			}
 			case "list": {
-				const db = new Database({
-					path: './database/blacklist.json'
-				});
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
 				const data = db.get(`blacklist_${interaction.guild.id}`)
-				const list = data.join(', ') || "N/A"
+				const list = data.join(', ') || "empty"
 
 				return interaction.reply({ content: `The current blacklist is: \`${list}\``, ephemeral: true });
 			}
@@ -89,9 +82,8 @@ module.exports = {
 	},
 
 	checkIfIgnored: (message) => {
-		const db = new Database({
-			path: './database/blacklist.json'
-		});
+		const { blacklist_db: db } = require('../index');
+		
 		if (db.get(`blacklist_${message.guild.id}`) == null) db.set(`blacklist_${message.guild.id}`, [])
 		let blacklist = db.get(`blacklist_${message.guild.id}`);
 		if (blacklist.some(v => message.content.includes(v))) return true;

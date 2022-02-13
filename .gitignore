@@ -3,3 +3,5 @@ node_modules
 .vscode
 config.json
 .vsls.json
+database/channel_mutes.json
+database/user_mutes.json

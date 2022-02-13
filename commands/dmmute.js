@@ -7,7 +7,7 @@ module.exports = {
 
 	//Timeout
 	default: async (interaction, lang) => {
-		const {db} = require('../index');
+		const { user_mutes_db: db } = require('../index');
 		const {
 			dmmute2, 
 			dmmute3

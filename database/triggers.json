@@ -3,6 +3,8 @@
 		"suicide",
 		"kill|myself",
 		"end|myself",
+		"jump.*bridge",
+		"jump.*train",
 		"end|my|life",
 		"commit|die",
 		"wish|i|was|dead",

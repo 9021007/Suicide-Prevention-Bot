@@ -20,7 +20,7 @@ module.exports = {
 		var { dmTimeout_MINUTES } = require('../config.json'); //Request config settings
 		dmTimeout_MINUTES *= 60 * 1000;
 
-		const {db} = require('../index'); //Request db
+		const { user_mutes_db: db } = require('../index'); //Request db
 
 		const { commandName, options } = interaction;
 		const {

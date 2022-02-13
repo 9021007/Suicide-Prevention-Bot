@@ -41,12 +41,12 @@ MMMMMMMMMMMMMMNXWMMMMMMMMMMMMMMMMWMMMMMMMMMMM
  * Error handling
  */
 process
-  .on('unhandledRejection', (reason, p) => {
-    console.error(reason, 'Unhandled Rejection at Promise', p);
-  })
-  .on('uncaughtException', err => {
-    console.error(err, 'Uncaught Exception caught');
-  });
+	.on('unhandledRejection', (reason, p) => {
+		console.error(reason, 'Unhandled Rejection at Promise', p);
+	})
+	.on('uncaughtException', err => {
+		console.error(err, 'Uncaught Exception caught');
+	});
 
 const { Client, Intents, Constants } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES], partials: ["CHANNEL"] });
@@ -57,8 +57,21 @@ activityResetTimeout_SECONDS *= 1000;
 
 const Database = require('simplest.db');
 
-const db = new Database({
-  path: './database/mutes.json'
+// Initialize databases
+const user_mutes_db = new Database({
+  path: './database/user_mutes.json'
+});
+const blacklist_db = new Database({
+	path: './database/blacklist.json'
+});
+const triggers_db = new Database({
+	path: './database/triggers.json'
+});
+const channel_mutes_db = new Database({
+	path: './database/channel_mutes.json'
+});
+const lang_db = new Database({
+	path: './database/lang.json'
 });
 let lastMessage = null;
 
@@ -111,19 +124,18 @@ client.on('messageCreate', async message => {
 	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return;
 
 	let lang = "en";
-	const server_language = db.get(`lang_${message.guild.id}`);
+	const server_language = lang_db.get(`lang_${message.guild.id}`);
 	if (typeof server_language === 'string') lang = server_language;
 
 	let LCM = message.content.toLowerCase(); //Lower case message text
-
 
 	// Mention bot will activate alert message without triggers
 	if (message.mentions.users.first() === client.user)
 	return require('./split/bot-mentioned')(message, lang);
 
 	//Check to see if you muted the bot (User side only)
-	if (db.get(`mute_${message.author.id}`) == null && !require("./commands/blacklist.js").checkIfIgnored(message)) 
-	require('./split/every-unmuted-message')(message, lang);
+	if (!require("./commands/mute").checkIfMuted(message) && !require("./commands/blacklist.js").checkIfIgnored(message)) 
+		require('./split/every-unmuted-message')(message, lang);
 
 	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
 	require("./commands/update")(message, lang) // Ask to add slash commands if the old prefix is used
@@ -137,7 +149,7 @@ client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
 
   var lang = "en";
-  const server_language = db.get(`lang_${interaction.guild.id}`);
+  const server_language = lang_db.get(`lang_${interaction.guild.id}`);
   if (typeof server_language === 'string') lang = server_language;
 
   const { commandName, options } = interaction;
@@ -172,7 +184,7 @@ client.on("interactionCreate", async (interaction) => {
  */
 
 client.on("interactionCreate", async (interaction) => {
-  const server_language = db.get(`lang_${interaction.guild.id}`);
+  const server_language = lang_db.get(`lang_${interaction.guild.id}`);
   var lang = "en";
   if (typeof server_language === 'string') lang = server_language;
   const { commandName, options } = interaction;
@@ -186,7 +198,11 @@ client.login(token); //Client login
 
 module.exports = {
   client: client,
-  db: db
+  user_mutes_db: user_mutes_db,
+  blacklist_db: blacklist_db,
+  triggers_db: triggers_db,
+  channel_mutes_db: channel_mutes_db,
+  lang_db: lang_db,
 };
 
 /* JOIN US on our Discord: https://discord.gg/YHvfUqVgWS.
