@@ -1,15 +1,3 @@
-module.exports = {
-     command: {
-		name: "mute",
-		description: "Prevent the bot from responding to your messages",
-		options: []
-	},
-
-     default: async (interaction, lang) => {
-		
-	 }
-};
-
 const { Constants } = require('discord.js');
 
 module.exports = {
@@ -57,17 +45,17 @@ module.exports = {
 				}
 			}
 			case "channel": {
-				if (!interaction.member.permissions.has("ADMINISTRATOR")) {
+				if (!interaction.member.permissions.has("MANAGE_SERVER")) {
 					return interaction.reply({ content: 'Only admins can use this', ephemeral: true });
 				}
 				const { channel_mutes_db: db } = require('../index');
 				
 				if (db.get(`mute_${interaction.channel.id}`)) {
 					db.delete(`mute_${interaction.channel.id}`);
-					interaction.reply({ content: "Channel has been unmuted" });
+					return interaction.reply({ content: "Channel has been unmuted" });
 				} else {
 					db.set(`mute_${interaction.channel.id}`, true);
-					interaction.reply({ content: "Channel has been muted" });
+					return interaction.reply({ content: "Channel has been muted" });
 				}
 			}
 		}
