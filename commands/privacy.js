@@ -15,9 +15,9 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
 			.setTitle("Privacy Policy")
+			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription("See our privacy polcy at https://spbot.ml/privacy.txt")
-			.setImage('https://www.spbot.ml/suicideicon.png');
+			.setDescription("See our privacy polcy at https://spbot.ml/privacy.txt");
 		interaction.reply({ embeds: [embed] });
 	}
 }

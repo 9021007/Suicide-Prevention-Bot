@@ -14,11 +14,11 @@ module.exports = {
 		const langs = new MessageEmbed()
 			 .setColor('#04d384')
 			 .setTitle(langstitle)
+			 .setThumbnail('https://spbot.ml/siround.png')
 			 .setAuthor(langsauthor)
 			 .setDescription(langlist.toString())
 			 .setURL('https://spbot.ml/')
-			 .addField(langsfield1heading, langsfield1)
-			 .setImage('https://www.spbot.ml/suicideicon.png');
+			 .addField(langsfield1heading, langsfield1);
 		interaction.reply({ embeds: [langs] });
 	 }
 };

@@ -15,9 +15,9 @@ module.exports = {
 		const invite = new MessageEmbed()
 			.setColor('#04d384')
 			.setTitle(invitetitle)
+			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(invitedescription)
-			.setImage('https://www.spbot.ml/suicideicon.png');
+			.setDescription(invitedescription);
 		interaction.reply({ embeds: [invite] });
 	}
 }
