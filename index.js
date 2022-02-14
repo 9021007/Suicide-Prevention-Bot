@@ -100,7 +100,9 @@ client.once('ready', async () => {
 		require("./commands/set").command,
 		require("./commands/lang").command,
 		require("./commands/mute").command,
-		require("./commands/blacklist").command
+		require("./commands/blacklist").command,
+		require("./commands/privacy").command,
+		require("./commands/tos").command
 	];
 
 	// Get dev guild ID for slash commands, comment to use global slash commands
@@ -175,7 +177,11 @@ client.on("interactionCreate", async (interaction) => {
 	case "mute":
 		return require("./commands/mute").default(interaction, lang);
 	case "blacklist":
-		return require("./commands/blacklist").default(interaction, lang)
+		return require("./commands/blacklist").default(interaction, lang);
+	case "tos":
+		return require("./commands/tos").default(interaction, lang);
+	case "privacy":
+		return require("./commands/privacy").default(interaction, lang);
   }
 });
 

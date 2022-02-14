@@ -24,7 +24,7 @@ module.exports = async (message, lang) => {
 
      const suicide = new MessageEmbed()
       .setColor('#04d384')
-      .setTitle(`${suicidetitle}`)
+      .setTitle(`Bot Mentioned. Here is my helpline embed: ${suicidetitle}`)
       .setAuthor(`${suicideauthor}`, 'https://spbot.ml/siround.png')
       .setDescription(`${suicidedescription}`)
       .addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
