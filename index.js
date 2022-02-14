@@ -185,21 +185,6 @@ client.on("interactionCreate", async (interaction) => {
   }
 });
 
-/**
- * Context Menu Buttons
- */
-
-client.on("interactionCreate", async (interaction) => {
-  const server_language = lang_db.get(`lang_${interaction.guild.id}`);
-  var lang = "en";
-  if (typeof server_language === 'string') lang = server_language;
-  const { commandName, options } = interaction;
-  switch (commandName) {
-    case "DM User":
-      return require('./commands/dmuser').default(interaction, lang);
-  }
-});
-
 client.login(token); //Client login
 
 module.exports = {
