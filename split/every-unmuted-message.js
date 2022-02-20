@@ -57,7 +57,7 @@ module.exports = async (message, lang) => {
 	   		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
 	   		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
 			.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
-			.setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png');
+			.setFooter(`${suicidefooter}, Response ID: ${message.id}`, 'https://spbot.ml/siround.png');
 		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send(suicide));
 	}
 	let args = LCM.trim().split(/ +/);

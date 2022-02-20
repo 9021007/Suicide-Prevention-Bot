@@ -1,23 +1,23 @@
 const { MessageEmbed } = require('discord.js');
+
 module.exports = {
 	command: {
-		name: "invite",
-		description: "Displays an invite link, to add the bot to your server.",
+		name: "privacy",
+		description: "Points you to the privacy policy",
 		options: []
 	},
 
 	default: async (interaction, lang) => {
 		const {
-			invitetitle, 
-			invitedescription
+			
 		} = require(`../lang/${lang}.json`);
 
-		const invite = new MessageEmbed()
+		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle(invitetitle)
+			.setTitle("Privacy Policy")
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(invitedescription);
-		interaction.reply({ embeds: [invite] });
+			.setDescription("See our privacy polcy at https://spbot.ml/privacy.txt");
+		interaction.reply({ embeds: [embed] });
 	}
 }

@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@cityssm/unleet": "^2.3.1",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.6.0",
     "discord.js-multilingual-utils": "^1.7.0",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
