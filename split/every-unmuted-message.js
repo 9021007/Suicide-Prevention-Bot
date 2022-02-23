@@ -72,8 +72,9 @@ module.exports = async (message, lang) => {
 		const parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"));
 		parsedInsultTriggers.forEach(trigger => { // Loop ever each insult and check if they match the message
 	   		possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with insult
-				if (new RegExp(trigger, "g").test(unleeted_LCM))
+				if (new RegExp(trigger, "g").test(unleeted_LCM)) {
 					commonElements.push(true);
+				}
 			});
 		});
 		if (commonElements.length > 0) {

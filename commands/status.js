@@ -52,10 +52,10 @@ module.exports = {
 > **• Model** : ${os.cpus()[0].model} 
 > **• Speed** : ${os.cpus()[0].speed} MHz
 **•** ${ramemoji} :
-> **• Total Memory** : ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps
-> **• Free Memory** : ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps
-> **• Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps
-> **• Heap Usage** : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps
+> **• Total Memory** : ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mb
+> **• Free Memory** : ${(os.freemem() / 1024 / 1024).toFixed(2)} Mb
+> **• Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mb
+> **• Heap Usage** : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mb
 `)
 .setTimestamp();
 
