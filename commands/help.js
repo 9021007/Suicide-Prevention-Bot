@@ -20,7 +20,10 @@ module.exports = {
 
           const help = new MessageEmbed()
                .setColor('#04d384')
-               .setAuthor(helpauthor, 'https://spbot.ml/siround.png')
+			   .setAuthor({
+				   name: helpauthor,
+				   iconURL: 'https://spbot.ml/siround.png'
+			   })
                .setTitle(helptitle)
                .setURL('https://spbot.ml')
                .addField(helpfield1heading, helpcommands)

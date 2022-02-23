@@ -24,7 +24,10 @@ module.exports = {
 
      const info = new MessageEmbed()
           .setColor('#04d384')
-          .setAuthor(infoauthor, 'https://spbot.ml/siround.png')
+          .setAuthor({
+			name: infoauthor,
+			iconURL: 'https://spbot.ml/siround.png'
+		  })
           .setTitle(infotitle)
           .setURL('https://spbot.ml')
           .setThumbnail('https://spbot.ml/siround.png')
@@ -33,7 +36,9 @@ module.exports = {
           .addField(infofield3heading, infofield3)
           .addField(infofield4heading, infofield4)
           .setImage('https://spbot.ml/sc2.png')
-          .setFooter(infofooter);
+          .setFooter({
+			  text: infofooter
+		  });
      interaction.reply({ embeds: [info] });
      }
 

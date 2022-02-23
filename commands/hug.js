@@ -16,4 +16,4 @@ module.exports = {
 	default: async (interaction, lang) => {
 		// to add
 	}
-}
+};

@@ -47,7 +47,10 @@ module.exports = async (message, lang) => {
 		const suicide = new MessageEmbed()
 	   		.setColor('#04d384')
 	   		.setTitle(`${suicidetitle}`)
-	   		.setAuthor(`${suicideauthor}`, 'https://spbot.ml/siround.png')
+	   		.setAuthor({
+				   name: `${suicideauthor}`,
+				   iconURL: 'https://spbot.ml/siround.png'
+			})
 	   		.setDescription(`${suicidedescription}`)
 			.addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
 	   		.addField(`${suicidefield2heading}`, `${suicidefield2}`, true)
@@ -57,7 +60,10 @@ module.exports = async (message, lang) => {
 	   		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
 	   		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
 			.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
-			.setFooter(`${suicidefooter}, Response ID: ${message.id}`, 'https://spbot.ml/siround.png');
+			.setFooter({
+				text:`${suicidefooter}, Response ID: ${message.id}`,
+				iconURl: 'https://spbot.ml/siround.png'
+			});
 		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send(suicide));
 	}
 	let args = LCM.trim().split(/ +/);
@@ -74,7 +80,10 @@ module.exports = async (message, lang) => {
 	   		const insult = new MessageEmbed()
 				.setColor('#04d384')
 				.setTitle(`${insulttitle}`)
-				.setAuthor(`${insultauthor}`, 'https://spbot.ml/siround.png')
+				.setAuthor({
+					name: `${insultauthor}`,
+					iconURL: 'https://spbot.ml/siround.png'
+				})
 				.setDescription(`${insultdescription}`);
 	   		return message.channel.send({ embeds: [insult] }).catch(console.error);
 		}

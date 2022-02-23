@@ -140,7 +140,7 @@ client.on('messageCreate', async message => {
 		require('./split/every-unmuted-message')(message, lang);
 
 	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
-	require("./commands/update")(message, lang) // Ask to add slash commands if the old prefix is used
+	require("./commands/update")(message, lang); // Ask to add slash commands if the old prefix is used
 });
 
 

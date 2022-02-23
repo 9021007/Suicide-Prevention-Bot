@@ -22,20 +22,26 @@ module.exports = async (message, lang) => {
           suicidefooter
      } = require(`../lang/${lang}.json`);
 
-     const suicide = new MessageEmbed()
-      .setColor('#04d384')
-      .setTitle(`Bot Mentioned. Here is my helpline embed: ${suicidetitle}`)
-      .setAuthor(`${suicideauthor}`, 'https://spbot.ml/siround.png')
-      .setDescription(`${suicidedescription}`)
-      .addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
-      .addField(`${suicidefield2heading}`, `${suicidefield2}`, true)
-      .addField(`${suicidefield3heading}`, `${suicidefield3}`, true)
-      .addField(`${suicidefield4heading}`, `${suicidefield4}`, true)
-      .addField(`${suicidefield5heading}`, `${suicidefield5}`, true)
-      .addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
-      .addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
-      .addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
-      .setFooter(`${suicidefooter}`, 'https://spbot.ml/siround.png');
+	const suicide = new MessageEmbed()
+		.setColor('#04d384')
+		.setTitle(`Bot Mentioned. Here is my helpline embed: ${suicidetitle}`)
+		.setAuthor({
+			name: `${suicideauthor}`,
+			iconURL: 'https://spbot.ml/siround.png'
+		})
+		.setDescription(`${suicidedescription}`)
+		.addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
+		.addField(`${suicidefield2heading}`, `${suicidefield2}`, true)
+		.addField(`${suicidefield3heading}`, `${suicidefield3}`, true)
+		.addField(`${suicidefield4heading}`, `${suicidefield4}`, true)
+		.addField(`${suicidefield5heading}`, `${suicidefield5}`, true)
+		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
+		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
+		.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
+		.setFooter({
+			text: `${suicidefooter}`,
+			iconURL: 'https://spbot.ml/siround.png'
+		});
 
     return message.channel.send({ embeds: [suicide] });
 };

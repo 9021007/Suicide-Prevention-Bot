@@ -43,6 +43,7 @@ module.exports = {
 					db.set(`mute_${interaction.user.id}`, true);
 					interaction.reply({ content: mute3, ephemeral: true });
 				}
+				break;
 			}
 			case "channel": {
 				if (!interaction.member.permissions.has("MANAGE_SERVER")) {
@@ -63,6 +64,6 @@ module.exports = {
 
 	checkIfMuted: (message) => {
 		const { user_mutes_db, channel_mutes_db } = require('../index');
-		return user_mutes_db.get(`mute_${message.author.id}`) != null || channel_mutes_db.get(`mute_${message.channel.id}`) != null
+		return user_mutes_db.get(`mute_${message.author.id}`) != null || channel_mutes_db.get(`mute_${message.channel.id}`) != null;
 	}
 };

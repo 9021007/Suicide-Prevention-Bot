@@ -52,7 +52,7 @@ module.exports = {
 
 		switch (options.getSubcommand()) {
 			case "add": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
+				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
 				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
 				let word = options.getString("word");
 				if (blacklist.some(v => word.includes(v))) return interaction.reply({ content: "This word is already in the blacklist", ephemeral: true });
@@ -62,19 +62,19 @@ module.exports = {
 				return interaction.reply({ content: `Word \`${word}\` has been added to the blacklist`, ephemeral: true });
 			}
 			case "remove": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
+				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
 				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
 				let word = options.getString("word");
 				if (!blacklist.some(v => word.includes(v))) return interaction.reply({ content: "This word is not in the blacklist", ephemeral: true });
-				blacklist.splice(blacklist.indexOf(word), 1)
+				blacklist.splice(blacklist.indexOf(word), 1);
 				db.set(`blacklist_${interaction.guild.id}`, blacklist);
 
 				return interaction.reply({ content: `Word \`${word}\` has been removed from the blacklist`, ephemeral: true });
 			}
 			case "list": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, [])
-				const data = db.get(`blacklist_${interaction.guild.id}`)
-				const list = data.join(', ') || "empty"
+				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
+				const data = db.get(`blacklist_${interaction.guild.id}`);
+				const list = data.join(', ') || "empty";
 
 				return interaction.reply({ content: `The current blacklist is: \`${list}\``, ephemeral: true });
 			}
@@ -84,7 +84,7 @@ module.exports = {
 	checkIfIgnored: (message) => {
 		const { blacklist_db: db } = require('../index');
 		
-		if (db.get(`blacklist_${message.guild.id}`) == null) db.set(`blacklist_${message.guild.id}`, [])
+		if (db.get(`blacklist_${message.guild.id}`) == null) db.set(`blacklist_${message.guild.id}`, []);
 		let blacklist = db.get(`blacklist_${message.guild.id}`);
 		if (blacklist.some(v => message.content.includes(v))) return true;
 		return false;

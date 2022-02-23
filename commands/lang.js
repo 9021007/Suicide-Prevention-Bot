@@ -15,7 +15,9 @@ module.exports = {
 			 .setColor('#04d384')
 			 .setTitle(langstitle)
 			 .setThumbnail('https://spbot.ml/siround.png')
-			 .setAuthor(langsauthor)
+			 .setAuthor({
+				 name: langsauthor
+			 })
 			 .setDescription(langlist.toString())
 			 .setURL('https://spbot.ml/')
 			 .addField(langsfield1heading, langsfield1);

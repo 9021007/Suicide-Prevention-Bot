@@ -54,7 +54,10 @@ module.exports = {
 			.setTitle(`${dmembedtitle}`)
 			.setURL('https://spbot.ml/')
 			.setImage('https://www.spbot.ml/suicideicon.png')
-			.setAuthor(`${dmembedauthor}`, 'https://spbot.ml/siround.png')
+			.setAuthor({
+				name: `${dmembedauthor}`,
+				iconURL: 'https://spbot.ml/siround.png'
+			})
 			.setDescription(`${dmembeddescription}`)
 			.addField(`${dmembedfield1heading}`, `${dmembedfield1}`, false)
 			.addField(`${dmembedfield2heading}`, `${dmembedfield2}`, true)
@@ -64,13 +67,15 @@ module.exports = {
 			.addField(`${dmembedfield6heading}`, `${dmembedfield6}`, true)
 			.addField(`${dmembedfield7heading}`, `${dmembedfield7}`, true)
 			.addField(`${dmembedfield8heading}`, `${dmembedfield8}`, false)
-			.setFooter('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', 'https://spbot.ml/siround.png');
-
+			.setFooter({
+				text: 'I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs',
+				iconURL: 'https://spbot.ml/siround.png'
+			});
 		interaction.client.users.fetch(options.getUser("user").id).then(user => {
 			if (db.get(`dmmute_${user.id}`)) return interaction.reply({ content: dmmute5, ephemeral: true }); //Check to see if you muted the bot (User side only)
 
 			//Timeout command
-			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: "This user has already been messaged recently, please wait and try again.", ephemeral: true })
+			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: "This user has already been messaged recently, please wait and try again.", ephemeral: true });
 			DMTimeoutArray.push(user.id);
 			setTimeout(() => {
 				const index = DMTimeoutArray.findIndex(item => item == user.id);
@@ -79,11 +84,11 @@ module.exports = {
 
 			//Send message
 			user.send({ embeds: [dmembed] }).then(() => {
-				interaction.reply({ content: sent, ephemeral: true })
+				interaction.reply({ content: sent, ephemeral: true });
 			}).catch(e => {
 				console.error(e);
 				message.channel.send(dmmute4); //If dm command has an error
 			});
 		});
 	}
-}
+};

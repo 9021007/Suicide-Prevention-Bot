@@ -1,7 +1,7 @@
-const { MessageEmbed, CommandInteraction, Client } = require("discord.js")
+const { MessageEmbed, CommandInteraction, Client } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
-const os = require('os')
+const os = require('os');
 
 module.exports = {
 	command: {
@@ -29,7 +29,9 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setFooter(bot2)
+			.setFooter({
+				text: bot2
+			})
 			.setDescription(`🔎 **Status**
 **= CLIENT =**
 **• Username** : ${client.user.username}
@@ -57,6 +59,6 @@ module.exports = {
 `)
 .setTimestamp();
 
-		interaction.reply({ embeds: [embed] })
+		interaction.reply({ embeds: [embed] });
 	}
-}
+};

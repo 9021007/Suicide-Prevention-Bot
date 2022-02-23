@@ -21,4 +21,4 @@ module.exports = {
 			interaction.reply({ content: dmmute3, ephemeral: true });
 		}
 	}
-}
+};
