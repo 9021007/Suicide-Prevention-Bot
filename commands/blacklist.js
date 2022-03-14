@@ -43,12 +43,13 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
+		const { blacklist_db: db, __ } = require('../index');
 		const { commandName, options } = interaction;
+
 		if (!interaction.member.permissions.has("ADMINISTRATOR")) {
-			return interaction.reply({ content: 'Only admins can use this', ephemeral: true });
+			return interaction.reply({ content: __('Only admins can use this', lang), ephemeral: true });
 		}
 
-		const { blacklist_db: db } = require('../index');
 
 		switch (options.getSubcommand()) {
 			case "add": {
@@ -59,7 +60,7 @@ module.exports = {
 				blacklist.push(word);
 				db.set(`blacklist_${interaction.guild.id}`, blacklist);
 
-				return interaction.reply({ content: `Word \`${word}\` has been added to the blacklist`, ephemeral: true });
+				return interaction.reply({ content: __(`Word {{word}} has been added to the blacklist`, lang, { word: word }), ephemeral: true });
 			}
 			case "remove": {
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
@@ -69,7 +70,7 @@ module.exports = {
 				blacklist.splice(blacklist.indexOf(word), 1);
 				db.set(`blacklist_${interaction.guild.id}`, blacklist);
 
-				return interaction.reply({ content: `Word \`${word}\` has been removed from the blacklist`, ephemeral: true });
+				return interaction.reply({ content: __(`Word {{word}} has been added to the blacklist`, lang, { word: word }), ephemeral: true });
 			}
 			case "list": {
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);

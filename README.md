@@ -14,6 +14,34 @@ node.js v16 and above required. LTS version reccommended.
 
 ![screenshot](https://spbot.ml/sc2.png)
 
+## Translating
+Importing the translation function in your code:
+```js
+const { __ } = require('../index.js');
+```
+Usage:
+```js
+// Outputs "you have been trolled" in language "language"​
+var trolledText = ​__​(​"You have been trolled"​,​ ​language​​);
+```
+
+With parameters:
+```js
+// Outputs "You have been muted for 1w", replaces {{duration with the given parameter}}
+var mutedText = ​__​(​"You have been muted for {{duration}}"​,​ ​language​​, { duration: "1w" });
+```
+### Adding languages
+First, add a language to `config.json` (in the supportedLanguages list).
+Then, launch the program, and a language file will be generated in `/locales`
+
+### Editing language files
+`locales/fr.json`
+```json
+{
+	"Language successfully changed!": "Language changé avec succès!",
+	"Word {{word}} has been added to the blacklist": "Le mot {{word}} à été ajouté a la liste des mots à ignorer"
+}
+```
 ## Links
 [Website](https://spbot.ml)
 

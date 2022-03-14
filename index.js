@@ -73,6 +73,25 @@ const channel_mutes_db = new Database({
 const lang_db = new Database({
 	path: './database/lang.json'
 });
+
+const languageChoices = () => {
+	const { supportedLanguages } = require('./config.json');
+	var languages = [];
+	for (var l of supportedLanguages) {
+		languages.push(l[0]);
+	}
+	return languages;
+};
+
+const { I18n } = require('i18n');
+const i18n = new I18n({
+	locales: languageChoices(),
+	directory: "./locales"
+});
+const __ = (string, lang, options = undefined) => {
+	return i18n.__({ phrase: string, locale: lang }, options);
+};
+
 let lastMessage = null;
 
 
@@ -194,6 +213,7 @@ module.exports = {
   triggers_db: triggers_db,
   channel_mutes_db: channel_mutes_db,
   lang_db: lang_db,
+  __: __
 };
 
 /* JOIN US on our Discord: https://discord.gg/YHvfUqVgWS.
