@@ -56,6 +56,7 @@ var { activityResetTimeout_SECONDS } = require('./config.json');
 activityResetTimeout_SECONDS *= 1000;
 
 const Database = require('simplest.db');
+const gradient = require('gradient-string');
 
 // Initialize databases
 const user_mutes_db = new Database({
@@ -97,7 +98,7 @@ let lastMessage = null;
 
 // Setup bot ready callback
 client.once('ready', async () => {
-	console.log(`[+] Logged in as ${client.user.tag}!`); // Console log for verbosity
+	console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}!`)); // Console log for verbosity
 	setInterval(() => {
 		const users = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
 		const servers = client.guilds.cache.size.toLocaleString();
@@ -128,11 +129,13 @@ client.once('ready', async () => {
 	const devGuild = client.guilds.cache.get(devGuildId);
 	if (typeof devGuild == "undefined") {
 		client.application.commands.set(commands);
-		console.log("[+] Set global commands");
+		console.log(gradient.rainbow("[+] Set global commands"));
 	} else {
 		devGuild.commands.set(commands);
-		console.log("[+] Set guild commands");
+		console.log(gradient.rainbow("[+] Set guild commands"));
 	}
+
+	console.log(gradient.rainbow(`I'm online! ＼(￣▽￣)／`));
 });
 
 /**

@@ -9,7 +9,7 @@ A Discord bot to prevent suicide. It works by taking a list of phrases, and it c
 
 Don't forget to rename `config.json.example` to `config.json` and fill in the `token` and `devGuildId` in config
 
-node.js v16 and above required. LTS version reccommended.
+node.js v16 and above required. LTS version recommended.
 
 
 ![screenshot](https://spbot.ml/sc2.png)
