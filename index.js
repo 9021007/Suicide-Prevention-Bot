@@ -161,7 +161,7 @@ client.on('messageCreate', async message => {
 	if (!require("./commands/mute").checkIfMuted(message) && !require("./commands/blacklist.js").checkIfIgnored(message)) 
 		require('./split/every-unmuted-message')(message, lang);
 
-	if (!LCM.startsWith(prefix)) return; // Return if not prefixed
+	if (!LCM.startsWith("sp!")) return; // Return if not prefixed
 	require("./commands/update")(message, lang); // Ask to add slash commands if the old prefix is used
 });
 

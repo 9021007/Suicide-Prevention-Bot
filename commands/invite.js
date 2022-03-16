@@ -7,17 +7,14 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const {
-			invitetitle, 
-			invitedescription
-		} = require(`../lang/${lang}.json`);
+		const { __ } = require("../index.js");
 
 		const invite = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle(invitetitle)
+			.setTitle(__("Add Suicide Prevention Bot", lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(invitedescription);
+			.setDescription(__("This Discord bot is an easy-to-use and easy-to-install bot for Discord, that actively prevents suicide and other crisis from occuring. Add it to your Discord server in just 3 clicks.", lang));
 		interaction.reply({ embeds: [invite] });
 	}
-}
+};

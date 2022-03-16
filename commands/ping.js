@@ -1,4 +1,4 @@
-const { MessageEmbed, CommandInteraction, Client } = require("discord.js")
+const { MessageEmbed, CommandInteraction, Client } = require("discord.js");
 
 module.exports = {
 	command: {
@@ -8,7 +8,8 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { client } = require('../index');
+		const { client, __ } = require('../index');
+		
 		const loading = client.emojis.cache.get("838616104687108117");
 
 		await interaction.reply({ content: `${loading} Pinging...` }).then(async () => {
@@ -20,10 +21,10 @@ module.exports = {
 				embeds: [
 					new MessageEmbed()
 						.setColor('#04d384')
-						.setTitle('Here is my ping young one')
-						.setDescription(`Roundtrip latency is ${ping}ms \nAPI Latency is ${Math.round(api_ping)}ms`)
+						.setTitle(__('Here is my ping, young one', lang))
+						.setDescription(__("Roundtrip latency is {{ping}}ms \nAPI Latency is {{latency}}ms", lang, { ping: ping, latency: Math.round(api_ping) }))
 				]
 			});
 		});
 	}
-}
+};

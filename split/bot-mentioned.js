@@ -1,45 +1,25 @@
 module.exports = async (message, lang) => {
-     const { Client, Intents, MessageEmbed } = require('discord.js');
-     const { suicidetitle, 
-          suicideauthor, 
-          suicidedescription, 
-          suicidefield1heading, 
-          suicidefield1, 
-          suicidefield2heading, 
-          suicidefield2, 
-          suicidefield3heading, 
-          suicidefield3, 
-          suicidefield4heading, 
-          suicidefield4, 
-          suicidefield5heading, 
-          suicidefield5, 
-          suicidefield6heading, 
-          suicidefield6, 
-          suicidefield7heading, 
-          suicidefield7, 
-          suicidefield8heading, 
-          suicidefield8, 
-          suicidefooter
-     } = require(`../lang/${lang}.json`);
+    const { Client, Intents, MessageEmbed } = require('discord.js');
+	const { __ } = require("../index.js");
 
 	const suicide = new MessageEmbed()
 		.setColor('#04d384')
-		.setTitle(`Bot Mentioned. Here is my helpline embed: ${suicidetitle}`)
+		.setTitle(__("Bot Mentioned. Here is my helpline embed: Suicide Prevention Bot", lang))
 		.setAuthor({
-			name: `${suicideauthor}`,
+			name: __("Please give the helpline just one chance", lang),
 			iconURL: 'https://spbot.ml/siround.png'
 		})
-		.setDescription(`${suicidedescription}`)
-		.addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
-		.addField(`${suicidefield2heading}`, `${suicidefield2}`, true)
-		.addField(`${suicidefield3heading}`, `${suicidefield3}`, true)
-		.addField(`${suicidefield4heading}`, `${suicidefield4}`, true)
-		.addField(`${suicidefield5heading}`, `${suicidefield5}`, true)
-		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
-		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
-		.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
+		.setDescription(__("This bot has automatically detected a keyword related to suicide\n", lang))
+		.addField(__("We care about you.", lang), __("Your life is important. We all care very deeply about you. I understand you don't feel like you matter right know, but I can tell you with 100% confidence that you do. I know you might be reluctant, but please just give the suicide prevention hotline just one more chance.", lang), false)
+		.addField(__("United States", lang), __("Call (800) 273-8255 or Text HOME to 741741", lang), true)
+		.addField(__("United Kingdom", lang), __("Call 116-123 or Text SHOUT to 85258", lang), true)
+		.addField(__("Canada", lang), __("Call (833) 456-4566 or Text 45645", lang), true)
+		.addField(__("India", lang), __("Call +91 80 23655557", lang), true)
+		.addField(__("Japan", lang), __("Call 810352869090", lang), true)
+		.addField(__("Other Countries?", lang), __("[Click Here.](https://spbot.ml/hotlines)", lang), true)
+		.addField(__("Need Extra Support?", lang), __("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang), false)
 		.setFooter({
-			text: `${suicidefooter}`,
+			text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', lang),
 			iconURL: 'https://spbot.ml/siround.png'
 		});
 

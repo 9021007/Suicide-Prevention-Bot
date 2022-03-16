@@ -29,19 +29,18 @@ module.exports = {
 
 	default: async (interaction, lang) => {
 		const { commandName, options } = interaction;
-		const { channel_mutes_db: db } = require('../index');
+		const { channel_mutes_db: db, __ } = require('../index');
 
 		switch (options.getSubcommand()) {
 			case "user": {
 				const { user_mutes_db: db } = require('../index');
-				const { mute2, mute3 } = require(`../lang/${lang}.json`);
 
 				if (db.get(`mute_${interaction.user.id}`)) {
 					db.delete(`mute_${interaction.user.id}`);
-					interaction.reply({ content: mute2, ephemeral: true });
+					interaction.reply({ content: __("Removed from ignore list.", lang), ephemeral: true });
 				} else {
 					db.set(`mute_${interaction.user.id}`, true);
-					interaction.reply({ content: mute3, ephemeral: true });
+					interaction.reply({ content: __("I will now ignore keywords you say in chat.", lang), ephemeral: true });
 				}
 				break;
 			}
@@ -53,10 +52,10 @@ module.exports = {
 				
 				if (db.get(`mute_${interaction.channel.id}`)) {
 					db.delete(`mute_${interaction.channel.id}`);
-					return interaction.reply({ content: "Channel has been unmuted" });
+					return interaction.reply({ content: __("Channel has been unmuted", lang) });
 				} else {
 					db.set(`mute_${interaction.channel.id}`, true);
-					return interaction.reply({ content: "Channel has been muted" });
+					return interaction.reply({ content: __("Channel has been muted", lang) });
 				}
 			}
 		}

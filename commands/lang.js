@@ -9,18 +9,18 @@ module.exports = {
 
      default: async (interaction, lang) => {
 		const { langlist } = require('../config.json');
-		const { langstitle, langsauthor, langsfield1heading, langsfield1 } = require(`../lang/${lang}.json`);
+		const { __ } = require("../index.js");
    
 		const langs = new MessageEmbed()
 			 .setColor('#04d384')
-			 .setTitle(langstitle)
+			 .setTitle(__("Here are all the supported languages", lang))
 			 .setThumbnail('https://spbot.ml/siround.png')
 			 .setAuthor({
-				 name: langsauthor
+				 name: __("Suicide Prevention Bot Info", lang)
 			 })
 			 .setDescription(langlist.toString())
 			 .setURL('https://spbot.ml/')
-			 .addField(langsfield1heading, langsfield1);
+			 .addField(__("Want more languages? Found a bug?", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang));
 		interaction.reply({ embeds: [langs] });
 	 }
 };

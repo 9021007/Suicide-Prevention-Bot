@@ -11,13 +11,8 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { client } = require('../index');
+		const { client, __ } = require('../index');
 		const { commandName, options } = interaction;
-		const {
-			bot2,
-			bot3,
-			bot4
-		} = require(`../lang/${lang}.json`); //Request lang stuff
 
 		const cpuemoji = client.emojis.cache.get("837909574966968371");
 		const pcemoji = client.emojis.cache.get("837909575034339369");
@@ -30,7 +25,7 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
 			.setFooter({
-				text: bot2
+				text: __("Does not update after you send the command. Send again to see updated info.', 'https://spbot.ml/siround.png", lang)
 			})
 			.setDescription(`🔎 **Status**
 **= CLIENT =**

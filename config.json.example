@@ -1,5 +1,4 @@
 {
-	"prefix": "sp!",
 	"token": "",
 	"devGuildId": "",
 	"activityResetTimeout_SECONDS": 15,
@@ -9,7 +8,7 @@
 		"EMBED_LINKS",
 		"READ_MESSAGE_HISTORY"
 	],
-	"version": "3.2.0",
+	"version": "3.0.0",
 	"langinfo": [
 		["en", "english"],
 		["sp","spanish", "espanol"],

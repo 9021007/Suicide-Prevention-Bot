@@ -34,7 +34,6 @@ module.exports = {
 		const { supportedLanguages } = require('../config.json');
 
 		if (!interaction.member.permissions.has("ADMINISTRATOR")) return interaction.reply({
-			//content: `:x: | ${seterror}`,
 			content: ":x: | " + __("You must be an administrator of this server to change the language!", lang),
 			ephemeral: true
 		}); //Checks to see if you have admin perms

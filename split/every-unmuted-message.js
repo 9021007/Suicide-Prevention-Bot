@@ -1,33 +1,10 @@
-module.exports = async (message, lang) => {
-	const { Client, Intents, MessageEmbed } = require('discord.js');
-	const { 
-		suicidetitle, 
-		suicideauthor, 
-		suicidedescription, 
-		suicidefield1heading, 
-		suicidefield1, 
-		suicidefield2heading, 
-		suicidefield2, 
-		suicidefield3heading, 
-		suicidefield3, 
-		suicidefield4heading, 
-		suicidefield4, 
-		suicidefield5heading, 
-		suicidefield5, 
-		suicidefield6heading, 
-		suicidefield6, 
-		suicidefield7heading, 
-		suicidefield7, 
-		suicidefield8heading, 
-		suicidefield8, 
-		suicidefooter, 
-		insulttitle, 
-		insultauthor, 
-		insultdescription,
-	} = require(`../lang/${lang}.json`);
-	const unleet = import('@cityssm/unleet');
-	const {triggers, insults} = require('../database/triggers.json');
+const unleet = import('@cityssm/unleet');
+const { MessageEmbed } = require('discord.js');
 
+module.exports = async (message, lang) => {
+	const { triggers, insults } = require('../database/triggers.json');
+	const { __ } = require('../index.js');
+	
 	let LCM = message.content.toLowerCase(); //Lower case message text
 	try {
   		var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
@@ -46,25 +23,25 @@ module.exports = async (message, lang) => {
     if (commonElements.length > 0) {
 		const suicide = new MessageEmbed()
 	   		.setColor('#04d384')
-	   		.setTitle(`${suicidetitle}`)
+	   		.setTitle(__("Bot Mentioned. Here is my helpline embed: Suicide Prevention Bot", lang))
 	   		.setAuthor({
-				   name: `${suicideauthor}`,
+				   name: __("Please give the helpline just one chance", lang),
 				   iconURL: 'https://spbot.ml/siround.png'
 			})
-	   		.setDescription(`${suicidedescription}`)
-			.addField(`${suicidefield1heading}`, `${suicidefield1}`, false)
-	   		.addField(`${suicidefield2heading}`, `${suicidefield2}`, true)
-	   		.addField(`${suicidefield3heading}`, `${suicidefield3}`, true)
-	   		.addField(`${suicidefield4heading}`, `${suicidefield4}`, true)
-	   		.addField(`${suicidefield5heading}`, `${suicidefield5}`, true)
-	   		.addField(`${suicidefield6heading}`, `${suicidefield6}`, true)
-	   		.addField(`${suicidefield7heading}`, `${suicidefield7}`, true)
-			.addField(`${suicidefield8heading}`, `${suicidefield8}`, false)
+			.setDescription(__("This bot has automatically detected a keyword related to suicide\n", lang))
+			.addField(__("We care about you.", lang), __("Your life is important. We all care very deeply about you. I understand you don't feel like you matter right know, but I can tell you with 100% confidence that you do. I know you might be reluctant, but please just give the suicide prevention hotline just one more chance.", lang), false)
+			.addField(__("United States", lang), __("Call (800) 273-8255 or Text HOME to 741741", lang), true)
+			.addField(__("United Kingdom", lang), __("Call 116-123 or Text SHOUT to 85258", lang), true)
+			.addField(__("Canada", lang), __("Call (833) 456-4566 or Text 45645", lang), true)
+			.addField(__("India", lang), __("Call +91 80 23655557", lang), true)
+			.addField(__("Japan", lang), __("Call 810352869090", lang), true)
+			.addField(__("Other Countries?", lang), __("[Click Here.](https://spbot.ml/hotlines)", lang), true)
+			.addField(__("Need Extra Support?", lang), __("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang), false)
 			.setFooter({
-				text:`${suicidefooter}, Response ID: ${message.id}`,
-				iconURl: 'https://spbot.ml/siround.png'
+				text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}', lang, { id: message.id }),
+				iconURL: 'https://spbot.ml/siround.png'
 			});
-		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send(suicide));
+		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send({ embeds: [suicide] }));
 	}
 	let args = LCM.trim().split(/ +/);
 	args = args.map(x => x.replace(/\t/g, ""));
@@ -80,12 +57,12 @@ module.exports = async (message, lang) => {
 		if (commonElements.length > 0) {
 	   		const insult = new MessageEmbed()
 				.setColor('#04d384')
-				.setTitle(`${insulttitle}`)
+				.setTitle(__("Suicide Prevention Bot", lang))
 				.setAuthor({
-					name: `${insultauthor}`,
+					name: __("Please don't tell others to kill themselves", lang),
 					iconURL: 'https://spbot.ml/siround.png'
 				})
-				.setDescription(`${insultdescription}`);
+				.setDescription(__("This is not a laughing matter", lang));
 	   		return message.channel.send({ embeds: [insult] }).catch(console.error);
 		}
 	}

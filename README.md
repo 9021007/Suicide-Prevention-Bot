@@ -42,6 +42,67 @@ Then, launch the program, and a language file will be generated in `/locales`
 	"Word {{word}} has been added to the blacklist": "Le mot {{word}} à été ajouté a la liste des mots à ignorer"
 }
 ```
+
+## Adding slash commands
+
+### Creating a new slash command
+Create a js file with this template code:
+```javascript
+const { Constants } = require('discord.js');
+
+module.exports = {
+	command: {
+		name: "greeting",
+		description: "Sends a greeting to a user!",
+		options: [
+			{
+				name: "name",
+				description: "Name of the user",
+				required: true,
+				type: Constants.ApplicationCommandOptionTypes.STRING,
+			}
+		]
+	},
+
+	default: async (interaction, lang) => {
+		// Main code for your slash command
+		// Example:
+		const { commandName, options } = interaction;
+		interaction.reply(`Hello ${options.getString("name")}`);
+	}
+};
+```
+### Registering commands
+To register the command, add it at the beginning of `index.js` (assuming your command's file name is `greeting.js`):
+```js
+// Registers commands
+var commands = [
+	require('./commands/dm').command,
+	require("./commands/ping").command,
+	// ...
+	require("./commands/blacklist").command,
+	require("./commands/privacy").command,
+	require("./commands/greeting.js").command
+];
+```
+### Linking it to a function
+Add your function in `index.js` (line ~200):
+```js
+// ...
+case "blacklist":
+	return require("./commands/blacklist").default(interaction, lang);
+case "tos":
+	return require("./commands/tos").default(interaction, lang);
+case "greeting":
+	return require("./commands/greeting").default(interaction, lang);
+```
+
+
+
+## Todo
+ - [ ] Make every command use the new lanugage API
+ - [ ] Add more supported languages
+ - [ ] Tweak the suicide keyword detection algorithm to make it perform better (less false positives)
 ## Links
 [Website](https://spbot.ml)
 
