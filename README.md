@@ -1,7 +1,7 @@
 # Suicide-Prevention-Bot
 
 
-IF YOU'RE HAVING ISSUES: Check our system status at https://spbot.freshstatus.io 
+This bot requires message contents as an intent. This means that it must be able to see the contents of every message. Discord has yet to grant us this intent, and the deadline is fast apporaching. With over 1000 servers that have this bot, people are depedning on it. If Discord does not grant the intent, I'm afraid that the bot is useless, and development work will cease until it is granted. Thank you all for the love and support I've had while making this bot.
 
 A Discord bot to prevent suicide. It works by taking a list of phrases, and it compares it against every message sent in the server. if the message includes the words or phrases, it reacts with an informational embed that directs users to local hotlines.
 
