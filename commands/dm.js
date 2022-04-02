@@ -15,7 +15,6 @@ module.exports = {
 		]
 	},
 
-	//Timeout
 	default: async (interaction, lang) => {
 		var { dmTimeout_MINUTES } = require('../config.json'); //Request config settings
 		dmTimeout_MINUTES *= 60 * 1000;
@@ -50,7 +49,7 @@ module.exports = {
 		interaction.client.users.fetch(options.getUser("user").id).then(user => {
 			if (db.get(`dmmute_${user.id}`)) return interaction.reply({ content: __("Mentioned user has opted out of user-directed bot DMs.", lang), ephemeral: true }); //Check to see if you muted the bot (User side only)
 
-			//Timeout command
+			//Timeout
 			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: __("This user has already been messaged recently, please wait and try again.", lang), ephemeral: true });
 			DMTimeoutArray.push(user.id);
 			setTimeout(() => {

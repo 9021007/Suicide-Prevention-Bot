@@ -18,7 +18,7 @@ module.exports = {
 			 .setAuthor({
 				 name: __("Suicide Prevention Bot Info", lang)
 			 })
-			 .setDescription(langlist.toString())
+			 .setDescription(langlist.join('\n'))
 			 .setURL('https://spbot.ml/')
 			 .addField(__("Want more languages? Found a bug?", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang));
 		interaction.reply({ embeds: [langs] });
