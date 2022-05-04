@@ -49,5 +49,6 @@
 	"I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}": "Me preocupo por ti. Por favor, intenta dar una oportunidad a las líneas de ayuda. Sé que puedes superar esto. Notificar un error: https://discord.gg/YHvfUqVgWS. Sitio web: https://spbot.ml/. Escriba /dmmute para evitar que otros me digan que le envíe DMs · Response ID: {{id}}",
 	"Suicide Prevention Bot": "Bot para la prevención del suicidio",
 	"Please don't tell others to kill themselves": "Por favor, no le digas a otros que se suiciden",
-	"This is not a laughing matter": "Esto no es un asunto de risa"
+	"This is not a laughing matter": "Esto no es un asunto de risa",
+	"The current blacklist consists of the words:\n```\n{{list}}```": "The current blacklist consists of the words:\n```\n{{list}}```"
 }

@@ -109,22 +109,14 @@ client.once('ready', async () => {
 		});
 	}, activityResetTimeout_SECONDS); // Update status every 15 seconds.
 
-	// Registers commands
-	var commands = [
-		require('./commands/dm').command,
-		require("./commands/ping").command,
-		require("./commands/status").command,
-		require("./commands/dmmute").command,
-		require("./commands/invite").command,
-		require("./commands/info").command,
-		require("./commands/help").command,
-		require("./commands/set").command,
-		require("./commands/lang").command,
-		require("./commands/mute").command,
-		require("./commands/blacklist").command,
-		require("./commands/privacy").command,
-		require("./commands/tos").command
-	];
+	// Auto imports every file in commands/ as a slash command
+	// Crashes if it finds an invalid command file
+	let commands = [];
+	var normalizedPath = require("path").join(__dirname, "commands");
+
+	require("fs").readdirSync(normalizedPath).forEach(function(file) {
+		commands.push(require("./commands/" + file).command);
+	});
 
 	// Get dev guild ID for slash commands, comment to use global slash commands
 	const devGuild = client.guilds.cache.get(devGuildId);
@@ -163,7 +155,7 @@ client.on('messageCreate', async message => {
 		require('./split/every-unmuted-message')(message, lang);
 
 	if (!LCM.startsWith("sp!")) return; // Return if not prefixed
-	require("./commands/update")(message, lang); // Ask to add slash commands if the old prefix is used
+	require("./scripts/update")(message, lang); // Ask to add slash commands if the old prefix is used
 });
 
 

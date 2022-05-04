@@ -1,5 +1,6 @@
 {
 	"Suicide Prevention Bot": "Suicide Prevention Bot",
 	"Please don't tell others to kill themselves": "Please don't tell others to kill themselves",
-	"This is not a laughing matter": "This is not a laughing matter"
+	"This is not a laughing matter": "This is not a laughing matter",
+	"The current blacklist consists of the words:\n```\n{{list}}```": "The current blacklist consists of the words:\n```\n{{list}}```"
 }
