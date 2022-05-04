@@ -1,5 +1,5 @@
 const { Constants } = require('discord.js');
-const Database = require('simplest.db');
+const Database = require('simplest.db').JS0N;
 const fs = require("fs");
 
 module.exports = {

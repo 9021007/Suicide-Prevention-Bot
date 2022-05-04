@@ -49,5 +49,6 @@
 	"I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}": "I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}",
 	"Suicide Prevention Bot": "Suicide Prevention Bot",
 	"Please don't tell others to kill themselves": "Please don't tell others to kill themselves",
-	"This is not a laughing matter": "This is not a laughing matter"
+	"This is not a laughing matter": "This is not a laughing matter",
+	"The current blacklist consists of the words:\n```\n{{list}}```": "The current blacklist consists of the words:\n```\n{{list}}```"
 }

@@ -51,5 +51,6 @@
 	"This is not a laughing matter": "Ce n'est pas un sujet de rigolade",
 	"Links": "Links",
 	"[Website](https://spbot.ml/)\n [Discord Invite](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Page](https://spbot.freshstatus.io/)\n": "[Website](https://spbot.ml/)\n [Discord Invite](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Page](https://spbot.freshstatus.io/)\n",
-	"Need more help? Found a bug?": "Need more help? Found a bug?"
+	"Need more help? Found a bug?": "Need more help? Found a bug?",
+	"Word `{{word}}` has been added to the blacklist": "Word `{{word}}` has been added to the blacklist"
 }

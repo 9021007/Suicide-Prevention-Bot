@@ -55,7 +55,7 @@ const { prefix, token, botPerms, devGuildId } = require('./config.json');
 var { activityResetTimeout_SECONDS } = require('./config.json');
 activityResetTimeout_SECONDS *= 1000;
 
-const Database = require('simplest.db');
+const Database = require('simplest.db').JS0N;
 const gradient = require('gradient-string');
 
 // Initialize databases
