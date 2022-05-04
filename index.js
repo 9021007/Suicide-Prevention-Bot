@@ -87,7 +87,8 @@ const languageChoices = () => {
 const { I18n } = require('i18n');
 const i18n = new I18n({
 	locales: languageChoices(),
-	directory: "./locales"
+	directory: "./locales",
+	syncFiles: true
 });
 const __ = (string, lang, options = undefined) => {
 	return i18n.__({ phrase: string, locale: lang }, options);
