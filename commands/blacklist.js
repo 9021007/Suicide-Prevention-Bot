@@ -43,7 +43,7 @@ module.exports = {
 
 	default: async (interaction, lang) => {
 		const { __ } = require('../index');
-		const { commandName, options } = interaction;
+		const { options } = interaction;
 
 		if (!interaction.member.permissions.has("ADMINISTRATOR")) {
 			return interaction.reply({ content: __('Only admins can use this', lang), ephemeral: true });

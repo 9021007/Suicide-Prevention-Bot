@@ -29,7 +29,7 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { commandName, options } = interaction;
+		const { options } = interaction;
 		const { __ } = require('../index');
 		let data = await schema.findOne({ guildId: interaction.guild.id })
 

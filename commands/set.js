@@ -29,7 +29,7 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { commandName, options } = interaction;
+		const { options } = interaction;
 		const { __ } = require('../index');
 		const { supportedLanguages } = require('../config.json');
 
@@ -38,8 +38,7 @@ module.exports = {
 		} //Checks to see if you have admin perms
 
 		const newLanguage = options.getString("language");
-		let data;
-		data = await schema.findOne({ guildId: interaction.guild.id })
+		let data = await schema.findOne({ guildId: interaction.guild.id })
 
 		// Checks if language is in the accepted languages list
 		// Someone might use HTTP requests to send arbitrary values to the bot for some reason, so we verify the language

@@ -1,4 +1,4 @@
-const { MessageEmbed, CommandInteraction, Client } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os');
@@ -12,7 +12,6 @@ module.exports = {
 
 	default: async (interaction, lang) => {
 		const { client, __ } = require('../index');
-		const { commandName, options } = interaction;
 
 		const cpuemoji = client.emojis.cache.get("837909574966968371");
 		const pcemoji = client.emojis.cache.get("837909575034339369");

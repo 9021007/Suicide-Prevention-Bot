@@ -46,9 +46,20 @@
 	"[Click Here.](https://spbot.ml/hotlines)": "[Click Here.](https://spbot.ml/hotlines)",
 	"Need Extra Support?": "Need Extra Support?",
 	"Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)": "Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)",
-	"I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}": "I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}",
+	"I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs": "I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs",
 	"Suicide Prevention Bot": "Suicide Prevention Bot",
 	"Please don't tell others to kill themselves": "Please don't tell others to kill themselves",
 	"This is not a laughing matter": "This is not a laughing matter",
-	"The current blacklist consists of the words:\n```\n{{list}}```": "The current blacklist consists of the words:\n```\n{{list}}```"
+	"Links": "Links",
+	"[Website](https://spbot.ml/)\n [Discord Invite](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Page](https://spbot.freshstatus.io/)\n": "[Website](https://spbot.ml/)\n [Discord Invite](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Page](https://spbot.freshstatus.io/)\n",
+	"Need more help? Found a bug?": "Need more help? Found a bug?",
+	"The current blacklist consists of the words:\n```\n{{list}}```": "The current blacklist consists of the words:\n```\n{{list}}```",
+	"Terms of Service": "Terms of Service",
+	"See our terms of service at https://spbot.ml/terms.txt": "See our terms of service at https://spbot.ml/terms.txt",
+	"Privacy Policy": "Privacy Policy",
+	"See our privacy policy at https://spbot.ml/privacy.txt": "See our privacy policy at https://spbot.ml/privacy.txt",
+	"A user has asked us to reach out to you": "A user has asked us to reach out to you",
+	"Somebody has asked us to reach out personally to you in your DMs. Please listen.\n": "Somebody has asked us to reach out personally to you in your DMs. Please listen.\n",
+	"A help DM has been sent.": "A help DM has been sent.",
+	"This user has already been messaged recently, please wait and try again.": "This user has already been messaged recently, please wait and try again."
 }

@@ -8,17 +8,14 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		
-		const {
-			
-		} = require(`../lang/${lang}.json`);
+		const { __ } = require('../index');
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle("Terms of Service")
+			.setTitle(__('Terms of Service', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription("See our privacy polcy at https://spbot.ml/terms.txt");
+			.setDescription(__('See our terms of service at https://spbot.ml/terms.txt', lang));
 		interaction.reply({ embeds: [embed] });
 	}
 }

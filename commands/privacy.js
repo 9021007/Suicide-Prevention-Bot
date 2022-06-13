@@ -3,21 +3,19 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
 	command: {
 		name: "privacy",
-		description: "Points you to the privacy policy",
+		description: "Points you to the Privacy Policy",
 		options: []
 	},
 
 	default: async (interaction, lang) => {
-		const {
-			
-		} = require(`../lang/${lang}.json`);
+		const { __ } = require('../index');
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle("Privacy Policy")
+			.setTitle(__('Privacy Policy', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription("See our privacy polcy at https://spbot.ml/privacy.txt");
+			.setDescription(__('See our privacy policy at https://spbot.ml/privacy.txt', lang));
 		interaction.reply({ embeds: [embed] });
 	}
 }

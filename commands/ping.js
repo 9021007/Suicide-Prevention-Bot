@@ -1,4 +1,4 @@
-const { MessageEmbed, CommandInteraction, Client } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
 	command: {

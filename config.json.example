@@ -12,12 +12,10 @@
 	"version": "3.1.2",
 	"supportedLanguages": [
 		["en", "english", "english"],
-		["sp","spanish", "espanol"],
-		["fr", "french", "français"]
+		["sp","spanish", "espanol"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
-		" - 🇪🇸 Español (sp)",
-		" - 🇫🇷 Français (fr)"
+		" - 🇪🇸 Español (sp)"
 	]
 }

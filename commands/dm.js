@@ -22,7 +22,7 @@ module.exports = {
 
 		const { __ } = require('../index');
 		let data = await schema.findOne({ guildId: interaction.guild.id })//Request db
-		const { commandName, options } = interaction;
+		const { options } = interaction;
 		
 		const dmembed = new MessageEmbed()
 			.setColor('#04d384')

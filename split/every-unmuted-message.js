@@ -38,7 +38,7 @@ module.exports = async (message, lang) => {
 			.addField(__("Other Countries?", lang), __("[Click Here.](https://spbot.ml/hotlines)", lang), true)
 			.addField(__("Need Extra Support?", lang), __("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang), false)
 			.setFooter({
-				text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs · Response ID: {{id}}', lang, { id: message.id }),
+				text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			});
 		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send({ embeds: [suicide] }));

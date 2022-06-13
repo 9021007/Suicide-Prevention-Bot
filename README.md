@@ -100,7 +100,6 @@ case "greeting":
 
 
 ## Todo
- - [ ] Make every command use the new lanugage API
  - [ ] Add more supported languages
  - [ ] Tweak the suicide keyword detection algorithm to make it perform better (less false positives)
 ## Links

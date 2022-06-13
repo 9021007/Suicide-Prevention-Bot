@@ -50,7 +50,7 @@ process
 
 const { Client, Intents, Constants } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES], partials: ["CHANNEL"] });
-const { prefix, token, mongodb, botPerms, devGuildId } = require('./config.json');
+const { token, mongodb, botPerms, devGuildId } = require('./config.json');
 const mongoose = require("mongoose");
 
 var { activityResetTimeout_SECONDS } = require('./config.json');
@@ -133,11 +133,14 @@ client.on('messageCreate', async message => {
 		return require('./split/bot-mentioned')(message, lang);
 
 	//Check to see if you muted the bot (User side only)
-	if (await require("./commands/mute").checkIfMuted(message) && await require("./commands/blacklist.js").checkIfIgnored(message))
+	if (await require("./commands/mute").checkIfMuted(message) && await require("./commands/blacklist.js").checkIfIgnored(message)) {
 		require('./split/every-unmuted-message')(message, lang);
+	}
 
-	if (!LCM.startsWith("sp!")) return; // Return if not prefixed
-	require("./scripts/update")(message, lang); // Ask to add slash commands if the old prefix is used
+	// Ask to add slash commands if the old prefix is used
+	if (LCM.startsWith("sp!")) {
+		require("./scripts/update")(message, lang);
+	}
 });
 
 
