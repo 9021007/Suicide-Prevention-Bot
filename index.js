@@ -80,7 +80,7 @@ const __ = (string, lang, options = undefined) => {
 
 // Setup bot ready callback
 client.once('ready', async () => {
-	console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}!`)); // Console log for verbosity
+	console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}! ＼(￣▽￣)／`)); // Console log for verbosity
 	setInterval(() => {
 		const users = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
 		const servers = client.guilds.cache.size.toLocaleString();
@@ -108,8 +108,6 @@ client.once('ready', async () => {
 		devGuild.commands.set(commands);
 		console.log(gradient.rainbow("[+] Set guild commands"));
 	}
-
-	console.log(gradient.rainbow(`I'm online! ＼(￣▽￣)／`));
 });
 
 /**
