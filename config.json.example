@@ -1,5 +1,6 @@
 {
 	"token": "",
+	"mongodb": "",
 	"devGuildId": "",
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
@@ -16,7 +17,6 @@
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
-		
 		" - 🇪🇸 Español (sp)",
 		" - 🇫🇷 Français (fr)"
 	]

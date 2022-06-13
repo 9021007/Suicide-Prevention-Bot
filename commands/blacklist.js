@@ -1,6 +1,5 @@
 const { Constants } = require('discord.js');
-const Database = require('simplest.db').JS0N;
-const fs = require("fs");
+const schema = require('../scripts/database.js')
 
 module.exports = {
 	command: {
@@ -43,51 +42,43 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { blacklist_db: db, __ } = require('../index');
+		const { __ } = require('../index');
 		const { commandName, options } = interaction;
 
 		if (!interaction.member.permissions.has("ADMINISTRATOR")) {
 			return interaction.reply({ content: __('Only admins can use this', lang), ephemeral: true });
-		}
+		} //Checks to see if you have admin perms
 
+		const word = options.getString("word");
+		let data = await schema.findOne({ guildId: interaction.guild.id })
 
 		switch (options.getSubcommand()) {
 			case "add": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
-				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
-				let word = options.getString("word");
-				if (blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("This word is already in the blacklist", lang), ephemeral: true });
-				blacklist.push(word);
-				db.set(`blacklist_${interaction.guild.id}`, blacklist);
+				if (data.BLW.includes(word)) return interaction.reply({ content: __("This word is already in the blacklist", lang), ephemeral: true });
+				data.BLW.push(word)
+				await data.save()
 
 				return interaction.reply({ content: __("Word `{{word}}` has been added to the blacklist", lang, { word: word }), ephemeral: true });
 			}
 			case "remove": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
-				let blacklist = db.get(`blacklist_${interaction.guild.id}`);
-				let word = options.getString("word");
-				if (!blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("This word is not in the blacklist", lang), ephemeral: true });
-				blacklist.splice(blacklist.indexOf(word), 1);
-				db.set(`blacklist_${interaction.guild.id}`, blacklist);
+				if (!data.BLW.includes(word)) return interaction.reply({ content: __("This word is not in the blacklist", lang), ephemeral: true });
+				let array = data.BLW.filter(x => x !== word)
+				data.BLW = array
+				await data.save()
 
 				return interaction.reply({ content: __("Word `{{word}}` has been removed from the blacklist", lang, { word: word }), ephemeral: true });
 			}
 			case "list": {
-				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
-				const data = db.get(`blacklist_${interaction.guild.id}`);
-				const list = data.join('\n') || "empty";
+				const list = data.BLW.join('\n') || "empty"
 
 				return interaction.reply({ content: __("The current blacklist consists of the words:\n```\n{{list}}```", lang, { list: list }), ephemeral: true });
 			}
 		}
 	},
 
-	checkIfIgnored: (message) => {
-		const { blacklist_db: db } = require('../index');
-		
-		if (db.get(`blacklist_${message.guild.id}`) == null) db.set(`blacklist_${message.guild.id}`, []);
-		let blacklist = db.get(`blacklist_${message.guild.id}`);
-		if (blacklist.some(v => message.content.includes(v))) return true;
-		return false;
+	checkIfIgnored: async (message) => {
+		let data = await schema.findOne({ guildId: message.guild.id })
+		if (data.BLW.some(v => message.content.includes(v))) return false;
+		return true;
 	}
 };

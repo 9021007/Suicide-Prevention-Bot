@@ -1,4 +1,5 @@
 const { Constants } = require('discord.js');
+const schema = require('../scripts/database.js')
 
 module.exports = {
 	command: {
@@ -29,40 +30,45 @@ module.exports = {
 
 	default: async (interaction, lang) => {
 		const { commandName, options } = interaction;
-		const { channel_mutes_db: db, __ } = require('../index');
+		const { __ } = require('../index');
+		let data = await schema.findOne({ guildId: interaction.guild.id })
 
 		switch (options.getSubcommand()) {
 			case "user": {
-				const { user_mutes_db: db } = require('../index');
-
-				if (db.get(`mute_${interaction.user.id}`)) {
-					db.delete(`mute_${interaction.user.id}`);
-					interaction.reply({ content: __("Removed from ignore list.", lang), ephemeral: true });
+				if (data.User_Mute.includes(interaction.user.id)) {
+					let array = data.User_Mute.filter(x => x !== interaction.user.id)
+					data.User_Mute = array
+					await data.save()
+					return interaction.reply({ content: __("Removed from ignore list.", lang), ephemeral: true });
 				} else {
-					db.set(`mute_${interaction.user.id}`, true);
-					interaction.reply({ content: __("I will now ignore keywords you say in chat.", lang), ephemeral: true });
+					data.User_Mute.push(interaction.user.id)
+					await data.save()
+					return interaction.reply({ content: __("I will now ignore keywords you say in chat.", lang), ephemeral: true });
 				}
-				break;
 			}
 			case "channel": {
 				if (!interaction.member.permissions.has("MANAGE_SERVER")) {
 					return interaction.reply({ content: 'Only admins can use this', ephemeral: true });
 				}
-				const { channel_mutes_db: db } = require('../index');
-				
-				if (db.get(`mute_${interaction.channel.id}`)) {
-					db.delete(`mute_${interaction.channel.id}`);
+
+				if (data.Channel_Mute.includes(interaction.channel.id)) {
+					let array = data.Channel_Mute.filter(x => x !== interaction.channel.id)
+					data.Channel_Mute = array
+					await data.save()
+
 					return interaction.reply({ content: __("Channel has been unmuted", lang) });
 				} else {
-					db.set(`mute_${interaction.channel.id}`, true);
+					data.Channel_Mute.push(interaction.channel.id)
+					await data.save()
 					return interaction.reply({ content: __("Channel has been muted", lang) });
 				}
 			}
 		}
 	},
 
-	checkIfMuted: (message) => {
-		const { user_mutes_db, channel_mutes_db } = require('../index');
-		return user_mutes_db.get(`mute_${message.author.id}`) != null || channel_mutes_db.get(`mute_${message.channel.id}`) != null;
+	checkIfMuted: async (message) => {
+		let data = await schema.findOne({ guildId: message.guild.id })
+		if (data.User_Mute.includes(message.author.id) || data.Channel_Mute.includes(message.channel.id)) return false;
+		return true;
 	}
 };

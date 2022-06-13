@@ -2,7 +2,7 @@ const unleet = import('@cityssm/unleet');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = async (message, lang) => {
-	const { triggers, insults } = require('../database/triggers.json');
+	const { triggers, insults } = require('../scripts/triggers.json');
 	const { __ } = require('../index.js');
 	
 	let LCM = message.content.toLowerCase(); //Lower case message text
