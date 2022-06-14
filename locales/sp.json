@@ -63,5 +63,13 @@
 	"A help DM has been sent.": "Se ha enviado un DM de ayuda.",
 	"This user has already been messaged recently, please wait and try again.": "Este usuario ya ha recibido un mensaje recientemente, por favor espere e inténtelo de nuevo.",
 	"Word `{{word}}` has been added to the blacklist": "Palabra `{{word}}` ha sido añadido a la lista negra",
-	"Word `{{word}}` has been removed from the blacklist": "Palabra `{{word}}` ha sido eliminado de la lista negra"
+	"Word `{{word}}` has been removed from the blacklist": "Palabra `{{word}}` ha sido eliminado de la lista negra",
+	"Does not update after you send the command. Send again to see updated info.": "No se actualiza después de enviar el comando. Envíe de nuevo para ver la información actualizada.",
+	"I will stop allowing others to send DMs to you via this bot. type /dmmute again to undo.": "Dejaré de permitir que otros te envíen DMs a través de este bot. tipo /dmmute de nuevo para deshacer.",
+	"Mentioned user has opted out of user-directed bot DMs.": "El usuario mencionado ha optado por no recibir DMs de bots dirigidos por el usuario.",
+	"Removed from DM ignore list.": "Eliminado de la lista de ignorados de DM.",
+	"I will now ignore keywords you say in chat.": "Ahora ignoraré las palabras clave que digas en el chat.",
+	"Removed from ignore list.": "Eliminado de la lista de ignorados.",
+	"Channel has been muted": "El canal ha sido silenciado",
+	"Channel has been unmuted": "El canal ha sido sin silenciar"
 }

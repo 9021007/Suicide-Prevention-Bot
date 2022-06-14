@@ -24,7 +24,8 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
 			.setFooter({
-				text: __("Does not update after you send the command. Send again to see updated info.', 'https://spbot.ml/siround.png", lang)
+				text: __("Does not update after you send the command. Send again to see updated info.", lang),
+				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setDescription(`🔎 **Status**
 **= CLIENT =**

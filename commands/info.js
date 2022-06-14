@@ -25,7 +25,8 @@ module.exports = {
 			.addField(__("I have a bug report or feature request.", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang))
 			.setImage('https://spbot.ml/sc2.png')
 			.setFooter({
-				text: __("Created by the SPBot dev team :) · https://spbot.ml · /mute to have the bot ignore your messages", lang)
+				text: __("Created by the SPBot dev team :) · https://spbot.ml · /mute to have the bot ignore your messages", lang),
+				iconURL: 'https://spbot.ml/siround.png'
 			});
 		interaction.reply({ embeds: [info] });
      }

@@ -63,5 +63,13 @@
 	"A help DM has been sent.": "A help DM has been sent.",
 	"This user has already been messaged recently, please wait and try again.": "This user has already been messaged recently, please wait and try again.",
 	"Word `{{word}}` has been added to the blacklist": "Word `{{word}}` has been added to the blacklist",
-	"Word `{{word}}` has been removed from the blacklist": "Word `{{word}}` has been removed from the blacklist"
+	"Word `{{word}}` has been removed from the blacklist": "Word `{{word}}` has been removed from the blacklist",
+	"Does not update after you send the command. Send again to see updated info.": "Does not update after you send the command. Send again to see updated info.",
+	"I will stop allowing others to send DMs to you via this bot. type /dmmute again to undo.": "I will stop allowing others to send DMs to you via this bot. type /dmmute again to undo.",
+	"Mentioned user has opted out of user-directed bot DMs.": "Mentioned user has opted out of user-directed bot DMs.",
+	"Removed from DM ignore list.": "Removed from DM ignore list.",
+	"I will now ignore keywords you say in chat.": "I will now ignore keywords you say in chat.",
+	"Removed from ignore list.": "Removed from ignore list.",
+	"Channel has been muted": "Channel has been muted",
+	"Channel has been unmuted": "Channel has been unmuted"
 }
