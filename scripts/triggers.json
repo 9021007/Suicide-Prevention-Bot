@@ -1,38 +1,10 @@
 {
-	"prefix": "sp!",
-	"token": "TOKEN GOES HERE",
-	"botPerms": [
-		"SEND_MESSAGES",
-		"EMBED_LINKS",
-		"READ_MESSAGE_HISTORY"
-	],
-	"version": "2.1.0",
-	"langinfo": [
-		["en", "english"],
-		["sp","spanish", "espanol"],
-		["hi", "hindi", "हिंदी"],
-		["cn", "chinese", "中文"],
-		["tr", "turkish", "türk"],
-		["de", "german", "deutsch"],
-		["hb", "hebrew", "עברית"],
-		["it", "italian", "italiano"],
-		["cs", "czech", "čeština"]
-	],
-	"langlist": [
-		"🇬🇧 English (en)",
-		" - 🇪🇸 Español (sp)",
-		" - 🇮🇳 हिंदी (hi)",
-		" - 🇨🇳 中文 (cn)",
-		" - 🇹🇷 Türk (tr)",
-		" - 🇩🇪 Deutsch (de)",
-		" - 🇮🇱 Hebrew (hb)",
-		" - 🇮🇹 Italian (it)",
-		" - 🇨🇿 Čeština (cs)"
-	],
-	"triggers": [
+    "triggers": [
 		"suicide",
 		"kill|myself",
 		"end|myself",
+		"jump.*bridge",
+		"jump.*train",
 		"end|my|life",
 		"commit|die",
 		"wish|i|was|dead",
@@ -141,6 +113,7 @@
 	],
 	"insults": [
 		"go|die",
+		"you.*apefucker",
 		"you|suck",
 		"kill|urself",
 		"kil|urself",

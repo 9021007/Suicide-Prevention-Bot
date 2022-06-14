@@ -1,0 +1,21 @@
+{
+	"token": "",
+	"mongodb": "",
+	"devGuildId": "",
+	"activityResetTimeout_SECONDS": 15,
+	"dmTimeout_MINUTES": 15,
+	"botPerms": [
+		"SEND_MESSAGES",
+		"EMBED_LINKS",
+		"READ_MESSAGE_HISTORY"
+	],
+	"version": "3.1.2",
+	"supportedLanguages": [
+		["en", "english", "english"],
+		["sp","spanish", "espanol"]
+	],
+	"langlist": [
+		" - 🇬🇧 English (en)",
+		" - 🇪🇸 Español (sp)"
+	]
+}
