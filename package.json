@@ -2,7 +2,8 @@
   "name": "suicide-prevention-bot",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "pm2": "pm2 start index.js && pm2 logs"
   },
   "dependencies": {
     "@cityssm/unleet": "^2.3.1",
@@ -11,10 +12,10 @@
     "i18n": "^0.14.2",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
-    "mongoose": "^6.3.6",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.16",
     "os": "^0.1.2",
     "path": "^0.12.7",
+    "simplest.db": "^2.0.0",
     "ws": ">=8.1.0"
   }
 }

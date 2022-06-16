@@ -9,7 +9,7 @@ module.exports = {
 
      default: async (interaction, lang) => {
 		const { langlist } = require('../config.json');
-		const { __ } = require("../index.js");
+		const { __ } = require("../bot.js");
    
 		const langs = new MessageEmbed()
 			 .setColor('#04d384')

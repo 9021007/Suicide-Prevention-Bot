@@ -1,5 +1,4 @@
 const { Constants } = require('discord.js');
-const schema = require('../scripts/database.js')
 
 const languageChoices = () => {
 	const { supportedLanguages } = require('../config.json');
@@ -30,15 +29,13 @@ module.exports = {
 
 	default: async (interaction, lang) => {
 		const { options } = interaction;
-		const { __ } = require('../index');
+
+		const { __, lang_db: db } = require('../bot.js');
 		const { supportedLanguages } = require('../config.json');
 
-		if (!interaction.member.permissions.has("ADMINISTRATOR")) {
-			return interaction.reply({ content: ":x: | " + __("You must be an administrator of this server to change the language!", lang), ephemeral: true });
-		} //Checks to see if you have admin perms
+		if (!interaction.member.permissions.has("ADMINISTRATOR")) return interaction.reply({ content: ":x: | " + __("You must be an administrator of this server to change the language!", lang), ephemeral: true}); //Checks to see if you have admin perms
 
 		const newLanguage = options.getString("language");
-		let data = await schema.findOne({ guildId: interaction.guild.id })
 
 		// Checks if language is in the accepted languages list
 		// Someone might use HTTP requests to send arbitrary values to the bot for some reason, so we verify the language
@@ -49,9 +46,9 @@ module.exports = {
 			}
 		}
 
-		if (!languageValidated) return interaction.reply(__("That language is not supported. To see all languages use the command /lang", lang));
-		data.Lang = newLanguage
-		await data.save()
+		if (!languageValidated) return message.channel.send(__("That language is not supported. To see all languages use the command /lang", lang));
+		if (newLanguage !== "en") db.set(`lang_${interaction.guild.id}`, newLanguage);
+		else db.delete(`lang_${interaction.guild.id}`);
 		lang = newLanguage;
 		interaction.reply(__("Language successfully changed!", lang));
 	}

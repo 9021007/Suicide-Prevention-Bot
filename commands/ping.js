@@ -8,7 +8,7 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { client, __ } = require('../index');
+		const { client, __ } = require('../bot.js');
 		
 		const loading = client.emojis.cache.get("838616104687108117");
 
