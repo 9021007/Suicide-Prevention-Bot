@@ -41,40 +41,44 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
+			.setDescription(`
+				🔎 **Status**
+				**= CLIENT =**
+				**• Username** : ${client.user.username}
+				**• Tag** : ${client.user.discriminator}
+				**• ID** : ${client.user.id}
+				\u200b
+				**= STATISTICS =**
+				**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0)}
+				**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0)}
+				**• Discord.js** : v${djsversion}
+				**• Node.js** : ${process.version}
+				**• ${logoemoji}** : v${version}
+				\u200b
+				**= SYSTEM =**
+				**• ${hddemoji}** : ${os.platform()} | ${os.release()}
+				**• ${pcemoji}** : ${moment.duration(interaction.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}
+				**• ${cpuemoji}** :
+				> **• Model** : ${os.cpus()[0].model} 
+				> **• Speed** : ${os.cpus()[0].speed} MHz
+				**•** ${ramemoji} :
+				> **• Total Memory** : ${formatBytes(os.totalmem())}
+				> **• Free Memory** : ${formatBytes(os.freemem())}
+				> **• Heap Total** : ${formatBytes(process.memoryUsage().heapTotal)}
+				> **• Heap Usage** : ${formatBytes(process.memoryUsage().heapUsed)}
+			`)
+
+		const embed2 = new MessageEmbed()
+			.setColor('$04d384')
 			.setFooter({
 				text: __("Does not update after you send the command. Send again to see updated info.", lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setTimestamp()
 			.setDescription(`
-🔎 **Status**
-**= CLIENT =**
-**• Username** : ${client.user.username}
-**• Tag** : ${client.user.discriminator}
-**• ID** : ${client.user.id}
-\u200b
-**= STATISTICS =**
-**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0)}
-**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0)}
-**• Discord.js** : v${djsversion}
-**• Node.js** : ${process.version}
-**• ${logoemoji}** : v${version}
-\u200b
-**= SYSTEM =**
-**• ${hddemoji}** : ${os.platform()} | ${os.release()}
-**• ${pcemoji}** : ${moment.duration(interaction.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}
-**• ${cpuemoji}** :
-> **• Model** : ${os.cpus()[0].model} 
-> **• Speed** : ${os.cpus()[0].speed} MHz
-**•** ${ramemoji} :
-> **• Total Memory** : ${formatBytes(os.totalmem())}
-> **• Free Memory** : ${formatBytes(os.freemem())}
-> **• Heap Total** : ${formatBytes(process.memoryUsage().heapTotal)}
-> **• Heap Usage** : ${formatBytes(process.memoryUsage().heapUsed)}
-\u200b
-**= SHARDS =**
-${finale}
-`)
+				**= SHARDS =**
+				${finale}
+			`)
 
 		function formatBytes(a, b) {
 			if (0 == a) return "0 Bytes";

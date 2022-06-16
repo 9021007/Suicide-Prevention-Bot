@@ -6,20 +6,23 @@ module.exports = async (message, lang) => {
 	const { __ } = require('../bot.js');
 	
 	let LCM = message.content.toLowerCase(); //Lower case message text
-	try {
-  		var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
-	} catch (RangeError) {
-		console.log("[-] WARNING: RangeError");
-	}
 	const commonElements = [];
 	const parsedTriggers = triggers.map(x => x.replace(/\|/g, " *"));
-	parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
-		possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
-			if (new RegExp(trigger, "g").test(unleeted_LCM)) {
-				commonElements.push(true);
-			}
+
+	try {
+  		var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
+		  parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
+			possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
+				if (new RegExp(trigger, "g").test(unleeted_LCM)) {
+					commonElements.push(true);
+				}
+			});
 		});
-	});
+	} catch (RangeError) {
+		console.log("[-] WARNING: RangeError");
+		console.log(RangeError)
+	}
+
     if (commonElements.length > 0) {
 		const suicide = new MessageEmbed()
 	   		.setColor('#04d384')
