@@ -69,7 +69,7 @@ module.exports = {
 			`)
 
 		const embed2 = new MessageEmbed()
-			.setColor('$04d384')
+			.setColor('#04d384')
 			.setFooter({
 				text: __("Does not update after you send the command. Send again to see updated info.", lang),
 				iconURL: 'https://spbot.ml/siround.png'
@@ -89,6 +89,6 @@ module.exports = {
 			return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
 		}
 
-		interaction.reply({ embeds: [embed] });
+		interaction.reply({ embeds: [embed, embed2] });
 	}
 };
