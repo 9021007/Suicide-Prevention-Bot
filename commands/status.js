@@ -49,8 +49,8 @@ module.exports = {
 				**• ID** : ${client.user.id}
 				\u200b
 				**= STATISTICS =**
-				**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0)}
-				**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0)}
+				**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0).toLocaleString()}
+				**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0).toLocaleString()}
 				**• Discord.js** : v${djsversion}
 				**• Node.js** : ${process.version}
 				**• ${logoemoji}** : v${version}

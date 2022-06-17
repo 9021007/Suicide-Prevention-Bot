@@ -99,10 +99,9 @@ const __ = (string, lang, options = undefined) => {
 client.once('ready', async () => {
 	console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}! ＼(￣▽￣)／`)); // Console log for verbosity
 	client.user.setActivity(
-		`chat for suicide. — https://spbot.ml/ — running on shard ${client.shard.ids[0] + 1}`, {
+		"chat for suicide.", {
 		type: 'LISTENING'
 	});
-
 	// Auto imports every file in commands/ as a slash command
 	// Crashes if it finds an invalid command file
 	let commands = [];
@@ -139,15 +138,15 @@ client.on('messageCreate', async message => {
 
 	// Mention bot will activate alert message without triggers
 	if (message.mentions.users.first() === client.user)
-	return require('./split/bot-mentioned')(message, lang);
+	return require('./events/bot-mentioned')(message, lang, LCM);
 
 	//Check to see if you muted the bot (User side only)
 	if (!require("./commands/mute").checkIfMuted(message) && !require("./commands/blacklist.js").checkIfIgnored(message)) 
-		require('./split/every-unmuted-message')(message, lang);
+		require('./events/every-unmuted-message')(message, lang, LCM);
 
 	// Ask to add slash commands if the old prefix is used
 	if (LCM.startsWith("sp!")) {
-		require("./scripts/update")(message, lang);
+		require("./events/update")(message, lang, LCM);
 	}
 });
 

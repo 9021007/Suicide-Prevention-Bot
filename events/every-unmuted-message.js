@@ -1,35 +1,34 @@
-const unleet = import('@cityssm/unleet');
+//const unleet = import('@cityssm/unleet');
 const { MessageEmbed } = require('discord.js');
 
-module.exports = async (message, lang) => {
+module.exports = async (message, lang, LCM) => {
 	const { triggers, insults } = require('../database/triggers.json');
 	const { __ } = require('../bot.js');
-	
-	let LCM = message.content.toLowerCase(); //Lower case message text
+
 	const commonElements = [];
 	const parsedTriggers = triggers.map(x => x.replace(/\|/g, " *"));
+	parsedTriggers.forEach(trigger => {
+		if (new RegExp(trigger, "g").test(LCM)) {
+			commonElements.push(true)
+		}
+	})
 
-	try {
-  		var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
-		  parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
-			possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
-				if (new RegExp(trigger, "g").test(unleeted_LCM)) {
-					commonElements.push(true);
-				}
-			});
-		});
-	} catch (RangeError) {
-		console.log("[-] WARNING: RangeError");
-		console.log(RangeError)
-	}
+	// var possible_LCMs = (await unleet).default(LCM); // Returns an array of possible unl33ted messages (some l33tcodes may have different meanings)
+	// parsedTriggers.forEach(trigger => { // Loop ever each trigger and check if they match the message
+	// 	possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with trigger
+	// 		if (new RegExp(trigger, "g").test(unleeted_LCM)) {
+	// 			commonElements.push(true);
+	// 		}
+	// 	});
+	// });
 
-    if (commonElements.length > 0) {
+	if (commonElements.length > 0) {
 		const suicide = new MessageEmbed()
-	   		.setColor('#04d384')
-	   		.setTitle(__("Bot Mentioned. Here is my helpline embed: Suicide Prevention Bot", lang))
-	   		.setAuthor({
-				   name: __("Please give the helpline just one chance", lang),
-				   iconURL: 'https://spbot.ml/siround.png'
+			.setColor('#04d384')
+			.setTitle(__("Bot Mentioned. Here is my helpline embed: Suicide Prevention Bot", lang))
+			.setAuthor({
+				name: __("Please give the helpline just one chance", lang),
+				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setDescription(__("This bot has automatically detected a keyword related to suicide\n", lang))
 			.addField(__("We care about you.", lang), __("Your life is important. We all care very deeply about you. I understand you don't feel like you matter right know, but I can tell you with 100% confidence that you do. I know you might be reluctant, but please just give the suicide prevention hotline just one more chance.", lang), false)
@@ -44,21 +43,28 @@ module.exports = async (message, lang) => {
 				text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			});
-		return message.author.send({ embeds: [suicide] }).catch(e => message.channel.send({ embeds: [suicide] }));
+		return message.author.send({ embeds: [suicide] })
 	}
+
 	let args = LCM.trim().split(/ +/);
 	args = args.map(x => x.replace(/\t/g, ""));
+	const parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"));
+
 	if (commonElements.length < 1) {
-		const parsedInsultTriggers = insults.map(x => x.replace(/\|/g, " *"));
-		parsedInsultTriggers.forEach(trigger => { // Loop ever each insult and check if they match the message
-	   		possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with insult
-				if (new RegExp(trigger, "g").test(unleeted_LCM)) {
-					commonElements.push(true);
-				}
-			});
-		});
+		parsedInsultTriggers.forEach(trigger => {
+			if (new RegExp(trigger, "g").test(LCM)) {
+				commonElements.push(true)
+			}
+		})
+		// parsedInsultTriggers.forEach(trigger => { // Loop ever each insult and check if they match the message
+		// 	possible_LCMs.forEach(unleeted_LCM => { // Loop over every possible unleeted message to match with insult
+		// 		if (new RegExp(trigger, "g").test(unleeted_LCM)) {
+		// 			commonElements.push(true);
+		// 		}
+		// 	});
+		// });
 		if (commonElements.length > 0) {
-	   		const insult = new MessageEmbed()
+			const insult = new MessageEmbed()
 				.setColor('#04d384')
 				.setTitle(__("Suicide Prevention Bot", lang))
 				.setAuthor({
@@ -66,7 +72,7 @@ module.exports = async (message, lang) => {
 					iconURL: 'https://spbot.ml/siround.png'
 				})
 				.setDescription(__("This is not a laughing matter", lang));
-	   		return message.channel.send({ embeds: [insult] }).catch(console.error);
+			return message.channel.send({ embeds: [insult] }).catch(console.error);
 		}
 	}
 };
