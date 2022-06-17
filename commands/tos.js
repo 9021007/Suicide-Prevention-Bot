@@ -8,7 +8,7 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		const { __ } = require('../index');
+		const { __ } = require('../bot.js');
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')

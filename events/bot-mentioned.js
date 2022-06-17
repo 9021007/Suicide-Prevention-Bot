@@ -1,6 +1,6 @@
 module.exports = async (message, lang) => {
     const { MessageEmbed } = require('discord.js');
-	const { __ } = require("../index.js");
+	const { __ } = require('../bot.js');
 
 	const suicide = new MessageEmbed()
 		.setColor('#04d384')

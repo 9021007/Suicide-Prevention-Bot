@@ -1,5 +1,4 @@
 const { Constants, MessageEmbed } = require('discord.js');
-const schema = require('../scripts/database.js')
 
 var DMTimeoutArray = [];
 module.exports = {
@@ -20,8 +19,8 @@ module.exports = {
 		var { dmTimeout_MINUTES } = require('../config.json'); //Request config settings
 		dmTimeout_MINUTES *= 60 * 1000;
 
-		const { __ } = require('../index');
-		let data = await schema.findOne({ guildId: interaction.guild.id })//Request db
+		const { user_mutes_db: db, __ } = require('../bot.js'); //Request db
+
 		const { options } = interaction;
 		
 		const dmembed = new MessageEmbed()
@@ -48,7 +47,7 @@ module.exports = {
 			});
 			
 		interaction.client.users.fetch(options.getUser("user").id).then(user => {
-			if (data.DM_Mute.includes(user.id)) return interaction.reply({ content: __("Mentioned user has opted out of user-directed bot DMs.", lang), ephemeral: true }); //Check to see if you muted the bot (User side only)
+			if (db.get(`dmmute_${user.id}`)) return interaction.reply({ content: __("Mentioned user has opted out of user-directed bot DMs.", lang), ephemeral: true }); //Check to see if you muted the bot (User side only)
 
 			//Timeout
 			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: __("This user has already been messaged recently, please wait and try again.", lang), ephemeral: true });

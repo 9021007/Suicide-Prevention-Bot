@@ -17,7 +17,7 @@ node.js v16 and above required. LTS version recommended.
 ## Translating
 Importing the translation function in your code:
 ```js
-const { __ } = require('../index.js');
+const { __ } = require('../bot.js');
 ```
 Usage:
 ```js

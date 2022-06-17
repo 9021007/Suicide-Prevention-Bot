@@ -1,7 +1,7 @@
 {
 	"token": "",
-	"mongodb": "",
 	"devGuildId": "",
+	"totalshards": 2,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
 	"botPerms": [
@@ -12,10 +12,12 @@
 	"version": "3.1.2",
 	"supportedLanguages": [
 		["en", "english", "english"],
-		["sp","spanish", "espanol"]
+		["sp","spanish", "espanol"],
+		["fr","french","Français"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
-		" - 🇪🇸 Español (sp)"
+		" - 🇪🇸 Español (sp)",
+		" - 🇫🇷 Français (fr)"
 	]
 }

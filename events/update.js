@@ -1,7 +1,7 @@
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = (message, lang) => {
-	const { __ } = require("../index.js");
+	const { __ } = require('../bot.js');
     const row = new MessageActionRow()
 		.addComponents(
 			new MessageButton()
