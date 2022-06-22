@@ -71,5 +71,6 @@
 	"I will now ignore keywords you say in chat.": "I will now ignore keywords you say in chat.",
 	"Removed from ignore list.": "Removed from ignore list.",
 	"Channel has been muted": "Channel has been muted",
-	"Channel has been unmuted": "Channel has been unmuted"
+	"Channel has been unmuted": "Channel has been unmuted",
+	"Unable to send DM. Error: Permission Denied (this user must have their DMs off)": "Unable to send DM. Error: Permission Denied (this user must have their DMs off)"
 }
