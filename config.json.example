@@ -13,11 +13,13 @@
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],
-		["fr","french","Français"]
+		["fr","french","Français"],
+		["cn", "chinese", "中文"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
 		" - 🇪🇸 Español (sp)",
-		" - 🇫🇷 Français (fr)"
+		" - 🇫🇷 Français (fr)",
+		" - 🇨🇳 中文 (cn)"
 	]
 }
