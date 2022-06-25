@@ -1,0 +1,27 @@
+{
+	"token": "ODM0MzAzODgxMTM0ODY2NDQy.G0jqeZ.k_HU2WHNbyFN3xGMWHv1WI3i-_vnUkBaZJkfPI",
+	"devGuildId": "",
+	"totalshards": 2,
+	"activityResetTimeout_SECONDS": 15,
+	"dmTimeout_MINUTES": 15,
+	"botPerms": [
+		"SEND_MESSAGES",
+		"EMBED_LINKS",
+		"READ_MESSAGE_HISTORY"
+	],
+	"version": "3.1.2",
+	"supportedLanguages": [
+		["en", "english", "english"],
+		["sp","spanish", "espanol"],
+		["fr","french","Français"],
+		["owo", "owo", "owo"],
+		["cn", "chinese", "Chinese"]
+	],
+	"langlist": [
+		" - 🇬🇧 English (en)",
+		" - 🇪🇸 Español (sp)",
+		" - 🇫🇷 Français (fr)",
+		" - 🏳️‍🌈 OwO!! (owo)",
+		" - 🇨🇳 China (cn)"
+	]
+}
