@@ -17,7 +17,7 @@ module.exports = async (message, lang) => {
 		.addField(__("India", lang), __("Call +91 80 23655557", lang), true)
 		.addField(__("Japan", lang), __("Call 810352869090", lang), true)
 		.addField(__("Other Countries?", lang), __("[Click Here.](https://spbot.ml/hotlines)", lang), true)
-		.addField(__("Need Extra Support?", lang), "Test **DISCORD** to **741741** from anywhere in the United States to chat with a trained colunteer crisis counselor at Crisis Text Line. Counselors are available 24/7 to help you are a friend through any mental health crisis.", false)
+		.addField(__("Need Extra Support?", lang), "Text **DISCORD** to **741741** from anywhere in the United States to chat with a trained volunteer crisis counselor at Crisis Text Line. Counselors are available 24/7 to help you or a friend through any mental health crisis.", false)
 		//__("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang)
 		.setFooter({
 			text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', lang),
