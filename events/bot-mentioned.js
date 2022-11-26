@@ -10,7 +10,7 @@ module.exports = async (message, lang) => {
 			iconURL: 'https://spbot.ml/siround.png'
 		})
 		.setTitle(`${__("We care about you.", lang)} ${__("Please give the helpline just one chance.", lang)}`)
-		.setDescription(`${line[Math.round(Math.random() * (line.length - 1))]}\n\n${__("Your life is important. We all care very deeply about you. I understand you don't feel like you matter right know, but I can tell you with 100% confidence that you do. I know you might be reluctant, but please just give the suicide prevention hotline just one more chance.", lang)}`)
+		.setDescription(`${line[Math.round(Math.random() * (line.length - 1))]}\n\n${__("Your life is important. We all care very deeply about you. I understand you don't feel like you matter right now, but I can tell you with 100% confidence that you do. I know you might be reluctant, but please just give the suicide prevention hotline just one more chance.", lang)}`)
 		.addField(__("United States", lang), __("Call (800) 273-8255 or Text HOME to 741741", lang), true)
 		.addField(__("United Kingdom", lang), __("Call 116-123 or Text SHOUT to 85258", lang), true)
 		.addField(__("Canada", lang), __("Call (833) 456-4566 or Text 45645", lang), true)
