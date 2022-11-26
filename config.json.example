@@ -9,12 +9,14 @@
 		"EMBED_LINKS",
 		"READ_MESSAGE_HISTORY"
 	],
-	"version": "3.3.1",
+	"version": "3.3.2",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],
 		["fr","french","Français"],
-		["cn", "chinese", "中文"]
+		["de", "german", "Deutsch"],
+		["cn", "chinese", "中國人"],
+		["owo", "owo", "owo"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
