@@ -75,9 +75,9 @@ module.exports = async (message, lang, LCM) => {
 		if (commonElements.length > 0) {
 			const insult = new MessageEmbed()
 				.setColor('#04d384')
-				.setTitle(__("Suicide Prevention Bot", lang))
+				.setTitle(__("Please don't tell others to kill themselves", lang))
 				.setAuthor({
-					name: __("Please don't tell others to kill themselves", lang),
+					name: __("Suicide Prevention Bot", lang),
 					iconURL: 'https://spbot.ml/siround.png'
 				})
 				.setDescription(__("This is not a laughing matter", lang));

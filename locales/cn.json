@@ -59,7 +59,7 @@
 	"Privacy Policy": "隐私政策",
 	"See our privacy policy at https://spbot.ml/privacy.txt": "请参阅我们的隐私政策：https://spbot.ml/privacy.txt",
 	"A user has asked us to reach out to you": "一位用户要求我们与您联系",
-	"Somebody has asked us to reach out personally to you in your DMs. Please listen.\n": "有人要求我们在您的DM中亲自与您联系。 请听。\n",
+	"Somebody has asked us to reach out personally to you in your DMs. Please listen.": "有人要求我们在您的DM中亲自与您联系。 请听。",
 	"A help DM has been sent.": "已经发送了一个帮助DM。",
 	"This user has already been messaged recently, please wait and try again.": "这个用户最近已经被发送过信息，请等待并重试。",
 	"Word `{{word}}` has been added to the blacklist": "词`{{word}}`已被添加到黑名单。",

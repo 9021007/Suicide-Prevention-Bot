@@ -59,7 +59,7 @@
 	"Privacy Policy": "Privacy Policy",
 	"See our privacy policy at https://spbot.ml/privacy.txt": "See our privacy policy at https://spbot.ml/privacy.txt",
 	"A user has asked us to reach out to you": "A user has asked us to reach out to you",
-	"Somebody has asked us to reach out personally to you in your DMs. Please listen.\n": "Somebody has asked us to reach out personally to you in your DMs. Please listen.\n",
+	"Somebody has asked us to reach out personally to you in your DMs. Please listen.": "Somebody has asked us to reach out personally to you in your DMs. Please listen.",
 	"A help DM has been sent.": "A help DM has been sent.",
 	"This user has already been messaged recently, please wait and try again.": "This user has already been messaged recently, please wait and try again.",
 	"Word `{{word}}` has been added to the blacklist": "Word `{{word}}` has been added to the blacklist",

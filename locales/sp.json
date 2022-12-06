@@ -59,7 +59,7 @@
 	"Privacy Policy": "Política de privacidad",
 	"See our privacy policy at https://spbot.ml/privacy.txt": "Consulte nuestra política de privacidad en https://spbot.ml/privacy.txt",
 	"A user has asked us to reach out to you": "Un usuario nos ha pedido que nos pongamos en contacto con usted",
-	"Somebody has asked us to reach out personally to you in your DMs. Please listen.\n": "Alguien nos ha pedido que nos dirijamos personalmente a ti en tus DMs. Por favor, escucha.\n",
+	"Somebody has asked us to reach out personally to you in your DMs. Please listen.": "Alguien nos ha pedido que nos dirijamos personalmente a ti en tus DMs. Por favor, escucha.",
 	"A help DM has been sent.": "Se ha enviado un DM de ayuda.",
 	"This user has already been messaged recently, please wait and try again.": "Este usuario ya ha recibido un mensaje recientemente, por favor espere e inténtelo de nuevo.",
 	"Word `{{word}}` has been added to the blacklist": "Palabra `{{word}}` ha sido añadido a la lista negra",
