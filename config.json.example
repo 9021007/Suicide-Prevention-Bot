@@ -3,13 +3,13 @@
 	"devGuildId": "",
 	"totalshards": 2,
 	"activityResetTimeout_SECONDS": 15,
-	"dmTimeout_MINUTES": 15,
+	"dmTimeout_HOURS": 24,
 	"botPerms": [
 		"SEND_MESSAGES",
 		"EMBED_LINKS",
 		"READ_MESSAGE_HISTORY"
 	],
-	"version": "3.3.2",
+	"version": "3.3.4",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],

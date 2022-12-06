@@ -16,8 +16,8 @@ module.exports = {
 	},
 
 	default: async (interaction, lang) => {
-		var { dmTimeout_MINUTES } = require('../config.json'); //Request config settings
-		dmTimeout_MINUTES *= 60 * 1000;
+		var { dmTimeout_HOURS } = require('../config.json'); //Request config settings
+		dmTimeout_HOURS *= 60 * 60 * 1000;
 
 		const { user_mutes_db: db, __ } = require('../bot.js'); //Request db
 
@@ -55,7 +55,7 @@ module.exports = {
 			setTimeout(() => {
 				const index = DMTimeoutArray.findIndex(item => item == user.id);
 				DMTimeoutArray = DMTimeoutArray.splice(index);
-			}, dmTimeout_MINUTES);
+			}, dmTimeout_HOURS);
 
 			//Send message
 			user.send({ embeds: [dmembed] }).then(() => {
