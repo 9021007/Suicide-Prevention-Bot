@@ -9,7 +9,7 @@
 		"EMBED_LINKS",
 		"READ_MESSAGE_HISTORY"
 	],
-	"version": "3.3.6",
+	"version": "3.4.0",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],

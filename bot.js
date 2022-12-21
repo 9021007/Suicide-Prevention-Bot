@@ -152,56 +152,68 @@ client.on('messageCreate', async message => {
 
 
 /**
- * Slash Commands
+ * Slash Commands && Buttons
  */
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) return;
+	//Slash Commands
+	if (interaction.isCommand()) {
+		var lang = "en";
+		const server_language = lang_db.get(`lang_${interaction.guild.id}`);
+		if (typeof server_language === 'string') lang = server_language;
 
-  var lang = "en";
-  const server_language = lang_db.get(`lang_${interaction.guild.id}`);
-  if (typeof server_language === 'string') lang = server_language;
+		const { commandName, options } = interaction;
+		switch (commandName) {
+			case "dm":
+				return require('./commands/dm').default(interaction, lang);
+			case "ping":
+				return require('./commands/ping').default(interaction, lang);
+			case "status":
+				return require('./commands/status').default(interaction, lang);
+			case "dmmute":
+				return require("./commands/dmmute").default(interaction, lang);
+			case "invite":
+				return require("./commands/invite").default(interaction, lang);
+			case "info":
+				return require("./commands/info").default(interaction, lang);
+			case "help":
+				return require("./commands/help").default(interaction, lang);
+			case "language":
+				return require("./commands/set").default(interaction, lang);
+			case "languages":
+				return require("./commands/lang").default(interaction, lang);
+			case "mute":
+				return require("./commands/mute").default(interaction, lang);
+			case "blacklist":
+				return require("./commands/blacklist").default(interaction, lang);
+			case "tos":
+				return require("./commands/tos").default(interaction, lang);
+			case "privacy":
+				return require("./commands/privacy").default(interaction, lang);
+		}
+	} else if (interaction.isButton()) {
+		//Buttons
+		if (interaction.customId.includes('button2')) {
+				user_mutes_db.set(`dmmute_${interaction.user.id}`, true);
+				await interaction.reply({ content: "👍" });
+		}
+	}
 
-  const { commandName, options } = interaction;
-  switch (commandName) {
-    case "dm":
-    	return require('./commands/dm').default(interaction, lang);
-    case "ping":
-    	return require('./commands/ping').default(interaction, lang);
-    case "status":
-    	return require('./commands/status').default(interaction, lang);
-	case "dmmute":
-	    return require("./commands/dmmute").default(interaction, lang);
-	case "invite":
-		return require("./commands/invite").default(interaction, lang);
-	case "info":
-		return require("./commands/info").default(interaction, lang);
-	case "help":
-		return require("./commands/help").default(interaction, lang);
-	case "language":
-		return require("./commands/set").default(interaction, lang);
-	case "languages":
-		return require("./commands/lang").default(interaction, lang);
-	case "mute":
-		return require("./commands/mute").default(interaction, lang);
-	case "blacklist":
-		return require("./commands/blacklist").default(interaction, lang);
-	case "tos":
-		return require("./commands/tos").default(interaction, lang);
-	case "privacy":
-		return require("./commands/privacy").default(interaction, lang);
-  }
+
+
+	//Buttons
+
 });
 
 client.login(token); //Client login
 
 module.exports = {
-  client: client,
-  user_mutes_db: user_mutes_db,
-  blacklist_db: blacklist_db,
-  triggers_db: triggers_db,
-  channel_mutes_db: channel_mutes_db,
-  lang_db: lang_db,
-  __: __
+	client: client,
+	user_mutes_db: user_mutes_db,
+	blacklist_db: blacklist_db,
+	triggers_db: triggers_db,
+	channel_mutes_db: channel_mutes_db,
+	lang_db: lang_db,
+	__: __
 };
 
 /* JOIN US on our Discord: https://discord.gg/YHvfUqVgWS.
