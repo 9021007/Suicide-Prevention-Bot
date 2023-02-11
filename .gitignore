@@ -1,9 +1,0 @@
-node_modules
-.DS_Store
-.vscode
-config.json
-.vsls.json
-database/channel_mutes.json
-database/user_mutes.json
-database/blacklist.json
-database/lang.json
