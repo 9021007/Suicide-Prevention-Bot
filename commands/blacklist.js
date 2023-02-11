@@ -45,7 +45,7 @@ module.exports = {
 		const { options } = interaction;
 
 		if (!interaction.member.permissions.has("ADMINISTRATOR")) {
-			return interaction.reply({ content: __('Only admins can use this', lang), ephemeral: true });
+			return interaction.reply({ content: __('onlyadmin', lang), ephemeral: true });
 		} //Checks to see if you have admin perms
 
 		let word = options.getString("word");
@@ -54,25 +54,25 @@ module.exports = {
 		switch (options.getSubcommand()) {
 			case "add": {
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
-				if (blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("This word is already in the blacklist", lang), ephemeral: true });
+				if (blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("alrinblacklist", lang), ephemeral: true });
 				blacklist.push(word);
 				db.set(`blacklist_${interaction.guild.id}`, blacklist);
 
-				return interaction.reply({ content: __("Word `{{word}}` has been added to the blacklist", lang, { word: word }), ephemeral: true });
+				return interaction.reply({ content: __("blacklistadd", lang, { word: word }), ephemeral: true });
 			}
 			case "remove": {
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
-				if (!blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("This word is not in the blacklist", lang), ephemeral: true });
+				if (!blacklist.some(v => word.includes(v))) return interaction.reply({ content: __("notinblacklist", lang), ephemeral: true });
 				blacklist.splice(blacklist.indexOf(word), 1);
 				db.set(`blacklist_${interaction.guild.id}`, blacklist);
 
-				return interaction.reply({ content: __("Word `{{word}}` has been removed from the blacklist", lang, { word: word }), ephemeral: true });
+				return interaction.reply({ content: __("blacklistremove", lang, { word: word }), ephemeral: true });
 			}
 			case "list": {
 				if (db.get(`blacklist_${interaction.guild.id}`) == null) db.set(`blacklist_${interaction.guild.id}`, []);
 				const list = blacklist.join('\n') || "empty";
 
-				return interaction.reply({ content: __("The current blacklist consists of the words:\n```\n{{list}}```", lang, { list: list }), ephemeral: true });
+				return interaction.reply({ content: __("currentblacklist", lang, { list: list }), ephemeral: true });
 			}
 		}
 	},

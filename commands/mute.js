@@ -37,10 +37,10 @@ module.exports = {
 
 				if (db.get(`mute_${interaction.user.id}`)) {
 					db.delete(`mute_${interaction.user.id}`);
-					interaction.reply({ content: __("Removed from ignore list.", lang), ephemeral: true });
+					interaction.reply({ content: __("rmignorelist", lang), ephemeral: true });
 				} else {
 					db.set(`mute_${interaction.user.id}`, true);
-					interaction.reply({ content: __("I will now ignore keywords you say in chat.", lang), ephemeral: true });
+					interaction.reply({ content: __("addignorelist", lang), ephemeral: true });
 				}
 				break;
 			}
@@ -52,10 +52,10 @@ module.exports = {
 				
 				if (db.get(`mute_${interaction.channel.id}`)) {
 					db.delete(`mute_${interaction.channel.id}`);
-					return interaction.reply({ content: __("Channel has been unmuted", lang) });
+					return interaction.reply({ content: __("chanunmute", lang) });
 				} else {
 					db.set(`mute_${interaction.channel.id}`, true);
-					return interaction.reply({ content: __("Channel has been muted", lang) });
+					return interaction.reply({ content: __("chanmute", lang) });
 				}
 			}
 		}

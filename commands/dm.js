@@ -25,6 +25,7 @@ module.exports = {
 		
 		const dmembed = new MessageEmbed()
 			.setColor('#04d384')
+<<<<<<< Updated upstream
 			.setTitle(__("A user has asked us to reach out to you", lang))
 			.setURL('https://spbot.ml/')
 			.setImage('https://www.spbot.ml/suicideicon.png')
@@ -41,16 +42,53 @@ module.exports = {
 			.addField(__("Japan", lang), __("Call 810352869090", lang), true)
 			.addField(__("Other Countries?", lang), __("[Click Here.](https://spbot.ml/hotlines)", lang), true)
 			.addField(__("Need Extra Support?", lang), __("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang), false)
+=======
+			.setAuthor({
+				name: __("dmauthor", lang),
+				iconURL: 'https://spbot.ml/siround.png'
+			})
+			.setTitle(__("dmtitle", lang))
+			.setURL('https://spbot.ml/')
+			.setImage('https://www.spbot.ml/suicideicon.png')
+			.setDescription(`${__("dmdesc", lang)}\n\n${line[Math.round(Math.random() * (line.length - 1))]}`)
+			.addField(__("dmf1", lang), __("dmf1d", lang), false)
+			.addField(__("dmf2", lang), __("dmf2d", lang), true)
+			.addField(__("dmf3", lang), __("dmf3d", lang), true)
+			.addField(__("dmf4", lang), __("dmf4d", lang), true)
+			.addField(__("dmf5", lang), __("dmf5d", lang), true)
+			.addField(__("dmf6", lang), __("dmf6d", lang), true)
+			.addField(__("dmf7", lang), __("dmf7d", lang), true)
+			.addField(__("dmf8", lang), __("dmf8d", lang), false)
+			//__("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang)
+>>>>>>> Stashed changes
 			.setFooter({
-				text: __('I care about you. Please try to give the helplines just one chance. I know you can make it through this. Report a bug: https://discord.gg/YHvfUqVgWS. Website: https://spbot.ml/. Type /dmmute to prevent others from telling me to send you DMs', lang),
+				text: __('dmfooter', lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			});
+<<<<<<< Updated upstream
+=======
+
+			//Buttons
+			const row = new MessageActionRow()
+				.addComponents(
+					new MessageButton()
+						.setLabel("Want to remove access for users to send you a dm message? -->")
+						.setStyle(2)
+						.setCustomId("button1")
+						.setDisabled(true),
+					new MessageButton()
+						.setLabel("Click me!")
+						.setStyle(1)
+						.setCustomId("button2")
+						.setDisabled(false),
+				);
+>>>>>>> Stashed changes
 			
 		interaction.client.users.fetch(options.getUser("user").id).then(user => {
-			if (db.get(`dmmute_${user.id}`)) return interaction.reply({ content: __("Mentioned user has opted out of user-directed bot DMs.", lang), ephemeral: true }); //Check to see if you muted the bot (User side only)
+			if (db.get(`dmmute_${user.id}`)) return interaction.reply({ content: __("dmoptout", lang), ephemeral: true }); //Check to see if you muted the bot (User side only)
 
 			//Timeout
-			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: __("This user has already been messaged recently, please wait and try again.", lang), ephemeral: true });
+			if (DMTimeoutArray.includes(user.id)) return interaction.reply({ content: __("dmtimeout", lang), ephemeral: true });
 			DMTimeoutArray.push(user.id);
 			setTimeout(() => {
 				const index = DMTimeoutArray.findIndex(item => item == user.id);
@@ -58,10 +96,15 @@ module.exports = {
 			}, dmTimeout_MINUTES);
 
 			//Send message
+<<<<<<< Updated upstream
 			user.send({ embeds: [dmembed] }).then(() => {
 				interaction.reply({ content: __("A help DM has been sent.", lang), ephemeral: true });
+=======
+			user.send({ embeds: [dmembed], components: [row] }).then(() => {
+				interaction.reply({ content: __("dmsent", lang), ephemeral: true });
+>>>>>>> Stashed changes
 			}).catch(e => {
-				interaction.reply({ content: __("Unable to send DM. Error: Permission Denied (this user must have their DMs off)", lang), ephemeral: true }); //If dm command has an error
+				interaction.reply({ content: __("dmdenied", lang), ephemeral: true }); //If dm command has an error
 			});
 		});
 	}

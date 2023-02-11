@@ -33,7 +33,7 @@ module.exports = {
 		const { __, lang_db: db } = require('../bot.js');
 		const { supportedLanguages } = require('../config.json');
 
-		if (!interaction.member.permissions.has("ADMINISTRATOR")) return interaction.reply({ content: ":x: | " + __("You must be an administrator of this server to change the language!", lang), ephemeral: true}); //Checks to see if you have admin perms
+		if (!interaction.member.permissions.has("ADMINISTRATOR")) return interaction.reply({ content: ":x: | " + __("mustadmin", lang), ephemeral: true}); //Checks to see if you have admin perms
 
 		const newLanguage = options.getString("language");
 
@@ -50,6 +50,6 @@ module.exports = {
 		if (newLanguage !== "en") db.set(`lang_${interaction.guild.id}`, newLanguage);
 		else db.delete(`lang_${interaction.guild.id}`);
 		lang = newLanguage;
-		interaction.reply(__("Language successfully changed!", lang));
+		interaction.reply(__("lang1", lang));
 	}
 };

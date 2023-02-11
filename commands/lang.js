@@ -13,14 +13,14 @@ module.exports = {
    
 		const langs = new MessageEmbed()
 			 .setColor('#04d384')
-			 .setTitle(__("Here are all the supported languages", lang))
+			 .setTitle(__("langtitle", lang))
 			 .setThumbnail('https://spbot.ml/siround.png')
 			 .setAuthor({
-				 name: __("Suicide Prevention Bot Info", lang)
+				 name: __("langauthor", lang)
 			 })
 			 .setDescription(langlist.join('\n'))
 			 .setURL('https://spbot.ml/')
-			 .addField(__("Want more languages? Found a bug?", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang));
+			 .addField(__("langf1", lang), __("langf1d", lang));
 		interaction.reply({ embeds: [langs] });
 	 }
 };

@@ -13,7 +13,6 @@
     "moment-duration-format": "^2.3.2",
     "os": "^0.1.2",
     "path": "^0.12.7",
-    "simplest.db": "^2.0.0",
-    "ws": ">=8.1.0"
+    "simplest.db": "^2.0.0"
   }
 }

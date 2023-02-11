@@ -12,10 +12,10 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle(__('Privacy Policy', lang))
+			.setTitle(__('pptitle', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(__('See our privacy policy at https://spbot.ml/privacy.txt', lang));
+			.setDescription(__('ppdesc', lang));
 		interaction.reply({ embeds: [embed] });
 	}
 }

@@ -71,5 +71,11 @@
 	"I will now ignore keywords you say in chat.": "Ahora ignoraré las palabras clave que digas en el chat.",
 	"Removed from ignore list.": "Eliminado de la lista de ignorados.",
 	"Channel has been muted": "El canal ha sido silenciado",
+<<<<<<< Updated upstream
 	"Channel has been unmuted": "El canal ha sido sin silenciar"
+=======
+	"Channel has been unmuted": "El canal ha sido sin silenciar",
+	"Unable to send DM. Error: Permission Denied (this user must have their DMs off)": "No se puede enviar dm. Error: permiso denegado (este usuario debe tener sus DMs apagados)",
+	"statusfooter": "statusfooter"
+>>>>>>> Stashed changes
 }

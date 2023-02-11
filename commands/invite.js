@@ -12,10 +12,10 @@ module.exports = {
 
 		const invite = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle(__("Add Suicide Prevention Bot", lang))
+			.setTitle(__("invitetitle", lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(__("This Discord bot is an easy-to-use and easy-to-install bot for Discord, that actively prevents suicide and other crisis from occuring. Add it to your Discord server in just 3 clicks.", lang));
+			.setDescription(__("invitedesc", lang));
 		interaction.reply({ embeds: [invite] });
 	}
 };

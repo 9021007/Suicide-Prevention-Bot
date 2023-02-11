@@ -12,10 +12,10 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setColor('#04d384')
-			.setTitle(__('Terms of Service', lang))
+			.setTitle(__('tostitle', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(__('See our terms of service at https://spbot.ml/terms.txt', lang));
+			.setDescription(__('tosdesc', lang));
 		interaction.reply({ embeds: [embed] });
 	}
 }
