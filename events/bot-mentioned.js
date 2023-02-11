@@ -5,7 +5,7 @@ module.exports = async (message, lang) => {
 
 	const suicide = new MessageEmbed()
 		.setColor('#04d384')
-		.setTitle(__("Bot Mentioned. Here is my helpline embed: Suicide Prevention Bot", lang))
+		.setTitle(__("botmentionedauthor", lang))
 		.setAuthor({
 			name: __("botmentionedauthor", lang),
 			iconURL: 'https://spbot.ml/siround.png'

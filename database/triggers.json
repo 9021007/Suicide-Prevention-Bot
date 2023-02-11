@@ -180,5 +180,8 @@
 		"zastřel|se",
 		"doufám|že|umřeš",
 		"se|zabij"
+	],
+	"blacklist": [
+		"just died"
 	]
 }
