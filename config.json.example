@@ -10,7 +10,7 @@
 		"EMBED_LINKS",
 		"READ_MESSAGE_HISTORY"
 	],
-	"version": "3.2.5",
+	"version": "3.2.5.1",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["uwu", "uwu", "uwu"]
