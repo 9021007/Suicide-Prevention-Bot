@@ -2,7 +2,7 @@
 	"token": "",
 	"devGuildId": "",
 	"clearCommandList": false,
-	"totalshards": 2,
+	"totalshards": 3,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
 	"botPerms": [
@@ -13,18 +13,10 @@
 	"version": "3.1.2",
 	"supportedLanguages": [
 		["en", "english", "english"],
-		["sp","spanish", "espanol"],
-		["fr","french","Français"],
-		["de", "german", "Deutsch"],
-		["cn", "chinese", "中國人"],
 		["uwu", "uwu", "uwu"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
-		" - 🇪🇸 Español (sp)",
-		" - 🇫🇷 Français (fr)",
-		" - 🇩🇪 Deutsch (de)",
-		" - 🇨🇳 中國人 (cn)",
 		" - 🥺 uwu (uwu)"
 	]
 }

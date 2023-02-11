@@ -153,7 +153,7 @@ client.on('messageCreate', async message => {
 	let LCM = message.content.toLowerCase(); //Lower case message text
 
 	// Mention bot will activate alert message without triggers
-	if (message.mentions.users.first() === client.user)
+	if (message.mentions.users.first() === client.user && message.reference == null)
 	return require('./events/bot-mentioned')(message, lang, LCM);
 
 	//Check to see if you muted the bot (User side only)
