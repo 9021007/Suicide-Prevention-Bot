@@ -1,6 +1,7 @@
 {
 	"token": "",
 	"devGuildId": "",
+	"clearCommandList": false,
 	"totalshards": 2,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
@@ -13,23 +14,17 @@
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],
-<<<<<<< Updated upstream
-		["fr","french","Français"]
-=======
 		["fr","french","Français"],
 		["de", "german", "Deutsch"],
-		["cn", "chinese", "中國人"]
->>>>>>> Stashed changes
+		["cn", "chinese", "中國人"],
+		["uwu", "uwu", "uwu"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
 		" - 🇪🇸 Español (sp)",
-<<<<<<< Updated upstream
-		" - 🇫🇷 Français (fr)"
-=======
 		" - 🇫🇷 Français (fr)",
 		" - 🇩🇪 Deutsch (de)",
-		" - 🇨🇳 中國人 (cn)"
->>>>>>> Stashed changes
+		" - 🇨🇳 中國人 (cn)",
+		" - 🥺 uwu (uwu)"
 	]
 }
