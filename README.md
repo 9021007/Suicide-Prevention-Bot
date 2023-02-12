@@ -8,6 +8,7 @@ Tools Provided by us:
 
 ## 1. Windows executable (.exe) file  [RECOMMENDED]
 *Yes this .exe is safe. It's contents are from `main.py` and just converted to .exe with the help of pyinstaller
+
 *the autodownload feature is broken right now, please download the `en.json` file and put it inside the folder with `main.exe`
 - Download the `main.exe` file
 - Place `main.exe` into its own folder
