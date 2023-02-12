@@ -34,7 +34,7 @@ python main.py
 ```
 
 ## 3. Translation text (.txt/.json) file
-- Download the `manual-main.txt` file
+- Download the `example.en.txt` file
 - Open it inside a txt editor
 - Follow the instructions inside the file
 
