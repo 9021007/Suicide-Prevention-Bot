@@ -9,7 +9,9 @@ Tools Provided by us:
 ## 1. Windows executable (.exe) file  [RECOMMENDED]
 *Yes this .exe is safe. It's contents are from `main.py` and just converted to .exe with the help of pyinstaller
 - Download the `main.exe` file
-- Place `main.exe` into its own folder and open the folder
+- Place `main.exe` into its own folder
+*the autodownload feature is broken right now, please download the `en.json` file and put it inside the folder with `main.exe`
+- Open the folder
 - Run the .exe file and follow the steps provided by the program.
 
 To create a updated .exe file from the .py script run the commands below:
@@ -22,6 +24,7 @@ pyinstaller --onefile main.py
 - Download [python](https://www.python.org/) v3.11.2
 - Download the `main.py` file
 - Place `main.py` into its own folder
+*the autodownload feature is broken right now, please download the `en.json` file and put it inside the folder with `main.py`
 - Open the folder into a terminal
 - Run the commands below and follow the instructions given to you:
 ```
