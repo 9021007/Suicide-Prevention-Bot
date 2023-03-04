@@ -5,15 +5,17 @@
 	"totalshards": 1,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
-	"version": "3.3.2",
+	"version": "3.3.4",
 	"supportedLanguages": [
 		["en", "english", "english"],
+		["sp","spanish", "espanol"],
 		["ru", "russian", "pусский"],
 		["uwu", "uwu", "uwu"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
 		" - 🇷🇺 pусский (rn)",
+		" - 🇪🇸 Español (sp)",
 		" - 🥺 uwu (uwu)"
 	]
 }
