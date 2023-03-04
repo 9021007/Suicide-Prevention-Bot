@@ -5,7 +5,7 @@
     "infoauthor": "Suicide Pwevention Bot Info",
     "helptitle": "You wequested hewp?!?1",
     "helpf1": "Commands - pwefix is / [command hewe]",
-    "helpf1d": "help \nbot (alias: neofetch, v) \ninfo \ninvite \nmute \nping \ndm (user) \ndmmute \nset \nlang",
+    "helpf1d": "blacklist (list/add/remove) (word) \ndm (user) \ndmmute \nhelp \nhug \ninfo \ninvite \nkiss \nlanguages (list/set) \nmute \nping \nprivacy \nstatus \ntos",
     "mustadmin": "You must be an adminyistwatow of this sewvew t-to change the x3 wanguage?!?1",
     "infotitle": "What is this bot?!?!",
     "infof1": "What do you wespond to?!! *twerks*",
@@ -77,5 +77,7 @@
     "onlyadmin": "Onwy admins c-can use this",
     "alrinblacklist": "This wowd is awweady in the x3 bwackwist",
     "notinblacklist": "This wowd is nyot in the x3 bwackwist",
-    "dmdenied": "unyabwe ^w^ t-to send D-D-DM. Error: Pewmission Denyied (this usew must have theiw D-D-DMs off) ;;w;;"
+    "dmdenied": "unyabwe ^w^ t-to send D-D-DM. Error: Pewmission Denyied (this usew must have theiw D-D-DMs off) ;;w;;",
+    "errorblacklist": "Nyo wowd was g-g-given, pwease type a wowd t-to edit the x3 bwackwist",
+    "errorlangset": "Nyo wanguage was g-g-given, pwease choose a suppowted wanguage"
 }

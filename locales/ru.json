@@ -5,7 +5,7 @@
   "infoauthor": "Информация о боте по предотвращению суицида",
   "helptitle": "Вы попросили помощи?",
   "helpf1": "Префикс для команд - / [команда]",
-  "helpf1d": "help \nbot (alias: neofetch, v) \ninfo \ninvite \nmute \nping \ndm (user) \ndmmute \nset \nlang",
+  "helpf1d": "blacklist (list/add/remove) (word) \ndm (user) \ndmmute \nhelp \nhug \ninfo \ninvite \nkiss \nlanguages (list/set) \nmute \nping \nprivacy \nstatus \ntos",
   "mustadmin": "Вы должны быть администратором этого сервера что-бы изменить язык!",
   "infotitle": "Что это за бот?",
   "infof1": "На что этот бот отвечает?",
@@ -77,5 +77,7 @@
   "onlyadmin": "Только администраторы могут эти воспользоваться",
   "alrinblacklist": "Это слово уже в чёрном списке",
   "notinblacklist": "Этого слова нет в чёрном списке",
-  "dmdenied": "Не получилось отправить ЛС. Ошибка: Отказано в доступе(Этот пользователь отключил ЛС)"
+  "dmdenied": "Не получилось отправить ЛС. Ошибка: Отказано в доступе(Этот пользователь отключил ЛС)",
+  "errorblacklist": "Слово не было указано, пожалуйста, введите слово для редактирования черного списка",
+  "errorlangset": "Не указан язык, пожалуйста, выберите поддерживаемый язык"
 }
