@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	command: {
@@ -10,7 +10,7 @@ module.exports = {
 	default: async (interaction, lang) => {
 		const { __ } = require("../bot.js");
 
-		const invite = new MessageEmbed()
+		const invite = new EmbedBuilder()
 			.setColor('#04d384')
 			.setTitle(__("invitetitle", lang))
 			.setThumbnail('https://spbot.ml/siround.png')

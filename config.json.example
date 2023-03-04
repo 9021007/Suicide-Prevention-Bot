@@ -2,21 +2,18 @@
 	"token": "",
 	"devGuildId": "",
 	"clearCommandList": false,
-	"totalshards": 3,
+	"totalshards": 1,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
-	"botPerms": [
-		"SEND_MESSAGES",
-		"EMBED_LINKS",
-		"READ_MESSAGE_HISTORY"
-	],
-	"version": "3.2.5.1",
+	"version": "3.3.2",
 	"supportedLanguages": [
 		["en", "english", "english"],
+		["ru", "russian", "pусский"],
 		["uwu", "uwu", "uwu"]
 	],
 	"langlist": [
 		" - 🇬🇧 English (en)",
+		" - 🇷🇺 pусский (rn)",
 		" - 🥺 uwu (uwu)"
 	]
 }

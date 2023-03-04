@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os');
@@ -45,7 +45,7 @@ module.exports = {
 		}
 
 
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setColor('#04d384')
 			.setDescription(`
 🔎 **Status**
@@ -76,7 +76,7 @@ module.exports = {
 > **• Heap Usage** : ${formatBytes(process.memoryUsage().heapUsed)}
 			`)
 
-		const embed2 = new MessageEmbed()
+		const embed2 = new EmbedBuilder()
 			.setColor('#04d384')
 			.setFooter({
 				text: __("statusfooter", lang),

@@ -1,5 +1,3 @@
-const { Constants } = require('discord.js');
-
 module.exports = {
 	command: {
 		name: "mute",
@@ -7,20 +5,20 @@ module.exports = {
 		options: [
 			{
 				name: "user",
-				description: "Toggles preventing the bot from reacting to messages from your user",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				description: "Toggle prevents the bot from reacting to messages from you",
+				type: 1,
 				options: []
 			},
 			{
 				name: "channel",
-				description: "Toggles muting the bot in a channel",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				description: "Toggle muting the bot in a channel",
+				type: 1,
 				options: [
 					{
 						name: "channel",
 						description: "Channel to mute/unmute",
 						required: true,
-						type: Constants.ApplicationCommandOptionTypes.CHANNEL
+						type: 7
 					}
 				]
 			},

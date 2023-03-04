@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
      command: {
@@ -10,7 +10,7 @@ module.exports = {
      default: async (interaction, lang) => {
 		const { __ } = require("../bot.js");
 
-		const info = new MessageEmbed()
+		const info = new EmbedBuilder()
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("infoauthor", lang),
@@ -19,10 +19,12 @@ module.exports = {
 			.setTitle(__("infotitle", lang))
 			.setURL('https://spbot.ml')
 			.setThumbnail('https://spbot.ml/siround.png')
-			.addField(__("infof1", lang), __("infof1d", lang))
-			.addField(__("infof2", lang), __("infof2d", lang))
-			.addField(__("infof3", lang), __("infof3d", lang))
-			.addField(__("infof4", lang), __("infof4d", lang))
+			.addFields([
+				{ name: __("infof1", lang), value: __("infof1d", lang) },
+				{ name: __("infof2", lang), value: __("infof2d", lang) },
+				{ name: __("infof3", lang), value: __("infof3d", lang) },
+				{ name: __("infof4", lang), value: __("infof4d", lang) },
+			])
 			.setImage('https://spbot.ml/sc2.png')
 			.setFooter({
 				text: __("infofooter", lang),
