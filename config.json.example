@@ -5,12 +5,7 @@
 	"totalshards": 3,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_MINUTES": 15,
-	"botPerms": [
-		"SEND_MESSAGES",
-		"EMBED_LINKS",
-		"READ_MESSAGE_HISTORY"
-	],
-	"version": "3.2.5.1",
+	"version": "3.3.0",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["uwu", "uwu", "uwu"]

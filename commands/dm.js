@@ -1,4 +1,4 @@
-const { Constants, MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, EmbedBuilder } = require('discord.js');
 
 var DMTimeoutArray = [];
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
 				name: "user",
 				description: "The user to DM",
 				required: true,
-				type: Constants.ApplicationCommandOptionTypes.USER
+				type: 6
 			},
 		]
 	},
@@ -24,7 +24,7 @@ module.exports = {
 
 		const { options } = interaction;
 		
-		const dmembed = new MessageEmbed()
+		const dmembed = new EmbedBuilder()
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("dmauthor", lang),
@@ -34,14 +34,16 @@ module.exports = {
 			.setURL('https://spbot.ml/')
 			.setImage('https://www.spbot.ml/suicideicon.png')
 			.setDescription(`${__("dmdesc", lang)}\n\n${line[Math.round(Math.random() * (line.length - 1))]}`)
-			.addField(__("dmf1", lang), __("dmf1d", lang), false)
-			.addField(__("dmf2", lang), __("dmf2d", lang), true)
-			.addField(__("dmf3", lang), __("dmf3d", lang), true)
-			.addField(__("dmf4", lang), __("dmf4d", lang), true)
-			.addField(__("dmf5", lang), __("dmf5d", lang), true)
-			.addField(__("dmf6", lang), __("dmf6d", lang), true)
-			.addField(__("dmf7", lang), __("dmf7d", lang), true)
-			.addField(__("dmf8", lang), __("dmf8d", lang), false)
+			.addFields([
+				{ name: __("dmf1", lang), value: __("dmf1d", lang), inline: false },
+				{ name: __("dmf2", lang), value: __("dmf2d", lang), inline: true },
+				{ name: __("dmf3", lang), value: __("dmf3d", lang), inline: true },
+				{ name: __("dmf4", lang), value: __("dmf4d", lang), inline: true },
+				{ name: __("dmf5", lang), value: __("dmf5d", lang), inline: true },
+				{ name: __("dmf6", lang), value: __("dmf6d", lang), inline: true },
+				{ name: __("dmf7", lang), value: __("dmf7d", lang), inline: true },
+				{ name: __("dmf8", lang), value: __("dmf8d", lang), inline: false },
+			])
 			//__("Come talk to real people to help you through this Discord! [Click here.](https://discord.gg/sdY4jyY)", lang)
 
 			.setFooter({
@@ -50,14 +52,14 @@ module.exports = {
 			});
 
 			//Buttons
-			const row = new MessageActionRow()
+			const row = new ActionRowBuilder()
 				.addComponents(
-					new MessageButton()
+					new ButtonBuilder()
 						.setLabel("Want to remove access for users to send you a dm message? -->")
 						.setStyle(2)
 						.setCustomId("button1")
 						.setDisabled(true),
-					new MessageButton()
+					new ButtonBuilder()
 						.setLabel("Click me!")
 						.setStyle(1)
 						.setCustomId("button2")

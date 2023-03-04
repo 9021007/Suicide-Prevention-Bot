@@ -5,7 +5,7 @@
 	"infoauthor": "Suicide Prevention Bot Info",
 	"helptitle": "You requested help?",
 	"helpf1": "Commands - prefix is / [command here]",
-	"helpf1d": "help \nbot (alias: neofetch, v) \ninfo \ninvite \nmute \nping \ndm (user) \ndmmute \nset \nlang",
+	"helpf1d": "help \nbot \ninfo \ninvite \nmute \nping \ndm (user) \ndmmute \nset \nlang",
 	"mustadmin": "You must be an administrator of this server to change the language!",
 	"infotitle": "What is this bot?",
 	"infof1": "What do you respond to?",

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
      command: {
@@ -11,7 +11,7 @@ module.exports = {
 		const { langlist } = require('../config.json');
 		const { __ } = require("../bot.js");
    
-		const langs = new MessageEmbed()
+		const langs = new EmbedBuilder()
 			 .setColor('#04d384')
 			 .setTitle(__("langtitle", lang))
 			 .setThumbnail('https://spbot.ml/siround.png')
@@ -20,7 +20,9 @@ module.exports = {
 			 })
 			 .setDescription(langlist.join('\n'))
 			 .setURL('https://spbot.ml/')
-			 .addField(__("langf1", lang), __("langf1d", lang));
+			 .addFields([
+				{ name: __("langf1", lang), value: __("langf1d", lang) },
+			])
 		interaction.reply({ embeds: [langs] });
 	 }
 };

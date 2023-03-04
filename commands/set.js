@@ -1,5 +1,3 @@
-const { Constants } = require('discord.js');
-
 const languageChoices = () => {
 	const { supportedLanguages } = require('../config.json');
 	var languages = [];
@@ -21,7 +19,7 @@ module.exports = {
 				name: "language",
 				description: "The language to use",
 				required: true,
-				type: Constants.ApplicationCommandOptionTypes.STRING,
+				type: 3,
 				choices: languageChoices(),
 			}
 		]

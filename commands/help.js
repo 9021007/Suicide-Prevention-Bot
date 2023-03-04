@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	command: {
@@ -10,7 +10,7 @@ module.exports = {
 	default: async (interaction, lang) => {
 		const { __ } = require("../bot.js");
 
-		const help = new MessageEmbed()
+		const help = new EmbedBuilder()
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("helpauthor", lang),
@@ -18,9 +18,11 @@ module.exports = {
 			})
 			.setTitle(__("helptitle", lang))
 			.setURL('https://spbot.ml')
-			.addField(__("helpf1", lang), __("helpf1d", lang))
-			.addField(__("helpf2", lang), __("helpf2d", lang))
-			.addField(__("helpf3", lang), __("helpf3d", lang));
+			.addFields([
+				{ name: __("helpf1", lang), value: __("helpf1d", lang) },
+				{ name: __("helpf2", lang), value: __("helpf2d", lang) },
+				{ name: __("helpf3", lang), value: __("helpf3d", lang) },
+			])
 		interaction.reply({ embeds: [help] });
 	}
 };

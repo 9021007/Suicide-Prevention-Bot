@@ -48,9 +48,19 @@ process
 		console.error(err, 'Uncaught Exception caught');
 	});
 
-const { Client, Intents, Constants } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES], partials: ["CHANNEL"] });
-const { token, botPerms, devGuildId, clearCommandList } = require('./config.json');
+const { Client, GatewayIntentBits, PermissionsBitField, Partials } = require('discord.js');
+const client = new Client({ 
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildEmojisAndStickers,
+		GatewayIntentBits.DirectMessages
+	],
+	partials: [
+		Partials.Channel
+	] 
+});
+const { token, devGuildId, clearCommandList } = require('./config.json');
 
 var { activityResetTimeout_SECONDS } = require('./config.json');
 activityResetTimeout_SECONDS *= 1000;
@@ -144,7 +154,7 @@ client.once('ready', async () => {
 client.on('messageCreate', async message => {
 	lastMessage = message;
 	
-	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return; // Verify permissions of user who sent message before continuing.
+	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.EmbedLinks, PermissionsBitField.Flags.ReadMessageHistory)) return; // Verify permissions of user who sent message before continuing.
 
 	let lang = "en";
 	const server_language = lang_db.get(`lang_${message.guild.id}`);

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
 	command: {
@@ -19,7 +19,7 @@ module.exports = {
 			await interaction.editReply({
 				content: "\u200B",
 				embeds: [
-					new MessageEmbed()
+					new EmbedBuilder()
 						.setColor('#04d384')
 						.setTitle(__('pingtitle', lang))
 						.setDescription(__("pingdesc", lang, { ping: ping, latency: Math.round(api_ping) }))

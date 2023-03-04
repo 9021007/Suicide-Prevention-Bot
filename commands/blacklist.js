@@ -1,5 +1,3 @@
-const { Constants } = require('discord.js');
-
 module.exports = {
 	command: {
 		name: "blacklist",
@@ -8,33 +6,33 @@ module.exports = {
 			{
 				name: "add",
 				description: "Add a word to ignore",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				type: 1,
 				options: [
 					{
 						name: "word",
 						description: "Word to ignore",
 						required: true,
-						type: Constants.ApplicationCommandOptionTypes.STRING
+						type: 3
 					}
 				]
 			},
 			{
 				name: "remove",
 				description: "Remove a word to ignore",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				type: 1,
 				options: [
 					{
 						name: "word",
 						description: "Word to ignore",
 						required: true,
-						type: Constants.ApplicationCommandOptionTypes.STRING
+						type: 3
 					}
 				]
 			},
 			{
 				name: "list",
 				description: "See what words are a nono",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				type: 1,
 				options: []
 			}
 		]
