@@ -4,7 +4,7 @@
 	"clearCommandList": false,
 	"totalshards": 1,
 	"activityResetTimeout_SECONDS": 15,
-	"dmTimeout_MINUTES": 15,
+	"dmTimeout_HOURS": 24,
 	"version": "3.3.4",
 	"supportedLanguages": [
 		["en", "english", "english"],
