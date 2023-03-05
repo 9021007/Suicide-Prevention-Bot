@@ -5,7 +5,7 @@
 	"infoauthor": "Suicide Prevention Bot Info",
 	"helptitle": "You requested help?",
 	"helpf1": "Commands - prefix is / [command here]",
-	"helpf1d": "help \nbot (alias: neofetch, v) \ninfo \ninvite \nmute \nping \ndm (user) \ndmmute \nset \nlang",
+	"helpf1d": "blacklist (list/add/remove) (word) \ndm (user) \ndmmute \nhelp \nhug \ninfo \ninvite \nkiss \nlanguages (list/set) \nmute \nping \nprivacy \nstatus \ntos",
 	"mustadmin": "You must be an administrator of this server to change the language!",
 	"infotitle": "What is this bot?",
 	"infof1": "What do you respond to?",
@@ -77,5 +77,7 @@
 	"onlyadmin": "Only admins can use this",
 	"alrinblacklist": "This word is already in the blacklist",
 	"notinblacklist": "This word is not in the blacklist",
-	"dmdenied": "Unable to send DM. Error: Permission Denied (this user must have their DMs off)"
+	"dmdenied": "Unable to send DM. Error: Permission Denied (this user must have their DMs off)",
+	"errorblacklist": "No word was given, please type a word to edit the blacklist",
+	"errorlangset": "No language was given, please choose a supported language"
 }

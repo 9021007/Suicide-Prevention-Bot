@@ -1,26 +1,28 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-     command: {
+	command: {
 		name: "help",
 		description: "Displays a help page",
 		options: []
 	},
-     
-     default: async (interaction, lang) => {
+
+	default: async (interaction, lang) => {
 		const { __ } = require("../bot.js");
 
-		const help = new MessageEmbed()
+		const help = new EmbedBuilder()
 			.setColor('#04d384')
 			.setAuthor({
-				name: __("Suicide Prevention Bot Info", lang),
+				name: __("helpauthor", lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			})
-			.setTitle(__("You requested help?", lang))
+			.setTitle(__("helptitle", lang))
 			.setURL('https://spbot.ml')
-			.addField(__("Commands - prefix is / [command here]", lang), "help\n bot (alias: neofetch, v)\n info\n invite\n mute\n ping\n dm (user)\n dmmute\n set\n lang\n")
-			.addField(__("Links", lang), __("[Website](https://spbot.ml/)\n [Discord Invite](https://discord.com/invite/YHvfUqVgWS)\n [GitHub](https://github.com/Bobrobot1/Suicide-Prevention-Bot)\n [Status Page](https://spbot.freshstatus.io/)\n", lang))
-			.addField(__("Need more help? Found a bug?", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang));
+			.addFields([
+				{ name: __("helpf1", lang), value: __("helpf1d", lang) },
+				{ name: __("helpf2", lang), value: __("helpf2d", lang) },
+				{ name: __("helpf3", lang), value: __("helpf3d", lang) },
+			])
 		interaction.reply({ embeds: [help] });
-}
+	}
 };

@@ -48,9 +48,19 @@ process
 		console.error(err, 'Uncaught Exception caught');
 	});
 
-const { Client, Intents, Constants } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.DIRECT_MESSAGES], partials: ["CHANNEL"] });
-const { token, botPerms, devGuildId } = require('./config.json');
+const { Client, GatewayIntentBits, PermissionsBitField, Partials } = require('discord.js');
+const client = new Client({ 
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildEmojisAndStickers,
+		GatewayIntentBits.DirectMessages
+	],
+	partials: [
+		Partials.Channel
+	] 
+});
+const { token, devGuildId, clearCommandList } = require('./config.json');
 
 var { activityResetTimeout_SECONDS } = require('./config.json');
 activityResetTimeout_SECONDS *= 1000;
@@ -97,7 +107,9 @@ const __ = (string, lang, options = undefined) => {
 
 // Setup bot ready callback
 client.once('ready', async () => {
-	console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}! ＼(￣▽￣)／`)); // Console log for verbosity
+	if(!clearCommandList == true){
+		console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}! ＼(￣▽￣)／`)); // Console log for verbosity
+	}
 	client.user.setActivity(
 		"chat for suicide.", {
 		type: 'LISTENING'
@@ -114,11 +126,25 @@ client.once('ready', async () => {
 	// Get dev guild ID for slash commands, comment to use global slash commands
 	const devGuild = client.guilds.cache.get(devGuildId);
 	if (typeof devGuild == "undefined") {
-		client.application.commands.set(commands);
-		console.log(gradient.rainbow("[+] Set global commands"));
+		if(clearCommandList == true) {
+			await client.application.commands.set([]);
+			await devGuild.commands.set([]);
+			console.log(gradient.rainbow("[+] Cleared commands (helps remove old commands or duplicates)"));
+			console.log("\x1B[31mPlease set \"clearCommandList\" in config.json to false to run the bot normally!\x1b[37m");
+		} else {
+			await client.application.commands.set(commands);
+			console.log(gradient.rainbow("[+] Set global commands"));
+		}
 	} else {
-		devGuild.commands.set(commands);
-		console.log(gradient.rainbow("[+] Set guild commands"));
+		if(clearCommandList == true) {
+			await client.application.commands.set([]);
+			await devGuild.commands.set([]);
+			console.log(gradient.rainbow("[+] Cleared commands (helps remove old commands or duplicates)"));
+			console.log("\x1B[31mPlease set \"clearCommandList\" in config.json to false to run the bot normally!\x1b[37m");
+		} else {
+			await devGuild.commands.set(commands);
+			console.log(gradient.rainbow("[+] Set guild/local commands"));
+		}
 	}
 });
 
@@ -128,7 +154,7 @@ client.once('ready', async () => {
 client.on('messageCreate', async message => {
 	lastMessage = message;
 	
-	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(botPerms)) return; // Verify permissions of user who sent message before continuing.
+	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.EmbedLinks, PermissionsBitField.Flags.ReadMessageHistory)) return; // Verify permissions of user who sent message before continuing.
 
 	let lang = "en";
 	const server_language = lang_db.get(`lang_${message.guild.id}`);
@@ -137,7 +163,7 @@ client.on('messageCreate', async message => {
 	let LCM = message.content.toLowerCase(); //Lower case message text
 
 	// Mention bot will activate alert message without triggers
-	if (message.mentions.users.first() === client.user)
+	if (message.mentions.users.first() === client.user && message.reference == null)
 	return require('./events/bot-mentioned')(message, lang, LCM);
 
 	//Check to see if you muted the bot (User side only)
@@ -152,7 +178,7 @@ client.on('messageCreate', async message => {
 
 
 /**
- * Slash Commands && Buttons
+ * Slash Commands
  */
 client.on("interactionCreate", async (interaction) => {
 	//Slash Commands
@@ -162,58 +188,28 @@ client.on("interactionCreate", async (interaction) => {
 		if (typeof server_language === 'string') lang = server_language;
 
 		const { commandName, options } = interaction;
-		switch (commandName) {
-			case "dm":
-				return require('./commands/dm').default(interaction, lang);
-			case "ping":
-				return require('./commands/ping').default(interaction, lang);
-			case "status":
-				return require('./commands/status').default(interaction, lang);
-			case "dmmute":
-				return require("./commands/dmmute").default(interaction, lang);
-			case "invite":
-				return require("./commands/invite").default(interaction, lang);
-			case "info":
-				return require("./commands/info").default(interaction, lang);
-			case "help":
-				return require("./commands/help").default(interaction, lang);
-			case "language":
-				return require("./commands/set").default(interaction, lang);
-			case "languages":
-				return require("./commands/lang").default(interaction, lang);
-			case "mute":
-				return require("./commands/mute").default(interaction, lang);
-			case "blacklist":
-				return require("./commands/blacklist").default(interaction, lang);
-			case "tos":
-				return require("./commands/tos").default(interaction, lang);
-			case "privacy":
-				return require("./commands/privacy").default(interaction, lang);
-		}
-	} else if (interaction.isButton()) {
-		//Buttons
+		return require(`./commands/${commandName}`).default(interaction, lang);
+	}
+
+	//Buttons
+	if (interaction.isButton()) {
 		if (interaction.customId.includes('button2')) {
 				user_mutes_db.set(`dmmute_${interaction.user.id}`, true);
 				await interaction.reply({ content: "👍" });
 		}
 	}
-
-
-
-	//Buttons
-
 });
 
 client.login(token); //Client login
 
 module.exports = {
-	client: client,
-	user_mutes_db: user_mutes_db,
-	blacklist_db: blacklist_db,
-	triggers_db: triggers_db,
-	channel_mutes_db: channel_mutes_db,
-	lang_db: lang_db,
-	__: __
+  client: client,
+  user_mutes_db: user_mutes_db,
+  blacklist_db: blacklist_db,
+  triggers_db: triggers_db,
+  channel_mutes_db: channel_mutes_db,
+  lang_db: lang_db,
+  __: __
 };
 
 /* JOIN US on our Discord: https://discord.gg/YHvfUqVgWS.
@@ -221,12 +217,11 @@ module.exports = {
 Bot developers:
 
   Bobrobot1#1408
-  CactusKing101#2624
-  Killerjet101#7638
+  CatusKing#2624
+  Jet#2471
   pengu#1111
   HAHALOSAH#4627
   Parotay | Luke#3210
-  CPlusPatch#9373
 
 Message from developers:
 

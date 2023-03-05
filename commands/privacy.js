@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	command: {
@@ -10,12 +10,12 @@ module.exports = {
 	default: async (interaction, lang) => {
 		const { __ } = require('../bot.js');
 
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setColor('#04d384')
-			.setTitle(__('Privacy Policy', lang))
+			.setTitle(__('pptitle', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
 			.setURL('https://spbot.ml/')
-			.setDescription(__('See our privacy policy at https://spbot.ml/privacy.txt', lang));
+			.setDescription(__('ppdesc', lang));
 		interaction.reply({ embeds: [embed] });
 	}
 }

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os');
@@ -36,48 +36,56 @@ module.exports = {
 
 
 		promises.forEach((value) => {
-			finale += `\`Shard ${value[0].toLocaleString()}:\` \n Servers: **${value[1].toLocaleString()}** | Users: **${value[2].toLocaleString()}** | Channels: **${value[3].toLocaleString()}** | Uptime: **${moment.duration(value[4]).format(" D [days], H [hrs], m [mins], s [secs]")}** | Memory Usage: **${formatBytes(value[5])}** \n\n`;
+			finale += `\`Shard ${value[0].toLocaleString()}:\` \nServers: **${value[1].toLocaleString()}** | Uptime: **${moment.duration(value[4]).humanize()}** | Memory Usage: **${formatBytes(value[5])}** \n\n`;
 		});
+		
+		var cpuspeed = ""
+		if (os.cpus()[0].speed != 0) { //If it can't pull cpu speed (Some cloud servers don't allow access) then set speed to " "
+			cpuspeed = "\n> **• Speed** : " + os.cpus()[0].speed + " MHz"
+		}
 
-		const embed = new MessageEmbed()
+
+		const embed = new EmbedBuilder()
 			.setColor('#04d384')
 			.setDescription(`
-				🔎 **Status**
-				**= CLIENT =**
-				**• Username** : ${client.user.username}
-				**• Tag** : ${client.user.discriminator}
-				**• ID** : ${client.user.id}
-				\u200b
-				**= STATISTICS =**
-				**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0).toLocaleString()}
-				**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0).toLocaleString()}
-				**• Discord.js** : v${djsversion}
-				**• Node.js** : ${process.version}
-				**• ${logoemoji}** : v${version}
-				\u200b
-				**= SYSTEM =**
-				**• ${hddemoji}** : ${os.platform()} | ${os.release()}
-				**• ${pcemoji}** : ${moment.duration(interaction.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}
-				**• ${cpuemoji}** :
-				> **• Model** : ${os.cpus()[0].model} 
-				> **• Speed** : ${os.cpus()[0].speed} MHz
-				**•** ${ramemoji} :
-				> **• Total Memory** : ${formatBytes(os.totalmem())}
-				> **• Free Memory** : ${formatBytes(os.freemem())}
-				> **• Heap Total** : ${formatBytes(process.memoryUsage().heapTotal)}
-				> **• Heap Usage** : ${formatBytes(process.memoryUsage().heapUsed)}
+🔎 **Status**
+**== CLIENT ==**
+**• Username** : ${client.user.username}
+**• Tag** : ${client.user.discriminator}
+**• ID** : ${client.user.id}
+\u200b
+**== STATISTICS ==**
+**• Total Servers** : ${servers.reduce((acc, guildCount) => acc + guildCount, 0).toLocaleString()}
+**• Total Users** : ${users.reduce((acc, memberCount) => acc + memberCount, 0).toLocaleString()}
+
+**• Discord.js** : v${djsversion}
+**• Node.js** : ${process.version}
+**• ${logoemoji}** : v${version}
+\u200b
+**== SYSTEM ==**
+**• ${hddemoji}** : ${os.platform()} | ${os.release()}
+**• ${pcemoji}** : ${moment.duration(interaction.client.uptime).format(" Y [years], M [months], D [days], H [hrs], m [mins], s [secs] ")}
+**• ${cpuemoji}** :
+> **• Model** : ${os.cpus()[0].model}${cpuspeed}
+> **• Cores** : ${os.cpus().length}
+**•** ${ramemoji} :
+> **• Memory Total** : ${formatBytes(os.totalmem())}
+> **• Memory Usage** : ${formatBytes(os.totalmem()-os.freemem())}
+> **• Memory Free** : ${formatBytes(os.freemem())}
+> **• Heap Total** : ${formatBytes(process.memoryUsage().heapTotal)}
+> **• Heap Usage** : ${formatBytes(process.memoryUsage().heapUsed)}
 			`)
 
-		const embed2 = new MessageEmbed()
+		const embed2 = new EmbedBuilder()
 			.setColor('#04d384')
 			.setFooter({
-				text: __("Does not update after you send the command. Send again to see updated info.", lang),
+				text: __("statusfooter", lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setTimestamp()
 			.setDescription(`
-				**= SHARDS =**
-				${finale}
+**== SHARDS ==**
+${finale}
 			`)
 
 		function formatBytes(a, b) {

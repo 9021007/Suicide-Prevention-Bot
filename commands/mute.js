@@ -1,5 +1,3 @@
-const { Constants } = require('discord.js');
-
 module.exports = {
 	command: {
 		name: "mute",
@@ -7,20 +5,20 @@ module.exports = {
 		options: [
 			{
 				name: "user",
-				description: "Toggles preventing the bot from reacting to messages from your user",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				description: "Toggle prevents the bot from reacting to messages from you",
+				type: 1,
 				options: []
 			},
 			{
 				name: "channel",
-				description: "Toggles muting the bot in a channel",
-				type: Constants.ApplicationCommandOptionTypes.SUB_COMMAND,
+				description: "Toggle muting the bot in a channel",
+				type: 1,
 				options: [
 					{
 						name: "channel",
 						description: "Channel to mute/unmute",
 						required: true,
-						type: Constants.ApplicationCommandOptionTypes.CHANNEL
+						type: 7
 					}
 				]
 			},
@@ -37,10 +35,10 @@ module.exports = {
 
 				if (db.get(`mute_${interaction.user.id}`)) {
 					db.delete(`mute_${interaction.user.id}`);
-					interaction.reply({ content: __("Removed from ignore list.", lang), ephemeral: true });
+					interaction.reply({ content: __("rmignorelist", lang), ephemeral: true });
 				} else {
 					db.set(`mute_${interaction.user.id}`, true);
-					interaction.reply({ content: __("I will now ignore keywords you say in chat.", lang), ephemeral: true });
+					interaction.reply({ content: __("addignorelist", lang), ephemeral: true });
 				}
 				break;
 			}
@@ -52,10 +50,10 @@ module.exports = {
 				
 				if (db.get(`mute_${interaction.channel.id}`)) {
 					db.delete(`mute_${interaction.channel.id}`);
-					return interaction.reply({ content: __("Channel has been unmuted", lang) });
+					return interaction.reply({ content: __("chanunmute", lang) });
 				} else {
 					db.set(`mute_${interaction.channel.id}`, true);
-					return interaction.reply({ content: __("Channel has been muted", lang) });
+					return interaction.reply({ content: __("chanmute", lang) });
 				}
 			}
 		}

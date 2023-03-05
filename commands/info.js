@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
      command: {
@@ -10,22 +10,24 @@ module.exports = {
      default: async (interaction, lang) => {
 		const { __ } = require("../bot.js");
 
-		const info = new MessageEmbed()
+		const info = new EmbedBuilder()
 			.setColor('#04d384')
 			.setAuthor({
-				name: __("Suicide Prevention Bot Info", lang),
+				name: __("infoauthor", lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			})
-			.setTitle(__("What is this bot?", lang))
+			.setTitle(__("infotitle", lang))
 			.setURL('https://spbot.ml')
 			.setThumbnail('https://spbot.ml/siround.png')
-			.addField(__("What do you respond to?", lang), __("I look for key words related to suicide, as well as commands like /help, /invite, and /ping.", lang))
-			.addField(__("How do I add you to my server?", lang), __("Go to https://spbot.ml/ and click on Invite Bot.", lang))
-			.addField(__("Are you anonymous?", lang), __("Yes. I am, and have always been, 100% anonmyous. I'm open source as well.", lang))
-			.addField(__("I have a bug report or feature request.", lang), __("[Join the discord!](https://discord.com/invite/YHvfUqVgWS)", lang))
+			.addFields([
+				{ name: __("infof1", lang), value: __("infof1d", lang) },
+				{ name: __("infof2", lang), value: __("infof2d", lang) },
+				{ name: __("infof3", lang), value: __("infof3d", lang) },
+				{ name: __("infof4", lang), value: __("infof4d", lang) },
+			])
 			.setImage('https://spbot.ml/sc2.png')
 			.setFooter({
-				text: __("Created by the SPBot dev team :) · https://spbot.ml · /mute to have the bot ignore your messages", lang),
+				text: __("infofooter", lang),
 				iconURL: 'https://spbot.ml/siround.png'
 			});
 		interaction.reply({ embeds: [info] });
