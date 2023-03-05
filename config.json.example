@@ -5,7 +5,7 @@
 	"totalshards": 1,
 	"activityResetTimeout_SECONDS": 15,
 	"dmTimeout_HOURS": 24,
-	"version": "3.3.4",
+	"version": "3.3.5",
 	"supportedLanguages": [
 		["en", "english", "english"],
 		["sp","spanish", "espanol"],
