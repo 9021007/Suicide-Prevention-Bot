@@ -49,16 +49,17 @@ process
 	});
 
 const { Client, GatewayIntentBits, PermissionsBitField, Partials } = require('discord.js');
-const client = new Client({ 
+const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMessages,
 		GatewayIntentBits.GuildEmojisAndStickers,
-		GatewayIntentBits.DirectMessages
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.MessageContent
 	],
 	partials: [
 		Partials.Channel
-	] 
+	]
 });
 const { token, devGuildId, clearCommandList } = require('./config.json');
 
@@ -70,7 +71,7 @@ const gradient = require('gradient-string');
 
 // Initialize databases
 const user_mutes_db = new Database({
-  path: './database/user_mutes.json'
+	path: './database/user_mutes.json'
 });
 const blacklist_db = new Database({
 	path: './database/blacklist.json'
@@ -83,6 +84,17 @@ const channel_mutes_db = new Database({
 });
 const lang_db = new Database({
 	path: './database/lang.json'
+});
+
+const mysql = require("mysql2/promise");
+const config = require("./config.json");
+(async() => {
+
+const db = await mysql.createConnection({
+	host: config.db_host,
+	user: config.db_user,
+	password: config.db_pass,
+	database: 'spbot'
 });
 
 const languageChoices = () => {
@@ -107,7 +119,7 @@ const __ = (string, lang, options = undefined) => {
 
 // Setup bot ready callback
 client.once('ready', async () => {
-	if(!clearCommandList == true){
+	if (!clearCommandList == true) {
 		console.log(gradient.rainbow(`[+] Logged in as ${client.user.tag}! ＼(￣▽￣)／`)); // Console log for verbosity
 	}
 	client.user.setActivity(
@@ -126,7 +138,7 @@ client.once('ready', async () => {
 	// Get dev guild ID for slash commands, comment to use global slash commands
 	const devGuild = client.guilds.cache.get(devGuildId);
 	if (typeof devGuild == "undefined") {
-		if(clearCommandList == true) {
+		if (clearCommandList == true) {
 			await client.application.commands.set([]);
 			await devGuild.commands.set([]);
 			console.log(gradient.rainbow("[+] Cleared commands (helps remove old commands or duplicates)"));
@@ -136,7 +148,7 @@ client.once('ready', async () => {
 			console.log(gradient.rainbow("[+] Set global commands"));
 		}
 	} else {
-		if(clearCommandList == true) {
+		if (clearCommandList == true) {
 			await client.application.commands.set([]);
 			await devGuild.commands.set([]);
 			console.log(gradient.rainbow("[+] Cleared commands (helps remove old commands or duplicates)"));
@@ -152,8 +164,9 @@ client.once('ready', async () => {
 * Commands
 */
 client.on('messageCreate', async message => {
+	console.log(message.content);
 	lastMessage = message;
-	
+
 	if (message.author.bot || message.channel.type === 'DM' || !message.channel.permissionsFor(client.user).has(PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.EmbedLinks, PermissionsBitField.Flags.ReadMessageHistory)) return; // Verify permissions of user who sent message before continuing.
 
 	let lang = "en";
@@ -164,10 +177,10 @@ client.on('messageCreate', async message => {
 
 	// Mention bot will activate alert message without triggers
 	if (message.mentions.users.first() === client.user && message.reference == null)
-	return require('./events/bot-mentioned')(message, lang, LCM);
+		return require('./events/bot-mentioned')(message, lang, LCM);
 
 	//Check to see if you muted the bot (User side only)
-	if (!require("./commands/mute").checkIfMuted(message) && !require("./commands/blacklist.js").checkIfIgnored(message)) 
+	if (!await require("./commands/mute").checkIfMuted(message, db) && !require("./commands/blacklist.js").checkIfIgnored(message))
 		require('./events/every-unmuted-message')(message, lang, LCM);
 
 	// Ask to add slash commands if the old prefix is used
@@ -194,8 +207,8 @@ client.on("interactionCreate", async (interaction) => {
 	//Buttons
 	if (interaction.isButton()) {
 		if (interaction.customId.includes('button2')) {
-				user_mutes_db.set(`dmmute_${interaction.user.id}`, true);
-				await interaction.reply({ content: "👍" });
+			user_mutes_db.set(`dmmute_${interaction.user.id}`, true);
+			await interaction.reply({ content: "👍" });
 		}
 	}
 });
@@ -203,13 +216,13 @@ client.on("interactionCreate", async (interaction) => {
 client.login(token); //Client login
 
 module.exports = {
-  client: client,
-  user_mutes_db: user_mutes_db,
-  blacklist_db: blacklist_db,
-  triggers_db: triggers_db,
-  channel_mutes_db: channel_mutes_db,
-  lang_db: lang_db,
-  __: __
+	client: client,
+	user_mutes_db: user_mutes_db,
+	blacklist_db: blacklist_db,
+	triggers_db: triggers_db,
+	channel_mutes_db: channel_mutes_db,
+	lang_db: lang_db,
+	__: __
 };
 
 /* JOIN US on our Discord: https://discord.gg/YHvfUqVgWS.
@@ -228,39 +241,40 @@ Message from developers:
   There is always hope, and even if the world seems dark right now, I know that anyone can make it through this.
 
 
-                .=%+.
-              .....=%%*=:.
-            .........--=+*#*-
-           ................:+#+
-         .....................=%+.
-        ........................=%*.
-      ............................=%*.
-     ...............................=%*:       ::      .===.
-    ..................................=%#-  +#*=+##- :##-:-+#-
+				.=%+.
+			  .....=%%*=:.
+			.........--=+*#*-
+		   ................:+#+
+		 .....................=%+.
+		........................=%*.
+	  ............................=%*.
+	 ...............................=%*:       ::      .===.
+	..................................=%#-  +#*=+##- :##-:-+#-
    -:.................................:+%%%@@-....-#@@@:....:+%=
    %%=.........:-....................*@#+=+%@*:.....-#@#-.....:+%=
-    *@=........+@#:.................=@#.....=%@+:.....-#@#-.....:+%+
-     @%:........-%%-................:%@=......=%@+:.....-#@#-.....:+%+
-     #@:.........-@%:.........::.....:#@%=......=%@+:.....-#@#-.....:+%+.
-     +@:..........*@+.........*@*:.:+%@%%@%=......=%@+:.....-#@#-.....:+@+.
-     =@-..........=@*..........=#@*#@+...:*@%=......=%@+:.....-#%:......:+@+.
-     .@=..........#@=....==......=*@@-.....:*@%=......=%@+:...............:+@+
-      *@-........+@*.....+@%=......=%@*:.....:*@%=......=%@+................:+%+
-       *@*:.....:#@#-.....:+@%=......=%@*:.....:*@%=......=+:.................:+%+
-        :#@+:.....-#@#-.....:+@%=......=%@*:.....:*@%=..........................:+%:
-          :#@+:.....-#@#-.....:+@%=......=%@*:.....:*@+...........................-@:
-            :#@+:.....-#@#-.....:+@%=......=%@*:...................................##
-              :#@+:.....-%@#-.....:+@%=......#@@*:.................................#@:
-                :%@+:....-@@@#-.....:+@%=:.:+@+:+@*:...............................:*@+:
-                  -#@+:..+@=.+@#-.....#@%@%%*:    +@*:...............................:*=
-                    :*@*#@-    +@#=--*@+           .*@*:..............................
-                      .-=        -+#+-               :#@*:............................
-                                        :*@%######****#@%@*:.........................
-                                       *@+:.....:-====-..-#@*:......................
-                                       *%+=:...............-##:...................
-                                        .=*#%%*+=:...............................
-                                             .:=*#%%*+-:........................
-                                                   .:=*#%#*++++**##%*:........
-                                                          :--=--::::+@*:....
-                                                                      +%*.
+	*@=........+@#:.................=@#.....=%@+:.....-#@#-.....:+%+
+	 @%:........-%%-................:%@=......=%@+:.....-#@#-.....:+%+
+	 #@:.........-@%:.........::.....:#@%=......=%@+:.....-#@#-.....:+%+.
+	 +@:..........*@+.........*@*:.:+%@%%@%=......=%@+:.....-#@#-.....:+@+.
+	 =@-..........=@*..........=#@*#@+...:*@%=......=%@+:.....-#%:......:+@+.
+	 .@=..........#@=....==......=*@@-.....:*@%=......=%@+:...............:+@+
+	  *@-........+@*.....+@%=......=%@*:.....:*@%=......=%@+................:+%+
+	   *@*:.....:#@#-.....:+@%=......=%@*:.....:*@%=......=+:.................:+%+
+		:#@+:.....-#@#-.....:+@%=......=%@*:.....:*@%=..........................:+%:
+		  :#@+:.....-#@#-.....:+@%=......=%@*:.....:*@+...........................-@:
+			:#@+:.....-#@#-.....:+@%=......=%@*:...................................##
+			  :#@+:.....-%@#-.....:+@%=......#@@*:.................................#@:
+				:%@+:....-@@@#-.....:+@%=:.:+@+:+@*:...............................:*@+:
+				  -#@+:..+@=.+@#-.....#@%@%%*:    +@*:...............................:*=
+					:*@*#@-    +@#=--*@+           .*@*:..............................
+					  .-=        -+#+-               :#@*:............................
+										:*@%######****#@%@*:.........................
+									   *@+:.....:-====-..-#@*:......................
+									   *%+=:...............-##:...................
+										.=*#%%*+=:...............................
+											 .:=*#%%*+-:........................
+												   .:=*#%#*++++**##%*:........
+														  :--=--::::+@*:....
+																	  +%*.
 */
+})();

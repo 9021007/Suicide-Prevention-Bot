@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
+const config = require('../config.json');
 
 module.exports = {
 	command: {
@@ -14,10 +15,10 @@ module.exports = {
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("helpauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: `https://${config.domain}/siround.png`
 			})
 			.setTitle(__("helptitle", lang))
-			.setURL('https://spbot.ml')
+			.setURL(`https://${config.domain}`)
 			.addFields([
 				{ name: __("helpf1", lang), value: __("helpf1d", lang) },
 				{ name: __("helpf2", lang), value: __("helpf2d", lang) },

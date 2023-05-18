@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
+const config = require('../config.json');
 
 const languageChoices = () => {
 	const { supportedLanguages } = require('../config.json');
@@ -53,12 +54,12 @@ module.exports = {
 			const langs = new EmbedBuilder()
 				.setColor('#04d384')
 				.setTitle(__("langtitle", lang))
-				.setThumbnail('https://spbot.ml/siround.png')
+				.setThumbnail(`https://${config.domain}/siround.png`)
 				.setAuthor({
 					name: __("langauthor", lang)
 				})
 				.setDescription(langlist.join('\n'))
-				.setURL('https://spbot.ml/')
+				.setURL(`https://${config.domain}`)
 				.addFields([
 					{ name: __("langf1", lang), value: __("langf1d", lang) },
 				])

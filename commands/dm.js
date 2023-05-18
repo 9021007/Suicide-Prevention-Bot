@@ -1,5 +1,7 @@
 const { ActionRowBuilder, ButtonBuilder, EmbedBuilder } = require('discord.js');
 
+const config = require('../config.json');
+
 var DMTimeoutArray = [];
 module.exports = {
 	command: {
@@ -28,11 +30,11 @@ module.exports = {
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("dmauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: `https://${config.domain}/siround.png`
 			})
 			.setTitle(__("dmtitle", lang))
-			.setURL('https://spbot.ml/')
-			.setImage('https://www.spbot.ml/suicideicon.png')
+			.setURL(`https://${config.domain}`)
+			.setImage(`https://${config.domain}/suicideicon.png`)
 			.setDescription(`${__("dmdesc", lang)}\n\n${line[Math.round(Math.random() * (line.length - 1))]}`)
 			.addFields([
 				{ name: __("dmf1", lang), value: __("dmf1d", lang), inline: false },
@@ -48,7 +50,7 @@ module.exports = {
 
 			.setFooter({
 				text: __('dmfooter', lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: `https://${config.domain}/siround.png`
 			});
 
 			//Buttons
@@ -75,7 +77,7 @@ module.exports = {
 			setTimeout(() => {
 				const index = DMTimeoutArray.findIndex(item => item == user.id);
 				DMTimeoutArray = DMTimeoutArray.splice(index);
-			}, dmTimeout_MINUTES);
+			}, config.dmTimeout_HOURS * 60 * 60 * 1000);
 
 
 			user.send({ embeds: [dmembed], components: [row] }).then(() => {

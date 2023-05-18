@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
+const config = require('../config.json');
 
 module.exports = {
 	command: {
@@ -13,8 +14,8 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setColor('#04d384')
 			.setTitle(__('tostitle', lang))
-			.setThumbnail('https://spbot.ml/siround.png')
-			.setURL('https://spbot.ml/')
+			.setThumbnail(`https://${config.domain}/siround.png`)
+			.setURL(`https://${config.domain}`)
 			.setDescription(__('tosdesc', lang));
 		interaction.reply({ embeds: [embed] });
 	}

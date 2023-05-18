@@ -25,9 +25,8 @@ module.exports = {
 		]
 	},
 
-	default: async (interaction, lang) => {
+	default: async (interaction, lang, db) => {
 		const { options } = interaction;
-		const { channel_mutes_db: db, __ } = require('../bot.js');
 
 		switch (options.getSubcommand()) {
 			case "user": {
@@ -59,8 +58,7 @@ module.exports = {
 		}
 	},
 
-	checkIfMuted: (message) => {
-		const { user_mutes_db, channel_mutes_db } = require('../bot.js');
-		return user_mutes_db.get(`mute_${message.author.id}`) != null || channel_mutes_db.get(`mute_${message.channel.id}`) != null;
+	checkIfMuted: async (message, db) => {
+		return (await db.execute('SELECT * FROM `user_mutes` WHERE `user_id` = ?', [message.author.id]))[0].length > 0 || (await db.execute('SELECT * FROM `channel_mutes` WHERE `channel_id` = ?', [message.channel.id]))[0].length > 0;
 	}
 };

@@ -2,6 +2,7 @@ const { EmbedBuilder } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os');
+const config = require('../config.json');
 
 module.exports = {
 	command: {
@@ -80,7 +81,7 @@ module.exports = {
 			.setColor('#04d384')
 			.setFooter({
 				text: __("statusfooter", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: `https://${config.domain}/siround.png`
 			})
 			.setTimestamp()
 			.setDescription(`
