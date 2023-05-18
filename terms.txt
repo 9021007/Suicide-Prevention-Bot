@@ -1,5 +1,5 @@
 Terms and Conditions
-Last updated: March 22, 2021
+Last updated: May 17, 2023
 
 Please read these terms and conditions carefully before using Our Service.
 
@@ -22,7 +22,7 @@ Service refers to the Website.
 
 Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-Website refers to Suicide Prevention Bot, accessible from https://spbot.ml
+Website refers to Suicide Prevention Bot, accessible from https://spbot.9021007.xyz
 
 You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
@@ -93,4 +93,4 @@ By continuing to access or use Our Service after those revisions become effectiv
 Contact Us
 If you have any questions about these Terms and Conditions, You can contact us:
 
-By email: bobrobot@zoho.com
+By email: spbot@9021007.xyz
