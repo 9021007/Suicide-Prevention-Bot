@@ -14,7 +14,7 @@ module.exports = {
 			.setColor('#04d384')
 			.setTitle(__('tostitle', lang))
 			.setThumbnail('https://spbot.ml/siround.png')
-			.setURL('https://spbot.ml/')
+			.setURL('https://spbot.9021007/terms.html')
 			.setDescription(__('tosdesc', lang));
 		interaction.reply({ embeds: [embed] });
 	}
