@@ -17,7 +17,7 @@ module.exports = {
 				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setTitle(__("helptitle", lang))
-			.setURL('https://spbot.ml')
+			.setURL('https://spbot.9021007.xyz')
 			.addFields([
 				{ name: __("helpf1", lang), value: __("helpf1d", lang) },
 				{ name: __("helpf2", lang), value: __("helpf2d", lang) },

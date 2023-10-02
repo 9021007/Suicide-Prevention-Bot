@@ -101,13 +101,13 @@ case "greeting":
  - [ ] Add more supported languages
  - [ ] Tweak the suicide keyword detection algorithm to make it perform better (less false positives)
 ## Links
-[Website](https://spbot.ml)
+[Website](https://spbot.9021007.xyz)
 
 [Status Website](https://spbot.freshstatus.io)
 
-[Terms of Service](https://spbot.ml/terms.txt)
+[Terms of Service](https://spbot.9021007.xyz/terms.html)
 
-[Privacy Policy](https://spbot.ml/privacy.txt)
+[Privacy Policy](https://spbot.9021007.xyz/policy.html)
 
 ## Socials
 [Discord](https://discord.com/invite/YHvfUqVgWS)

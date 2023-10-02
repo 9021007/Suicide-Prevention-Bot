@@ -17,7 +17,7 @@ module.exports = {
 				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setTitle(__("infotitle", lang))
-			.setURL('https://spbot.ml')
+			.setURL('https://spbot.9021007.xyz')
 			.setThumbnail('https://spbot.ml/siround.png')
 			.addFields([
 				{ name: __("infof1", lang), value: __("infof1d", lang) },

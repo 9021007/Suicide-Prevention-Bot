@@ -31,7 +31,7 @@ module.exports = {
 				iconURL: 'https://spbot.ml/siround.png'
 			})
 			.setTitle(__("dmtitle", lang))
-			.setURL('https://spbot.ml/')
+			.setURL('https://spbot.9021007.xyz')
 			.setImage('https://www.spbot.ml/suicideicon.png')
 			.setDescription(`${__("dmdesc", lang)}\n\n${line[Math.round(Math.random() * (line.length - 1))]}`)
 			.addFields([
