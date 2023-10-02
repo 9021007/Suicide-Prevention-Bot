@@ -13,7 +13,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setColor('#04d384')
 			.setTitle(__('pptitle', lang))
-			.setThumbnail('https://spbot.ml/siround.png')
+			.setThumbnail('https://spbot.9021007.xyz/siround.png')
 			.setURL('https://spbot.9021007.xyz/policy.html')
 			.setDescription(__('ppdesc', lang));
 		interaction.reply({ embeds: [embed] });

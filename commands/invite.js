@@ -13,7 +13,7 @@ module.exports = {
 		const invite = new EmbedBuilder()
 			.setColor('#04d384')
 			.setTitle(__("invitetitle", lang))
-			.setThumbnail('https://spbot.ml/siround.png')
+			.setThumbnail('https://spbot.9021007.xyz/siround.png')
 			.setURL('https://spbot.9021007.xyz')
 			.setDescription(__("invitedesc", lang));
 		interaction.reply({ embeds: [invite] });

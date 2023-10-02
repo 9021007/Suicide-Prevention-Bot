@@ -14,7 +14,7 @@ module.exports = {
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("helpauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			})
 			.setTitle(__("helptitle", lang))
 			.setURL('https://spbot.9021007.xyz')

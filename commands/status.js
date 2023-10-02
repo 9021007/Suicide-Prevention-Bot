@@ -80,7 +80,7 @@ module.exports = {
 			.setColor('#04d384')
 			.setFooter({
 				text: __("statusfooter", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			})
 			.setTimestamp()
 			.setDescription(`

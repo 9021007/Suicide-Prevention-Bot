@@ -35,7 +35,7 @@ module.exports = async (message, lang, LCM) => {
 			.setTitle(__("botmentionedauthor", lang))
 			.setAuthor({
 				name: __("triggerauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			})
 			.setTitle(`${__("dmf1", lang)} ${__("dmauthor", lang)}`)
 			.setDescription(`${line[Math.round(Math.random() * (line.length - 1))]}\n\n${__("dmf1d", lang)}`)
@@ -50,7 +50,7 @@ module.exports = async (message, lang, LCM) => {
 			])
 			.setFooter({
 				text: __('dmfooter', lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			});
 		return message.author.send({ embeds: [suicide] })
 	}
@@ -78,7 +78,7 @@ module.exports = async (message, lang, LCM) => {
 				.setTitle(__("insulttitle", lang))
 				.setAuthor({
 					name: __("SPB", lang),
-					iconURL: 'https://spbot.ml/siround.png'
+					iconURL: 'https://spbot.9021007.xyz/siround.png'
 				})
 				.setDescription(__("insultd", lang));
 			return message.channel.send({ embeds: [insult] }).catch(console.error);

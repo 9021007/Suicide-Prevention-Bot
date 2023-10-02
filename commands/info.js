@@ -14,11 +14,11 @@ module.exports = {
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("infoauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			})
 			.setTitle(__("infotitle", lang))
 			.setURL('https://spbot.9021007.xyz')
-			.setThumbnail('https://spbot.ml/siround.png')
+			.setThumbnail('https://spbot.9021007.xyz/siround.png')
 			.addFields([
 				{ name: __("infof1", lang), value: __("infof1d", lang) },
 				{ name: __("infof2", lang), value: __("infof2d", lang) },
@@ -28,7 +28,7 @@ module.exports = {
 			.setImage('https://spbot.ml/sc2.png')
 			.setFooter({
 				text: __("infofooter", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			});
 		interaction.reply({ embeds: [info] });
      }
