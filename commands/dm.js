@@ -28,10 +28,10 @@ module.exports = {
 			.setColor('#04d384')
 			.setAuthor({
 				name: __("dmauthor", lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			})
 			.setTitle(__("dmtitle", lang))
-			.setURL('https://spbot.ml/')
+			.setURL('https://spbot.9021007.xyz')
 			.setImage('https://www.spbot.ml/suicideicon.png')
 			.setDescription(`${__("dmdesc", lang)}\n\n${line[Math.round(Math.random() * (line.length - 1))]}`)
 			.addFields([
@@ -48,7 +48,7 @@ module.exports = {
 
 			.setFooter({
 				text: __('dmfooter', lang),
-				iconURL: 'https://spbot.ml/siround.png'
+				iconURL: 'https://spbot.9021007.xyz/siround.png'
 			});
 
 			//Buttons

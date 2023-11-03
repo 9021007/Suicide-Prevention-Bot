@@ -53,7 +53,7 @@ module.exports = {
 			const langs = new EmbedBuilder()
 				.setColor('#04d384')
 				.setTitle(__("langtitle", lang))
-				.setThumbnail('https://spbot.ml/siround.png')
+				.setThumbnail('https://spbot.9021007.xyz/siround.png')
 				.setAuthor({
 					name: __("langauthor", lang)
 				})
