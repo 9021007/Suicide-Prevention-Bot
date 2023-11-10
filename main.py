@@ -2,13 +2,13 @@ import json
 import requests
 
 
-# check for existing englsih file
+# check for existing English file
 try:
     open("en.json", "r")
 except FileNotFoundError:
     # download english file from GitHub
-    print("\033[1;33mDownloading english file...\033[0m")
-    r = requests.get("https://raw.githubusercontent.com/Bobrobot1/Suicide-Prevention-Bot/main/locales/en.json")
+    print("\033[1;33mDownloading English file...\033[0m")
+    r = requests.get("https://raw.githubusercontent.com/9021007/Suicide-Prevention-Bot/main/locales/en.json")
     
     with open("en.json", "wb") as f:
         f.write(r.content)
@@ -22,12 +22,12 @@ newobj = {}
 print("")
 
 # input the name of the new translation file
-long = input("Enter the name of the language, e.g. German: ")
+long = input("Enter the full name of the language, e.g. German: ")
 short = input("Enter the short name of the language, e.g. de: ")
 short = short.lower()
 
 print("")
-print("\033[1;30mYou will now be prompted to translate each word in the english file. Press enter to submit.\nUse \\n to make a line break.\033[0m")
+print("\033[1;30mYou will now be prompted to translate each word in the English file. Press enter to submit.\nUse \\n to make a line break.\033[0m")
 print("")
 
 for key in englishobj:
