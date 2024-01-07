@@ -1,5 +1,7 @@
 # Suicide-Prevention-Bot
 
+## Currently offline, rewrite in progress
+
 A Discord bot to prevent suicide. It works by taking a list of phrases, and it compares it against every message sent in the server. if the message includes the words or phrases, it reacts with an informational embed that directs users to local hotlines.
 
 Don't forget to rename `config.json.example` to `config.json` and fill in the `token` and `devGuildId` in config
