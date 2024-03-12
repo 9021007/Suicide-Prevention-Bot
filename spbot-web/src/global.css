@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "gg sans";
+    src: url("/fonts/ggsans-Medium.ttf");
+    font-weight: medium;
+}
+@font-face {
+    font-family: "gg sans";
+    src: url("/fonts/ggsans-Normal.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "gg sans";
+    src: url("/fonts/ggsans-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "gg sans";
+    src: url("/fonts/ggsans-Semibold.ttf");
+    font-weight: 600;
+}
+
+
+body {
+    font-family: 'gg sans', sans-serif;
+    font-weight: medium;
+    background-color: rgb(49,51,56);
+    color:white;
+}
+

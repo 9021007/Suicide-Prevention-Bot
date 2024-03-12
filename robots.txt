@@ -1,3 +1,0 @@
-User-Agent: *
-Allow: /
-Sitemap: https://spbot.9021007.xyz/sitemap.xml
