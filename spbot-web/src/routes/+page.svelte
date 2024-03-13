@@ -8,7 +8,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 <div class="start">
     <h1>Combating suicide with technology</h1>
     <h3>Automated mental health crisis detection, trusted by thousands of servers.</h3>
-    <a href="https://discord.com/api/oauth2/authorize?client_id=794098689983381525&permissions=92160&scope=bot">
+    <a href="https://discord.com/api/oauth2/authorize?client_id=794098689983381525&permissions=92160&scope=bot" target="_blank">
         <button>
             <Fa icon={faDiscord}/>
             Add Bot

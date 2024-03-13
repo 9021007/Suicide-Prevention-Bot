@@ -19,10 +19,10 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
                 <p>Where to Donate</p>
             </div>
             <div class="links">
-                <a href="https://988lifeline.org/donate/">US Suicide and Crisis Lifeline</a>
-                <a href="https://www.samaritans.org/donate-now/">Samaritans: UK</a>
-                <a href="https://www.arpitafoundation.org/contact.html">Arpita Foundation: India</a>
-                <a href="https://www.befrienders-jpn.org/donate">Befrienders International: Japan</a>
+                <a href="https://988lifeline.org/donate/" target="_blank">US Suicide and Crisis Lifeline</a>
+                <a href="https://www.samaritans.org/donate-now/" target="_blank">Samaritans: UK</a>
+                <a href="https://www.arpitafoundation.org/contact.html" target="_blank">Arpita Foundation: India</a>
+                <a href="https://www.befrienders-jpn.org/donate" target="_blank">Befrienders International: Japan</a>
 
             </div>
         </div>
@@ -31,12 +31,12 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
                 <p>Support</p>
             </div>
             <div class="links">
-                <a href="https://discord.gg/YHvfUqVgWS">Our Discord Server</a>
-                <a href="https://github.com/Bobrobot1/Suicide-Prevention-Bot">Source Code</a>
+                <a href="https://discord.gg/YHvfUqVgWS" target="_blank">Our Discord Server</a>
+                <a href="https://github.com/Bobrobot1/Suicide-Prevention-Bot" target="_blank">Source Code</a>
             </div>
         </div>
     </div>
-    <p>Made with ❤️, using <a href="https://kit.svelte.dev/">SvelteKit</a>.</p>
+    <p>Made with ❤️, using <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>.</p>
 
 </footer>
 
