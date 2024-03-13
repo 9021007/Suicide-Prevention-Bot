@@ -1,0 +1,2162 @@
+[
+    {
+      "Group": "Africa",
+      "Value": "DZ",
+      "Label": "Algeria",
+      "Number": "0021 3983 2000 58",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "AO",
+      "Label": "Angola",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "BJ",
+      "Label": "Benin",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "BW",
+      "Label": "Botswana",
+      "Number": "3911270",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "BF",
+      "Label": "Burkina Faso",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "BI",
+      "Label": "Burundi",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CM",
+      "Label": "Cameroon",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CV",
+      "Label": "Cape Verde",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CF",
+      "Label": "Central African Republic",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "TD",
+      "Label": "Chad",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "KM",
+      "Label": "Comoros",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CG",
+      "Label": "Congo, Republic of",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CD",
+      "Label": "Congo, Democratic Republic of",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "CI",
+      "Label": "Côte d’Ivoire",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "DJ",
+      "Label": "Djibouti",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "EG",
+      "Label": "Egypt",
+      "Number": "762 2381",
+      "Organization": "Befrienders Cairo",
+      "Website": "https://befrienderscairo.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GQ",
+      "Label": "Equatorial Guinea",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ER",
+      "Label": "Eritrea",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SZ",
+      "Label": "Eswatini",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ET",
+      "Label": "Ethiopia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GA",
+      "Label": "Gabon",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GM",
+      "Label": "Gambia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GH",
+      "Label": "Ghana",
+      "Number": "2332 444 71279",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GN",
+      "Label": "Guinea",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "GW",
+      "Label": "Guinea-Bissau",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "KE",
+      "Label": "Kenya",
+      "Number": "254 722 178 177",
+      "Organization": "Befrienders Kenya",
+      "Website": "https://www.befrienderskenya.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "LS",
+      "Label": "Lesotho",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "LR",
+      "Label": "Liberia",
+      "Number": "6534308",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "LY",
+      "Label": "Libya",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MG",
+      "Label": "Madagascar",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MW",
+      "Label": "Malawi",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ML",
+      "Label": "Mali",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MR",
+      "Label": "Mauritania",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MU",
+      "Label": "Mauritius",
+      "Number": "800-9393",
+      "Organization": "Befrienders Mauritius",
+      "Website": "http://www.befriendersmauritius.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "YT",
+      "Label": "Mayotte",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MA",
+      "Label": "Morocco",
+      "Number": "212 (0) 522 874 740",
+      "Organization": "Sourire de Reda",
+      "Website": "https://www.sourire2reda.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "MZ",
+      "Label": "Mozambique",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "NA",
+      "Label": "Namibia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "NE",
+      "Label": "Niger",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "NG",
+      "Label": "Nigeria",
+      "Number": "23419125106",
+      "Organization": "Nigeria Suicide Prevention",
+      "Website": "https://nigeriasuicideprevention.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "RW",
+      "Label": "Rwanda",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "RE",
+      "Label": "Réunion",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "EH",
+      "Label": "Sahrawi",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SH",
+      "Label": "Saint Helena",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SN",
+      "Label": "Senegal",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SC",
+      "Label": "Seychelles",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SL",
+      "Label": "Sierra Leone",
+      "Number": "5116",
+      "Organization": "Partners In Health",
+      "Website": "https://www.pihsierraleone.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SO",
+      "Label": "Somalia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ZA",
+      "Label": "South Africa",
+      "Number": "0861-322-322",
+      "Organization": "Lifeline South Africa",
+      "Website": "https://lifelinesa.co.za/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "SD",
+      "Label": "Sudan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ST",
+      "Label": "São Tomé and Príncipe",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "TZ",
+      "Label": "Tanzania",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "TG",
+      "Label": "Togo",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "TN",
+      "Label": "Tunisia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "UG",
+      "Label": "Uganda",
+      "Number": "0800 21 21 21",
+      "Organization": "Mental Health Uganda",
+      "Website": "https://www.mentalhealthuganda.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ZM",
+      "Label": "Zambia",
+      "Number": "933 (adults)/166 (children)",
+      "Organization": "Lifeline Childline Zambia",
+      "Website": "http://clzambia.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Africa",
+      "Value": "ZW",
+      "Label": "Zimbabwe",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "AI",
+      "Label": "Anguilla",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "AG",
+      "Label": "Antigua and Barbuda",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "AR",
+      "Label": "Argentina",
+      "Number": "987876006",
+      "Organization": "Teléfono de la Esperanza",
+      "Website": "https://telefonodelaesperanza.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "AW",
+      "Label": "Aruba",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BS",
+      "Label": "Bahamas",
+      "Number": "(242) 322-2763",
+      "Organization": "National Hotline for Crisis Intervention",
+      "Website": "https://bahamas.gov.bs/wps/portal/public/dol?1dmy&urile=wcm%3Apath%3A/mof_content/internet/moss/government/children/families/national+hotline+for+crisis+intervention/national+hotline+for+crisis+intervention",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BB",
+      "Label": "Barbados",
+      "Number": "#988",
+      "Organization": "Lifeline Barbados",
+      "Website": "https://gisbarbados.gov.bb/blog/new-support-hotline/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BZ",
+      "Label": "Belize",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BM",
+      "Label": "Bermuda",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BO",
+      "Label": "Bolivia",
+      "Number": "717 003 717",
+      "Organization": "Teléfono de la Esperanza",
+      "Website": "https://telefonodelaesperanza.org",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BR",
+      "Label": "Brazil",
+      "Number": "188",
+      "Organization": "CVV",
+      "Website": "https://cvv.org.br/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "VG",
+      "Label": "British Virgin Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "CA",
+      "Label": "Canada",
+      "Number": "988",
+      "Organization": "Suicide Crisis Helpline",
+      "Website": "https://988.ca/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "KY",
+      "Label": "Cayman Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "CL",
+      "Label": "Chile",
+      "Number": "*4141",
+      "Organization": "Ministerio de Salud",
+      "Website": "https://www.minsal.cl/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "CO",
+      "Label": "Colombia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "CR",
+      "Label": "Costa Rica",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "CU",
+      "Label": "Cuba",
+      "Number": "532 348 14 49",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "DM",
+      "Label": "Dominica",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "DO",
+      "Label": "Dominican Republic",
+      "Number": "809-636-3507",
+      "Organization": "Family Line",
+      "Website": "https://lineafamiliar.do/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "EC",
+      "Label": "Ecuador",
+      "Number": "593 2-290-6030",
+      "Organization": "Teléfono Amigo",
+      "Website": "https://www.facebook.com/TelefonoAmigo/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "SV",
+      "Label": "El Salvador",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "FK",
+      "Label": "Falkland Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GF",
+      "Label": "French Guiana",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GL",
+      "Label": "Greenland",
+      "Number": "134",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GD",
+      "Label": "Grenada",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GP",
+      "Label": "Guadeloupe",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GT",
+      "Label": "Guatemala",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "GY",
+      "Label": "Guyana",
+      "Number": "655-7233",
+      "Organization": "Guyana Health Ministry",
+      "Website": "https://dpi.gov.gy/health-ministry-launches-655-safe-7233-counselling-hotline/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "HT",
+      "Label": "Haiti",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "HN",
+      "Label": "Honduras",
+      "Number": "504 2232-1314",
+      "Organization": "Asociación Hondureña del Teléfono de la Esperanza ",
+      "Website": "https://www.facebook.com/telefonodelaesperanzahn",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "JM",
+      "Label": "Jamaica",
+      "Number": "(888) 639-5433",
+      "Organization": "Choose Life International",
+      "Website": "https://jis.gov.jm/health-ministry-to-establish-mental-health-suicide-helpline/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "MQ",
+      "Label": "Martinique",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "MX",
+      "Label": "Mexico",
+      "Number": "(55) 5259-8121",
+      "Organization": "SAPTEL",
+      "Website": "https://www.saptel.org.mx",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "MS",
+      "Label": "Montserrat",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "AN",
+      "Label": "Netherlands Antilles",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "NI",
+      "Label": "Nicaragua",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "PA",
+      "Label": "Panama",
+      "Number": "169",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "PY",
+      "Label": "Paraguay",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "PE",
+      "Label": "Peru",
+      "Number": "01 498 2711",
+      "Organization": "Sentido",
+      "Website": "https://www.sentido.pe",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "BL",
+      "Label": "Saint Barthélemy",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "KN",
+      "Label": "Saint Kitts and Nevis",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "LC",
+      "Label": "Saint Lucia",
+      "Number": "203",
+      "Organization": "Ministry of Health",
+      "Website": "https://www.govt.lc/news/national-health-helpline-launched",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "MF",
+      "Label": "Saint Martin",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "PM",
+      "Label": "Saint Pierre and Miquelon",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "VC",
+      "Label": "Saint Vincent and the Grenadines",
+      "Number": "(784) 456 1044",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "SR",
+      "Label": "Suriname",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "TT",
+      "Label": "Trinidad and Tobago",
+      "Number": "800-2673",
+      "Organization": "Ministry of Social Development and Family Services",
+      "Website": "https://social.gov.tt/",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "TC",
+      "Label": "Turks and Caicos Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "VI",
+      "Label": "U.S. Virgin Islands",
+      "Number": "988",
+      "Organization": "Suicide and Crisis Lifeline",
+      "Website": "https://988lifeline.org",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "US",
+      "Label": "United States",
+      "Number": "988",
+      "Organization": "Suicide and Crisis Lifeline",
+      "Website": "https://988lifeline.org",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "UY",
+      "Label": "Uruguay",
+      "Number": "0800 0767",
+      "Organization": "Ministerio de Salud Pública",
+      "Website": "https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/linea-de-prevencion-del-suicidio-0800-0767",
+      "Note": ""
+    },
+    {
+      "Group": "Americas",
+      "Value": "VE",
+      "Label": "Venezuela",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "AF",
+      "Label": "Afghanistan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "AM",
+      "Label": "Armenia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "AZ",
+      "Label": "Azerbaijan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "BH",
+      "Label": "Bahrain",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "BD",
+      "Label": "Bangladesh",
+      "Number": "09612-119911",
+      "Organization": "Kaan Pete Roi ",
+      "Website": "https://www.facebook.com/kaan.pete.roi/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "BT",
+      "Label": "Bhutan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "BN",
+      "Label": "Brunei",
+      "Number": "145",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KH",
+      "Label": "Cambodia",
+      "Number": "17 222 372",
+      "Organization": "Stop Suicide Cambodia",
+      "Website": "https://www.facebook.com/StopSuicideCambodia/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "CN",
+      "Label": "China",
+      "Number": "400 821 1215",
+      "Organization": "Lifeline China",
+      "Website": "https://lifelinechina.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "GE",
+      "Label": "Georgia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "HK",
+      "Label": "Hong Kong",
+      "Number": "2896 0000",
+      "Organization": "The Samaritans",
+      "Website": "https://samaritans.org.hk/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "IN",
+      "Label": "India",
+      "Number": " +91 80 23655557",
+      "Organization": "Arpita Foundation",
+      "Website": "http://arpitafoundation.org/index.html",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "ID",
+      "Label": "Indonesia",
+      "Number": "119, ext 8",
+      "Organization": "HIMPSI",
+      "Website": "https://himpsi.or.id/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "IR",
+      "Label": "Iran",
+      "Number": "123",
+      "Organization": "State Welfare Organization of Iran",
+      "Website": "https://en.behzisti.ir/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "IQ",
+      "Label": "Iraq",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "IL",
+      "Label": "Israel",
+      "Number": "1201",
+      "Organization": "ער\"ן",
+      "Website": "https://1201.org.il/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "JP",
+      "Label": "Japan",
+      "Number": "03-5286-9090",
+      "Organization": "Befrienders Japan",
+      "Website": "https://www.befrienders-jpn.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "JO",
+      "Label": "Jordan",
+      "Number": "911",
+      "Organization": "Family Protection Department",
+      "Website": "https://www.albawaba.com/editorchoice/jordan-police-set-suicide-hotline-following-rising-cases-1033056",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KZ",
+      "Label": "Kazakhstan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KW",
+      "Label": "Kuwait",
+      "Number": "22440904",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KG",
+      "Label": "Kyrgyzstan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "LA",
+      "Label": "Laos",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "LB",
+      "Label": "Lebanon",
+      "Number": "1564",
+      "Organization": "Embrace Lebanon",
+      "Website": "https://embracelebanon.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "MO",
+      "Label": "Macau",
+      "Number": "(+853) 2852 5222",
+      "Organization": "Caritas Macau",
+      "Website": "https://www.caritas.org.mo/",
+      "Note": "The organization running this number is affiliated with the Catholic Church"
+    },
+    {
+      "Group": "Asia",
+      "Value": "MY",
+      "Label": "Malaysia",
+      "Number": "15999",
+      "Organization": "Talian Kasih",
+      "Website": "https://www.sinarharian.com.my/article/112596/berita/nasional/talian-kasih-15999-beroperasi-24-jam",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "MV",
+      "Label": "Maldives",
+      "Number": "1484",
+      "Organization": "Ministry of Education",
+      "Website": "https://www.moe.gov.mv/en/article/view/898/1484",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "MN",
+      "Label": "Mongolia",
+      "Number": "1800-2000",
+      "Organization": "National Center for Mental Health",
+      "Website": "https://ncmh.gov.mn/home#/index",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "MM",
+      "Label": "Myanmar",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "NP",
+      "Label": "Nepal",
+      "Number": "1166",
+      "Organization": "Ministry of Health and Population",
+      "Website": "https://www.who.int/nepal/news/detail/09-12-2022-Nepal-National-Suicide-Prevention-Helpline-Service-helping-save-lives",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KP",
+      "Label": "North Korea",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "OM",
+      "Label": "Oman",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "PK",
+      "Label": "Pakistan",
+      "Number": "(92) 0311 7786264",
+      "Organization": "UMANG Pakistan",
+      "Website": "https://www.umang.com.pk/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "PH",
+      "Label": "Philippines",
+      "Number": "1553",
+      "Organization": "Department of Health",
+      "Website": "https://doh.gov.ph/NCMH-Crisis-Hotline",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "QA",
+      "Label": "Qatar",
+      "Number": "16000",
+      "Organization": "National Mental Health Helpline",
+      "Website": "https://www.emro.who.int/mhps/suicide.html",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "SA",
+      "Label": "Saudi Arabia",
+      "Number": "920033360",
+      "Organization": "المركز الوطني لتعزيز الصحة النفسية",
+      "Website": "https://ncmh.org.sa/view/10/2th",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "SG",
+      "Label": "Singapore",
+      "Number": "1767",
+      "Organization": "Samaritans of Singapore",
+      "Website": "https://www.sos.org.sg/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "KR",
+      "Label": "South Korea",
+      "Number": "109",
+      "Organization": "Korea Association for Suicide Prevention",
+      "Website": "http://suicideprevention.or.kr/04_sub/05_sub.html?ckattempt=3",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "LK",
+      "Label": "Sri Lanka",
+      "Number": "0707 308 308",
+      "Organization": "Sri Lanka Sumithrayo",
+      "Website": "https://srilankasumithrayo.lk/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "SY",
+      "Label": "Syria",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TW",
+      "Label": "Taiwan",
+      "Number": "1925",
+      "Organization": "Ministry of Health and Welfare",
+      "Website": "https://www.mohw.gov.tw/cp-16-48244-1.html",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TJ",
+      "Label": "Tajikistan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TH",
+      "Label": "Thailand",
+      "Number": "02-113-6789",
+      "Organization": "Sameritans Thailand",
+      "Website": "https://www.samaritansthai.com/contactus/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TL",
+      "Label": "Timor-Leste",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TR",
+      "Label": "Türkiye",
+      "Number": "182",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "TM",
+      "Label": "Turkmenistan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "AE",
+      "Label": "United Arab Emirates",
+      "Number": "8004673",
+      "Organization": "National Program for Happiness & Wellbeing",
+      "Website": "https://hope.hw.gov.ae/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "UZ",
+      "Label": "Uzbekistan",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "VN",
+      "Label": "Vietnam",
+      "Number": "19006186",
+      "Organization": "Tâm lý NQH ",
+      "Website": "https://tamlynqh.vn/",
+      "Note": ""
+    },
+    {
+      "Group": "Asia",
+      "Value": "YE",
+      "Label": "Yemen",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "AL",
+      "Label": "Albania",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "AD",
+      "Label": "Andorra",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "AT",
+      "Label": "Austria",
+      "Number": "01 / 406 95 95",
+      "Organization": "Kriseninterventionszentrum",
+      "Website": "https://kriseninterventionszentrum.at/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "BY",
+      "Label": "Belarus",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "BE",
+      "Label": "Belgium",
+      "Number": "106",
+      "Organization": "Tele-Onthaal",
+      "Website": "https://www.tele-onthaal.be/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "BA",
+      "Label": "Bosnia and Herzegovina",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "BG",
+      "Label": "Bulgaria",
+      "Number": "0035 9249 17 223",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "HR",
+      "Label": "Croatia",
+      "Number": "4833888",
+      "Organization": "Plavi Telefon",
+      "Website": "http://www.plavi-telefon.hr/index.html",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "CY",
+      "Label": "Cyprus",
+      "Number": "80007773",
+      "Organization": "Cyprus Sameritans",
+      "Website": "www.cyprussamaritans.org",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "CZ",
+      "Label": "Czechia",
+      "Number": "116123",
+      "Organization": "Linka první psychické pomoci",
+      "Website": "http://linkapsychickepomoci.cz/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "DK",
+      "Label": "Denmark",
+      "Number": "70 201 201",
+      "Organization": "Livslinien",
+      "Website": "https://www.livslinien.dk/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "EE",
+      "Label": "Estonia",
+      "Number": "116123",
+      "Organization": "Hingehoid",
+      "Website": "https://hingehoid.ee/hingehoiutelefon",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "FO",
+      "Label": "Faroe Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "FI",
+      "Label": "Finland",
+      "Number": "09 2525 0111",
+      "Organization": "MIELI",
+      "Website": "https://mieli.fi/en/support-and-help/crisis-helpline/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "FR",
+      "Label": "France",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "DE",
+      "Label": "Germany",
+      "Number": "116123",
+      "Organization": "TelefonSeelsorge",
+      "Website": "https://www.telefonseelsorge.de/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "GI",
+      "Label": "Gibraltar",
+      "Number": "116123",
+      "Organization": "GibSams",
+      "Website": "https://gibsams.gi/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "GR",
+      "Label": "Greece",
+      "Number": "1018",
+      "Organization": "Κέντρο ημέρας για την πρόληψη της Αυτοκτονίας",
+      "Website": "http://suicide-help.gr/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "GG",
+      "Label": "Guernsey",
+      "Number": "116123",
+      "Organization": "Samaritans",
+      "Website": "https://www.samaritans.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "HU",
+      "Label": "Hungary",
+      "Number": "116123",
+      "Organization": "Hungarian Mental First Aid Telephone Services Association",
+      "Website": "https://sos116-123.hu/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "IS",
+      "Label": "Iceland",
+      "Number": "1717",
+      "Organization": "Rauði krossinn á Íslandi",
+      "Website": "https://www.raudikrossinn.is/verkefni/innanlandsverkefni/heilbrigdi-og-velferd/hjalparsiminn-1717-og-netspjallid/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "IE",
+      "Label": "Ireland",
+      "Number": "116123",
+      "Organization": "Samaritans",
+      "Website": "https://www.samaritans.org/samaritans-ireland/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "IM",
+      "Label": "Isle of Man",
+      "Number": "803040",
+      "Organization": "Isle Stand Up To Suicide",
+      "Website": "https://www.islestanduptosuicide.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "IT",
+      "Label": "Italy",
+      "Number": "06 77208977",
+      "Organization": "Samaritans OdV",
+      "Website": "http://www.samaritansonlus.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "JE",
+      "Label": "Jersey",
+      "Number": "44 (0) 1534 445290",
+      "Organization": "Government of Jersey",
+      "Website": "https://www.gov.je/Health/Mental/Pages/Adult.aspx",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "LV",
+      "Label": "Latvia",
+      "Number": "116123",
+      "Organization": "SKALBES",
+      "Website": "https://www.skalbes.lv/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "LI",
+      "Label": "Liechtenstein",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "LT",
+      "Label": "Lithuania",
+      "Number": "116123",
+      "Organization": "Vilties Linija",
+      "Website": "https://www.viltieslinija.lt/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "LU",
+      "Label": "Luxembourg",
+      "Number": "454545",
+      "Organization": "SOS Détresse",
+      "Website": "https://454545.lu/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "MT",
+      "Label": "Malta",
+      "Number": "179",
+      "Organization": "Foundation for Social Welfare Services",
+      "Website": "https://fsws.gov.mt/en/appogg",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "MD",
+      "Label": "Moldova",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "MC",
+      "Label": "Monaco",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "ME",
+      "Label": "Montenegro",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "NL",
+      "Label": "Netherlands",
+      "Number": "113",
+      "Organization": "Zelfmoordpreventie",
+      "Website": "https://www.113.nl/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "MK",
+      "Label": "North Macedonia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "NO",
+      "Label": "Norway",
+      "Number": "116123",
+      "Organization": "Mental Helse",
+      "Website": "https://mentalhelse.no/fa-hjelp/hjelpetelefonen/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "PL",
+      "Label": "Poland",
+      "Number": "116123",
+      "Organization": "The Polish Psychological Association",
+      "Website": "https://psychologia.edu.pl/kryzysy-osobiste/telefon-kryzysowy-116123.html",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "PT",
+      "Label": "Portugal",
+      "Number": "915246060",
+      "Organization": "SOS Estudante",
+      "Website": "http://sosestudante.pt/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "RO",
+      "Label": "Romania",
+      "Number": "116123",
+      "Organization": "Asociația de Suicidologie",
+      "Website": "http://www.preveniresuicid.ro/pagina-principala/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "RU",
+      "Label": "Russia",
+      "Number": "007 (8202) 577–577",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "SM",
+      "Label": "San Marino",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "RS",
+      "Label": "Serbia",
+      "Number": "0800-300-303",
+      "Organization": "Centar Srce",
+      "Website": "https://www.centarsrce.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "SK",
+      "Label": "Slovakia",
+      "Number": "0800 800 566",
+      "Organization": "Liga za duševné zdravie",
+      "Website": "https://linkanezabudka.sk/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "SI",
+      "Label": "Slovenia",
+      "Number": "116123",
+      "Organization": "Drustvo Zaupni telefon Samarijan",
+      "Website": "http://www.telefon-samarijan.si/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "ES",
+      "Label": "Spain",
+      "Number": "717 003 717",
+      "Organization": "Teléfono de la Esperanza",
+      "Website": "https://telefonodelaesperanza.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "SE",
+      "Label": "Sweden",
+      "Number": "90101",
+      "Organization": "Mind Självmordslinjen",
+      "Website": "https://mind.se/hitta-hjalp/sjalvmordslinjen/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "CH",
+      "Label": "Switzerland",
+      "Number": "143",
+      "Organization": "Die Dargebotene Hand",
+      "Website": "https://www.143.ch/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "UA",
+      "Label": "Ukraine",
+      "Number": "7333",
+      "Organization": "Lifeline Ukraine",
+      "Website": "https://lifelineukraine.com/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "GB",
+      "Label": "United Kingdom",
+      "Number": "116123",
+      "Organization": "Samaritans",
+      "Website": "https://www.samaritans.org/",
+      "Note": ""
+    },
+    {
+      "Group": "Europe",
+      "Value": "AX",
+      "Label": "Åland Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "AS",
+      "Label": "American Samoa",
+      "Number": "252-3502 and 770-1571",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "AU",
+      "Label": "Australia",
+      "Number": "13 11 14",
+      "Organization": "Lifeline Australia",
+      "Website": "https://www.lifeline.org.au/",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "IO",
+      "Label": "British Indian Ocean Territory",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "CX",
+      "Label": "Christmas Island",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "CC",
+      "Label": "Cocos Island",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "CK",
+      "Label": "Cook Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "FJ",
+      "Label": "Fiji",
+      "Number": "5626",
+      "Organization": "Empower Pacific",
+      "Website": "http://www.empowerpacific.com/counselling-helpline",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "PF",
+      "Label": "French Polynesia",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "TF",
+      "Label": "French Southern Territories",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "GU",
+      "Label": "Guam",
+      "Number": "988",
+      "Organization": "Guam Behavioral Health and Wellness Center",
+      "Website": "https://gbhwc.guam.gov/contact-information",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "HM",
+      "Label": "Heard Island and McDonald Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "KI",
+      "Label": "Kiribati",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "MH",
+      "Label": "Marshall Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "FM",
+      "Label": "Micronesia",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "NR",
+      "Label": "Nauru",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "NC",
+      "Label": "New Caledonia",
+      "Number": "05.30.30",
+      "Organization": "ACSMS New Caledonia",
+      "Website": "https://acsms.nc/lepointsosecoute/",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "NZ",
+      "Label": "New Zealand",
+      "Number": "1737",
+      "Organization": "Whakarongorau Aotearoa",
+      "Website": "https://1737.org.nz/",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "NU",
+      "Label": "Niue",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "NF",
+      "Label": "Norfolk Island",
+      "Number": "56400",
+      "Organization": "Mental Health Counsellor",
+      "Website": "https://norfolkislandhealth.gov.nf/wp-content/uploads/2023/10/Community-Services-numbers-3-col-split_updated.pdf",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "MP",
+      "Label": "Northern Mariana Islands",
+      "Number": "988",
+      "Organization": "Suicide and Crisis Lifeline",
+      "Website": "https://988lifeline.org",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "PW",
+      "Label": "Palau",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "PG",
+      "Label": "Papua New Guinea",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "PN",
+      "Label": "Pitcairn Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "WS",
+      "Label": "Samoa",
+      "Number": "037 23 025",
+      "Organization": "nosource",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "SB",
+      "Label": "Solomon Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "GS",
+      "Label": "South Georgia and the South Sandwich Islands",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "TK",
+      "Label": "Tokelau",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "TO",
+      "Label": "Tonga",
+      "Number": "23000",
+      "Organization": "Free Wesleyan Church of Tonga",
+      "Website": "https://lifelinetongafwct.blogspot.com/",
+      "Note": "The organization running this number is a church"
+    },
+    {
+      "Group": "Oceania",
+      "Value": "TV",
+      "Label": "Tuvalu",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "UM",
+      "Label": "U.S. Minor Outlying Islands",
+      "Number": "988",
+      "Organization": "Suicide and Crisis Lifeline",
+      "Website": "https://988lifeline.org",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "VU",
+      "Label": "Vanuatu",
+      "Number": "",
+      "Organization": "",
+      "Website": "",
+      "Note": ""
+    },
+    {
+      "Group": "Oceania",
+      "Value": "WF",
+      "Label": "Wallis and Futuna",
+      "Number": "3114",
+      "Organization": "Ministère de la Santé et de la Prévention",
+      "Website": "https://3114.fr",
+      "Note": ""
+    }
+  ]
