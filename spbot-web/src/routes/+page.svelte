@@ -414,7 +414,9 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
         }
         .row4 > .column1 > img, .row4 > .column2 > img, .row4 > .column3 > img {
             width: auto;
-            height: 7vw;
+            height: 6vw;
+            padding-top:1vw;
+            padding-bottom:1vw;
             filter:invert(1)
         }
     }
