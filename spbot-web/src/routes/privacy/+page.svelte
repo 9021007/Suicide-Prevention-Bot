@@ -1,3 +1,4 @@
+<title>Privacy Policy</title>
 <div class="policy-content">
 
 

@@ -1,3 +1,4 @@
+<title>Terms of Service</title>
 <div class="policy-content">
   <h1 class="section-title">Terms of Service</h1>
   <p>
