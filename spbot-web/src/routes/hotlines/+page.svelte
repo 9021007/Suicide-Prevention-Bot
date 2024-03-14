@@ -158,9 +158,10 @@ onMount(() => {
             color: white;
             padding-top:3vh;
             padding-bottom:3vh;
-            padding-left: 3vw;
+            padding-left: 2vw;
             padding-right: 3vw;
             margin-bottom:5vh;
+            border-right: 2vw solid transparent
         }
 
         .info {

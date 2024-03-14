@@ -56,6 +56,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             display: flex;
             /* justify-content: space-between; */
             align-items: start  ;
+            justify-content: space-around;
 
             gap:3vw
         }
@@ -124,6 +125,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             display: flex;
             /* justify-content: center; */
             font-size: 5vw;
+            font-weight:bold;
             text-align: center;
             line-height: 0vh;
         }

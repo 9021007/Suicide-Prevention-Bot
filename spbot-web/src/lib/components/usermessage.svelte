@@ -25,6 +25,8 @@ img {
     gap: 17px;
     padding: 1rem;
     border-radius: 15px;
+    background-color: rgb(32,34,37);
+    margin-left:2vw
 }
 
 .msg-column {

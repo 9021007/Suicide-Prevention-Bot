@@ -368,7 +368,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             transform: scale(1.5);
             margin-right:auto;
             padding-left:5%;
-        }    
+        }
 
         .row3 > .text {
             font-weight: bold;
@@ -386,6 +386,15 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             padding-left:4%;
         }    
 
+        @media screen and (max-width: 1315px) { /* for people with bad monitors */
+            .row2 > .embed {
+                transform: scale(1);
+            }
+
+            .row3 > .embed {
+                transform: scale(1);
+            }
+        }
         .row4 {
             display: flex;
             flex-direction: row;
