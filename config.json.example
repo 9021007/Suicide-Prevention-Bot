@@ -1,21 +1,20 @@
 {
-	"token": "",
-	"devGuildId": "",
-	"clearCommandList": false,
-	"totalshards": 1,
-	"activityResetTimeout_SECONDS": 15,
-	"dmTimeout_HOURS": 24,
-	"version": "3.3.5",
-	"supportedLanguages": [
+    "supportedLanguages": [
 		["en", "english", "english"],
-		["sp","spanish", "espanol"],
-		["ru", "russian", "pусский"],
-		["uwu", "uwu", "uwu"]
+		["es","spanish", "espanol"]
 	],
-	"langlist": [
-		" - 🇬🇧 English (en)",
-		" - 🇷🇺 pусский (rn)",
-		" - 🇪🇸 Español (sp)",
-		" - 🥺 uwu (uwu)"
-	]
+    "themecolor": "#555555",
+    "website": "https://spbot.9021007.xyz",
+    "defaultLanguage": "en",
+    "discord": "https://discord.com/invite/YHvfUqVgWS",
+    "github": "https://github.com/9021007/Suicide-Prevention-Bot",
+    "lines": [
+        ["United States", "Call or text 988"],
+        ["United Kingdom", "Call 116-123 or text SHOUT to 85258"],
+        ["Canada", "Call or text 988"],
+        ["India", "Call +91 80 23655557"],
+        ["Japan", "Call +81 0 3 5286 9090"]
+    ],
+    "detectionPort": "2463",
+    "detectionEndpoint": "0.0.0.0"
 }

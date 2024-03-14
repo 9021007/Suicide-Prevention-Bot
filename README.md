@@ -1,116 +1,57 @@
-# Suicide-Prevention-Bot
+# Suicide Prevention Bot
 
-## Currently offline, rewrite in progress
+Welcome! This bot comes in 3 parts, which can all be run on the same machine, or even different machines!
 
-A Discord bot to prevent suicide. It works by taking a list of phrases, and it compares it against every message sent in the server. if the message includes the words or phrases, it reacts with an informational embed that directs users to local hotlines.
+## Part 1 - The Detection System
 
-Don't forget to rename `config.json.example` to `config.json` and fill in the `token` and `devGuildId` in config
+Head over to the [binary classification repo](https://github.com/9021007/BinaryClassifier) and clone it.
 
-node.js v16 and above required. LTS version recommended.
+Inside is one relevant file. That file compiles a machine learning model from the data you provide it, and then launches a server to allow the bot to interface with the machine learning model.
 
+It contains no authentication, do not port forward... obviously.
 
-![screenshot](https://spbot.9021007.xyz/sc2.png)
+At the top of the file are various helpful comments explaining the required directory structure for training. At the project root level is the folder "suicidedata", which holds the folders "test" and "train", each of which hold the folders "suicide" and "not", each of which holds text files of your training data, with each file being an indiviual datapoint.
 
-## Translating
-Importing the translation function in your code:
-```js
-const { __ } = require('../bot.js');
+In the end, it would be something like this:
 ```
-Usage:
-```js
-// Outputs "you have been trolled" in language "language"​
-var trolledText = ​__​(​"You have been trolled"​,​ ​language​​);
+BinaryClassifier/
+├─ main.py
+├─ suicidedata/
+│  ├─ train/
+│  │  ├─ suicide/
+│  │  │  ├─ 0001.txt
+│  │  ├─ not/
+│  │  │  ├─ 0002.txt
+│  ├─ test/
+│  │  ├─ suicide/
+│  │  │  ├─ 0003.txt
+│  │  ├─ not/
+│  │  │  ├─ 0004.txt
 ```
+For some sources of data, check out the links in the comments of `main.py`.
 
-With parameters:
-```js
-// Outputs "You have been muted for 1w", replaces {{duration with the given parameter}}
-var mutedText = ​__​(​"You have been muted for {{duration}}"​,​ ​language​​, { duration: "1w" });
-```
-### Adding languages
-First, add a language to `config.json` (in the supportedLanguages list).
-Then, launch the program, and a language file will be generated in `/locales`
+Once the folders are organized and filled, run `python3 -m pip install tensorflow==2.15.0` to install TensorFlow.
 
-### Editing language files
-`locales/fr.json`
-```json
-{
-	"Language successfully changed!": "Language changé avec succès!",
-	"Word {{word}} has been added to the blacklist": "Le mot {{word}} à été ajouté a la liste des mots à ignorer"
-}
-```
+Finally, you're go for launch. run `python3 main.py` and go for a walk outside. A long walk. Longer. This will take hours... assuming you don't run into any errors.
 
-## Adding slash commands
+Once it's running, you can take a deep breath and move on to Part 2. You can run it through `pm2` if you want it daemonized.
 
-### Creating a new slash command
-Create a js file with this template code:
-```javascript
-const { Constants } = require('discord.js');
+## Part 2 - The Database
 
-module.exports = {
-	command: {
-		name: "greeting",
-		description: "Sends a greeting to a user!",
-		options: [
-			{
-				name: "name",
-				description: "Name of the user",
-				required: true,
-				type: Constants.ApplicationCommandOptionTypes.STRING,
-			}
-		]
-	},
+Clone this repository, and grab the `schema.sql` file.
 
-	default: async (interaction, lang) => {
-		// Main code for your slash command
-		// Example:
-		const { commandName, options } = interaction;
-		interaction.reply(`Hello ${options.getString("name")}`);
-	}
-};
-```
-### Registering commands
-To register the command, add it at the beginning of `index.js` (assuming your command's file name is `greeting.js`):
-```js
-// Registers commands
-var commands = [
-	require('./commands/dm').command,
-	require("./commands/ping").command,
-	// ...
-	require("./commands/blacklist").command,
-	require("./commands/privacy").command,
-	require("./commands/greeting.js").command
-];
-```
-### Linking it to a function
-Add your function in `index.js` (line ~200):
-```js
-// ...
-case "blacklist":
-	return require("./commands/blacklist").default(interaction, lang);
-case "tos":
-	return require("./commands/tos").default(interaction, lang);
-case "greeting":
-	return require("./commands/greeting").default(interaction, lang);
-```
+Install `mysql`, and then run `schema.sql` through `mysql` to set up the database.
 
+Make sure that the database is accessible via a password, and make sure you save that password somewhere.
 
+## Part 3 - The Bot
 
-## Todo
- - [ ] Add more supported languages
- - [ ] Tweak the suicide keyword detection algorithm to make it perform better (less false positives)
-## Links
-[Website](https://spbot.9021007.xyz)
+If you have not done so already, simply clone the repository, and open it in your IDE of choice.
 
-[Status Website](https://spbot.freshstatus.io)
+Once you have done that, clone the `.env.example` file, and rename the cloned version to `.env`. It comes with prefilled example values that you will need to change yourself. Do the same with `config.json.example`, renaming it to `config.json`.
 
-[Terms of Service](https://spbot.9021007.xyz/terms.html)
+Install `node` and `npm` if you have not done so already.
 
-[Privacy Policy](https://spbot.9021007.xyz/policy.html)
+Once everything is set just right, run `npm i` and `node run index.cjs` to launch.
 
-## Socials
-[Discord](https://discord.com/invite/YHvfUqVgWS)
-
-[Github](https://github.com/Bobrobot1/Suicide-Prevention-Bot)
-
-[Reddit](https://www.reddit.com/r/SuicidePreventionBot)
+In theory, the program will connect successfully to both the database and the machine learning model, and it will be ready to go.

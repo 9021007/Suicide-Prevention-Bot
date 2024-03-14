@@ -1,18 +1,19 @@
 {
-  "name": "suicide-prevention-bot",
+  "name": "spbotprivate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.cjs",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "pm2": "pm2 start index.js && pm2 logs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.7.1",
-    "gradient-string": "^2.0.0",
+    "axios": "^1.6.7",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
     "i18n": "^0.15.1",
-    "moment": "^2.29.3",
-    "moment-duration-format": "^2.3.2",
-    "os": "^0.1.2",
-    "path": "^0.12.7",
-    "simplest.db": "^2.0.0"
+    "mysql2": "^3.6.5"
   }
 }

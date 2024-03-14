@@ -42,7 +42,6 @@
 	"This message was displayed because the bot believes this message is about suicide": "This message was displayed because the bot believes this message is about suicide",
 	"Suicide Prevention Bot": "Suicide Prevention Bot",
 	"Suicide Prevention Bot is a Discord bot that checks messages for content that could indicate signs of suicide, and responds directing people to crisis counselors. It is completely anonymous. To opt out of recieving responses form the bot, use `/optout`.": "Suicide Prevention Bot is a Discord bot that checks messages for content that could indicate signs of suicide, and responds directing people to crisis counselors. It is completely anonymous. To opt out of recieving responses form the bot, use `/optout`.",
-	"Here is my ping, young one": "Here is my ping, young one",
 	"Discord": "Discord",
 	"Need help? Join our discord server by visiting": "Need help? Join our discord server by visiting",
 	"You have opted out of these replies. To opt back in, use the `/optin` command": "You have opted out of these replies. To opt back in, use the `/optin` command",
@@ -52,5 +51,6 @@
 	"This user has opted out of user-directed bot DMs. You cannot send a DM to this user.": "This user has opted out of user-directed bot DMs. You cannot send a DM to this user.",
 	"A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.": "A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.",
 	"You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command": "You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command",
-	"You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.": "You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`."
+	"You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.": "You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.",
+	"Pong!": "Pong!"
 }
