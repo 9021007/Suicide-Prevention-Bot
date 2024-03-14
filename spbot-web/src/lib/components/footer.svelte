@@ -73,6 +73,8 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             font-size: 1.5vw;
             text-align: center;
             line-height: 0vh;
+            font-weight:bold;
+
         }
 
         .column > .links {
