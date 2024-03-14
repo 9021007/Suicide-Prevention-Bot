@@ -10,7 +10,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
         <a href="/"><img src="/img/siround.png" alt="SPBOT Logo" /></a>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/hotlines">Hotlines</a></li>
+            <li><a href="/lifelines">Lifelines</a></li>
         </ul>
     </div>
     <div id="right">

@@ -89,6 +89,8 @@ onMount(() => {
 
 </script>
 
+<title>Lifelines</title>
+
 <div class="container">
     <p class="title">Find a lifeline in your area</p>
     <p class="subtitle">Search hundreds of numbers, dataset last updated 2024/2/13.</p>

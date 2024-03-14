@@ -214,6 +214,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             width:100%;
             font-size: 5vh;
             text-align: center;
+            margin-bottom:3vh;
         }
         
         .row4 > .column1 > .title, .row4 > .column2 > .title, .row4 > .column3 > .title {
@@ -405,6 +406,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
             width:100%;
             line-height: 1.5vw;
             text-align: center;
+            margin-bottom: 2vh;
         }
 
         .row4 > .column1, .row4 > .column2, .row4 > .column3 {
