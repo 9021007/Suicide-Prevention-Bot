@@ -5,6 +5,8 @@
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 </script>
 
+<title>Suicide Prevention Bot</title>
+
 <div class="start">
     <h1>Combating suicide with technology</h1>
     <h3>Automated mental health crisis detection, trusted by thousands of servers.</h3>
