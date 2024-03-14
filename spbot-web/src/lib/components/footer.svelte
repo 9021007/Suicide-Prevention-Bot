@@ -23,6 +23,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
                 <a href="https://www.samaritans.org/donate-now/" target="_blank">Samaritans: UK</a>
                 <a href="https://www.arpitafoundation.org/contact.html" target="_blank">Arpita Foundation: India</a>
                 <a href="https://www.befrienders-jpn.org/donate" target="_blank">Befrienders International: Japan</a>
+                <a href="/lifelines"><u>Find more on the Lifelines page</u></a>
 
             </div>
         </div>

@@ -29,6 +29,7 @@ onMount(() => {
         option.setAttribute('data-organization', item.Organization);
         option.setAttribute('data-website', item.Website);
         option.setAttribute('data-note', item.Note);
+        option.setAttribute('data-donate', item.Donate);
         switch (item.Group) {
             case 'Africa':
                 countryOptgroupAfrica.appendChild(option);
@@ -55,6 +56,7 @@ onMount(() => {
         const organization = selectedOption.getAttribute('data-organization');
         const website = selectedOption.getAttribute('data-website');
         const note = selectedOption.getAttribute('data-note');
+        const donate = selectedOption.getAttribute('data-donate');
         if (number) {
             document.querySelector('.info .number').textContent = `Number: ${number}`;
         } else if (selectedOption.label == "Select a region...") {
@@ -70,14 +72,25 @@ onMount(() => {
             document.querySelector('.info .organization').textContent = '';
         }
         if (website) {
-            document.querySelector('.info .website').textContent = `Website: ${website}`;
+            document.querySelector('.info .website').textContent = `${website}`;
+            document.querySelector('.info .websitelink').href = website;
+            document.querySelector('.info .websitelabel').textContent = 'Website: ';
         } else {
             document.querySelector('.info .website').textContent = '';
+            document.querySelector('.info .websitelabel').textContent = '';
         }
         if (note) {
             document.querySelector('.info .note').textContent = `Note: ${note}`;
         } else {
             document.querySelector('.info .note').textContent = '';
+        }
+        if (donate) {
+            document.querySelector('.info .donate').textContent = `${donate}`;
+            document.querySelector('.info .donatelink').href = donate;
+            document.querySelector('.info .donationlabel').textContent = 'Donate: ';
+        } else {
+            document.querySelector('.info .donate').textContent = '';
+            document.querySelector('.info .donationlabel').textContent = '';
         }
     });
 });
@@ -114,8 +127,9 @@ onMount(() => {
     <div class="info">
         <p class="number">Information you search for will appear in this area</p>
         <p class="organization"></p>
-        <p class="website"></p>
+        <p class="websitelabel"></p><a href="" class="websitelink" target="_blank"><p class="website"></p></a>
         <p class="note"></p>
+        <p class="donationlabel"></p><a href="" class="donatelink" target="_blank"><p class="donate"></p></a>
     </div>
 
 
@@ -175,7 +189,7 @@ onMount(() => {
             padding-right: 3vw;
         }
 
-        .info > p {
+        .info > p, a {
             font-size: 1.5vw;
             color: white;
 
@@ -232,7 +246,7 @@ onMount(() => {
             padding-right: 3vw;
         }
 
-        .info > p {
+        .info > p, a {
             font-size: 5vw;
             color: white;
 
