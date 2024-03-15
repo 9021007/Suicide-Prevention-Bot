@@ -106,7 +106,7 @@ onMount(() => {
 
 <div class="container">
     <p class="title">Find a lifeline in your area</p>
-    <p class="subtitle">Search hundreds of numbers, dataset last updated 2024/2/13.</p>
+    <p class="subtitle">Search hundreds of numbers, dataset last updated 2024/3/13.</p>
     <div class="dropdown">
         <select name="country" class="form-control" id="country">
             <option value="0" label="Select a region...">
