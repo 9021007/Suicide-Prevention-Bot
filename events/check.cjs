@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } = require('discord.js');
 const { __ } = require('../bot.cjs');
 const { website, themecolor, detectionPort, detectionEndpoint } = require("../config.json")
-const alert = require("./alert.cjs")
+const { returnEmbed } = require("./alert.cjs")
 const axios = require('axios');
 
 module.exports = {
@@ -13,8 +13,8 @@ module.exports = {
             }
             
 
-            const newembed = alert.embed
-            .setFooter({text: __("This message was displayed because the bot believes this message is about suicide", lang), iconURL: website + '/img/siround.png'})
+            const newembed = returnEmbed(lang);
+            newembed.setFooter({text: __("This message was displayed because the bot believes this message is about suicide", lang), iconURL: website + '/img/siround.png'})
 
             const optout = new ButtonBuilder()
                 .setCustomId('optout')
