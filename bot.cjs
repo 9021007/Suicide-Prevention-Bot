@@ -2,6 +2,7 @@ const { Client, Events, Collection, GatewayIntentBits, PermissionsBitField } = r
 const fs = require('node:fs');
 const path = require('node:path');
 const type = require('node:os');
+const { I18n } = require('i18n');
 const dotenv = require('dotenv');
 dotenv.config();
 const token = process.env.BOT_TOKEN;
@@ -26,7 +27,6 @@ import('./database.mjs').then((db) => {
         return languages;
     };
 
-    const { I18n } = require('i18n');
     const i18n = new I18n({
         locales: languageChoices(),
         directory: "./locales",

@@ -52,5 +52,7 @@
 	"This user has opted out of user-directed bot DMs. You cannot send a DM to this user.": "This user has opted out of user-directed bot DMs. You cannot send a DM to this user.",
 	"A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.": "A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.",
 	"You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command": "You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command",
-	"You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.": "You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`."
+	"You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.": "You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.",
+	"Suicide and self harm are preventable. If you feel that you are considering suicide or self harm, please reach out for help. Resources are available 24/7.": "Suicide and self harm are preventable. If you feel that you are considering suicide or self harm, please reach out for help. Resources are available 24/7.",
+	"fr": "fr"
 }
