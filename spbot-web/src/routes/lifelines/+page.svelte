@@ -105,6 +105,14 @@ onMount(() => {
 
 </script>
 
+<meta name="Description" content="Search hundreds of numbers, along with organization websites">
+<meta property="og:title" content="Find a lifeline in your area." />
+<meta property="og:type" content="Suicide Prevention Bot for Discord" />
+<meta property="og:url" content="http://spbot.9021007.xyz" />
+<meta property="og:image" content="http://spbot.9021007.xyz/img/lifelineembed.png" />
+<meta property="og:description" content="Search hundreds of numbers, along with organization websites." />
+<meta name="theme-color" content="#4d87b2">
+<meta name="twitter:card" content="summary_large_image">
 <title>Lifelines</title>
 
 <div class="container">
