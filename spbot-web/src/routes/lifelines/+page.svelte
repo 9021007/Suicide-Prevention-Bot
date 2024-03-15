@@ -57,12 +57,15 @@ onMount(() => {
         const website = selectedOption.getAttribute('data-website');
         const note = selectedOption.getAttribute('data-note');
         const donate = selectedOption.getAttribute('data-donate');
-        if (number) {
+        const nonemsg = "We checked, but we couldn\'t find a number for this region. If you know of a hotline in this region, please let us know by joining our Discord server or submitting a GitHub pull request."
+        if (number == "NONE") {
+            document.querySelector('.info .number').textContent = nonemsg;
+        } else if (number) {
             document.querySelector('.info .number').textContent = `Number: ${number}`;
         } else if (selectedOption.label == "Select a region...") {
             document.querySelector('.info .number').textContent = 'Information you search for will appear in this area';
         } else {
-            document.querySelector('.info .number').textContent = 'We checked, but we couldn\'t find a number for this region. If you know of a hotline in this region, please let us know by joining our Discord server or submitting a GitHub pull request.';
+            document.querySelector('.info .number').textContent = nonemsg
         }
         if (organization == "nosource") {
             document.querySelector('.info .organization').textContent = `The number we have on file is widely shared on the Internet, but we were unable to locate an official source or organization for it. If you know more about this number, please let us know by joining our Discord server or submitting a GitHub pull request.`;
