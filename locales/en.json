@@ -48,7 +48,7 @@
 	"You have opted out of these replies. To opt back in, use the `/optin` command": "You have opted out of these replies. To opt back in, use the `/optin` command",
 	"You have successfully opted into bot DMs. To opt back out, use `/dmmute`": "You have successfully opted into bot DMs. To opt back out, use `/dmmute`",
 	"You have successfully opted out of bot DMs. To opt back in, use `/dmunmute`": "You have successfully opted out of bot DMs. To opt back in, use `/dmunmute`",
-	"This message was sent to you because a user directed the bot to DM you. You cannot recieve more than 1 user-directed DM in a 24-hour period.": "This message was sent to you because a user directed the bot to DM you. You cannot recieve more than 1 user-directed DM in a 24-hour period.",
+	"This message was sent to you because a user directed the bot to DM you. You cannot recieve more than 1 user-directed DM in a 24-hour period.": "This message was sent to you because a user directed the bot to DM you. You cannot receive more than 1 user-directed DM in a 24-hour period.",
 	"This user has opted out of user-directed bot DMs. You cannot send a DM to this user.": "This user has opted out of user-directed bot DMs. You cannot send a DM to this user.",
 	"A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.": "A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.",
 	"You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command": "You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command",
