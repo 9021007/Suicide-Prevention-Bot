@@ -11,7 +11,7 @@ for (var i = 0; i < lines.length; i++) {
 var embed = new EmbedBuilder()
     .setColor(themecolor)
     .setTitle(__("Help is available, 24 hours a day.", lang))
-    .setDescription(__("Suicide and self harm are preventable. If you feel that you are considering suicide or self harm, please reach out for help. Resources are availble 24/7.", lang))
+    .setDescription(__("Suicide and self harm are preventable. If you feel that you are considering suicide or self harm, please reach out for help. Resources are available 24/7.", lang))
     .setAuthor({
         name: __("Speak with a trained mental health counselor", lang),
         iconURL: website + '/img/siround.png'
