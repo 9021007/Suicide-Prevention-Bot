@@ -1,7 +1,8 @@
 {
     "supportedLanguages": [
 		["en", "english", "english"],
-		["es","spanish", "espanol"]
+		["es","spanish", "espanol"],
+        ["fr", "french", "français"]
 	],
     "themecolor": "#555555",
     "website": "https://spbot.9021007.xyz",
