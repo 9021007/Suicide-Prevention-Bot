@@ -17,5 +17,6 @@
         ["Japan", "Call +81 0 3 5286 9090"]
     ],
     "detectionPort": "2463",
-    "detectionEndpoint": "0.0.0.0"
+    "detectionEndpoint": "0.0.0.0",
+    "issuechannel": "123456789"
 }

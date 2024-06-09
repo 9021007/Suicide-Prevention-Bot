@@ -70,5 +70,10 @@
 	"Displays all available commands": "Displays all available commands",
 	"See information about Suicide Prevention Bot": "See information about Suicide Prevention Bot",
 	"Makes sure that the bot is working": "Makes sure that the bot is working",
-	"Display the current status and statistics of the bot": "Display the current status and statistics of the bot"
+	"Display the current status and statistics of the bot": "Display the current status and statistics of the bot",
+	"Opt out of these replies": "Opt out of these replies",
+	"Report Issue": "Report Issue",
+	"Issue reported. ": "Issue reported. ",
+	"Confirm": "Confirm",
+	"Are you sure you want to report an issue? Developers of this bot will be able to read the message you are reporting, and see who reported it.": "Are you sure you want to report an issue? Developers of this bot will be able to read the message you are reporting, and see who reported it."
 }

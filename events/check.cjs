@@ -8,11 +8,23 @@ const axios = require('axios');
 module.exports = {
 	async execute(message, lang) {
         import('../database.mjs').then(async (db) => {
+            // If user has muted bot, skip
             if (await db.checkMutedUser(message.author.id)) {
                 return;
             }
 
-            var messagecontent = message.content.split(" ");
+            var messagecontent = message.content
+            var codeblocks = message.content.match(/```[\s\S]*?```|`[^`]+`/g);
+
+            // Removes codeblocks from message
+            if (codeblocks) {
+                for (var i = 0; i < codeblocks.length; i++) {
+                    messagecontent = messagecontent.replace(codeblocks[i], "");
+                }
+            }
+
+            // Removes duplicate words from message
+            messagecontent = messagecontent.split(" ");
             var processedcontent = []
             for (var i = 0; i < messagecontent.length; i++) {
                 if (messagecontent[i] != messagecontent[i + 1]) {
@@ -29,10 +41,15 @@ module.exports = {
                         newembed.setFooter({text: __("This message was displayed because the bot believes this message is about suicide", lang), iconURL: website + '/img/siround.png'})
                         const optout = new ButtonBuilder()
                             .setCustomId('optout')
-                            .setLabel('Opt out of these replies')
+                            .setLabel(__('Opt out of these replies',lang))
+                            .setStyle(ButtonStyle.Secondary);
+                        const reportissue = new ButtonBuilder()
+                            .setCustomId(`reportissue-${message.guildId}-${message.id}`)
+                            .setLabel(__('Report Issue',lang))
                             .setStyle(ButtonStyle.Secondary);
                         const row = new ActionRowBuilder()
-                            .addComponents(optout);
+                            .addComponents(optout)
+                            .addComponents(reportissue);
                             
                         message.reply({ embeds: [newembed], components: [row] });
                     }

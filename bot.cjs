@@ -1,4 +1,4 @@
-const { Client, Events, Collection, GatewayIntentBits, PermissionsBitField } = require('discord.js');
+const { Client, Events, Collection, GatewayIntentBits, PermissionsBitField, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 const type = require('node:os');
@@ -6,7 +6,7 @@ const { I18n } = require('i18n');
 const dotenv = require('dotenv');
 dotenv.config();
 const token = process.env.BOT_TOKEN;
-const { supportedLanguages, defaultLanguage } = require('./config.json');
+const { supportedLanguages, defaultLanguage, issuechannel } = require('./config.json');
 
 
 import('./database.mjs').then((db) => {
@@ -134,6 +134,47 @@ import('./database.mjs').then((db) => {
             } else if (interaction.customId == "dmoptout") {
                 await db.setDmMutedUser(interaction.user.id, true);
                 await interaction.reply({ content: __("You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.", lang), ephemeral: true });
+            } else if (interaction.customId.startsWith("reportissue")) {
+                // only allow submission by the user who sent the message
+                var parts = interaction.customId.split("-");
+                var guildId = parts[1];
+                var messageId = parts[2];
+                var message = await interaction.channel.messages.fetch(messageId);
+                var user = message.author;
+                if (interaction.user.id != user.id) {
+                    await interaction.reply({ content: __("You cannot report an issue for a message you did not send.", lang), ephemeral: true });
+                    return;
+                } else {
+                    var confirm = new ButtonBuilder()
+                        .setCustomId(`riconfirm-${guildId}-${messageId}`)
+                        .setLabel(__('Confirm', lang))
+                        .setStyle(ButtonStyle.Success);
+                    await interaction.reply({ content: __("Are you sure you want to report an issue? Developers of this bot will be able to read the message you are reporting, and see who reported it.", lang), ephemeral: true, components: [new ActionRowBuilder().addComponents(confirm)] });
+                }
+            } else if (interaction.customId.startsWith("riconfirm")) {
+                var parts = interaction.customId.split("-");
+                var guildId = parts[1];
+                var messageId = parts[2];
+                var message = await interaction.channel.messages.fetch(messageId);
+                var user = message.author;
+                var newembed = new EmbedBuilder()
+                    .setColor('#ff0000')
+                    .setTitle('Issue Report')
+                    .setDescription(`Issue reported by <@${interaction.user.id}>`)
+                    .addFields(
+                        { name: 'Guild ID', value: guildId, inline: true },
+                        { name: 'Channel ID', value: message.channelId, inline: true },
+                        { name: 'Message ID', value: messageId, inline: true}
+                    )
+                    .setTimestamp();
+                if (message.content.length > 1500) {
+                    newembed.addFields({name: "Message", value: message.content.slice(0, 1500) + "..."});
+                } else {
+                    newembed.addFields({name: "Message", value: message.content});
+                }
+                var channel = await client.guilds.cache.get(process.env.BOT_GUILD).channels.fetch(issuechannel);
+                channel.send({ embeds: [newembed] });
+                await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
             }
         } else {
             console.log(`Unhandled interaction type: ${interaction.type}`);
