@@ -25,7 +25,7 @@ module.exports = {
                                 interaction.reply(__("A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.", lang));
                                 return;
                             } else { // if the last DM was sent more than 24 hours ago
-                                const newembed = alert.embed
+                                const newembed = alert.returnEmbed(lang);
                                 const dmoptout = new ButtonBuilder()
                                     .setCustomId('dmoptout')
                                     .setLabel('Opt out of all user-directed bot DMs')

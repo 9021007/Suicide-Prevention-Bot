@@ -31,8 +31,8 @@ module.exports = {
                 { name: __("Node.js", lang), value: process.version, inline: inline },
                 { name: __("== Hardware ==", lang), value: " ", inline: false },
                 { name: __("CPU", lang), value: os.cpus().map(i => `${i.model}`)[0], inline: inline },
-                { name: __("CPU Usage", lang), value: `${(process.cpuUsage().system / 1024 / 1024).toFixed(2)}%`, inline: inline },
-                { name: __("Memory Usage", lang), value: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, inline: inline },
+                { name: __("CPU Usage", lang), value: `${os.loadavg()[0]}%`, inline: inline },
+                { name: __("Memory Usage", lang), value: `${(os.totalmem()-os.freemem())/1024/1024} MB`, inline: inline },
                 { name: __("Uptime", lang), value: `${Math.floor(process.uptime() / 3600)} hours, ${Math.floor(process.uptime() / 60) % 60} minutes, ${Math.floor(process.uptime() % 60)} seconds`, inline: inline }
             )
             .setDescription(__("This is the current status of the bot, including a variety of interesting statistics on its usage.", lang))

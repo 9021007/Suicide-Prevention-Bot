@@ -28,7 +28,7 @@ module.exports = {
                 const filePath = path.join(commandsPath, file);
                 const command = require(filePath);
                 if ('data' in command && 'execute' in command) {
-                    commands.push({name: "/" + command.data.toJSON()["name"], value: command.data.toJSON()["description"]});
+                    commands.push({name: "/" + command.data.toJSON()["name"], value: __(command.data.toJSON()["description"], lang)});
                 } else {
                     console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
                 }

@@ -53,5 +53,22 @@
 	"A DM has already been sent to this user within the last 24 hours. Please wait before sending another DM.": "Un MP a été déjà été envoyé à cet utilisateur dans les 24 dernières heures. Merci d'attendre avant de renouveller l'envoi.",
 	"You have opted out of user-directed bot DMs. To opt back in, use the `/dmunmute` command": "Vous avez décliné les MP du bot recommandés par d'autres utilisateurs. Pour les recevoir à nouveau, utiliser la commande `/dmunmute`",
 	"You have opted out of user-directed bot DMs. To opt back in, use `/dmunmute`.": "Vous avez décliné les MP du bot recommandés par d'autres utilisateurs. Pour les recevoir à nouveau, utiliser la commande `/dmunmute`.",
-	"Pong!": "Pong!"
+	"Pong!": "Pong!",
+	"DM sent!": "DM sent!",
+	"Could not send DM to user. The user may not have DMs enabled.": "Could not send DM to user. The user may not have DMs enabled.",
+	"Send a private DM to a user, with information on how to get help.": "Send a private DM to a user, with information on how to get help.",
+	"Opts yourself out of user-directed DMs from the bot.": "Opts yourself out of user-directed DMs from the bot.",
+	"Opts yourself into user-directed DMs from the bot.": "Opts yourself into user-directed DMs from the bot.",
+	"Opts yourself into bot replies": "Opts yourself into bot replies",
+	"Opts yourself out of bot replies": "Opts yourself out of bot replies",
+	"Lists available languages": "Lists available languages",
+	"Sets the language that the bot will use in the server": "Sets the language that the bot will use in the server",
+	"Displays open source information": "Displays open source information",
+	"Displays Privacy Policy": "Displays Privacy Policy",
+	"Need help? Get a Discord invite to the support server.": "Need help? Get a Discord invite to the support server.",
+	"Displays Terms of Service": "Displays Terms of Service",
+	"Displays all available commands": "Displays all available commands",
+	"See information about Suicide Prevention Bot": "See information about Suicide Prevention Bot",
+	"Makes sure that the bot is working": "Makes sure that the bot is working",
+	"Display the current status and statistics of the bot": "Display the current status and statistics of the bot"
 }

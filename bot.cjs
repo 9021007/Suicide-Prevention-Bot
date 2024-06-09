@@ -91,6 +91,7 @@ import('./database.mjs').then((db) => {
 
     // command handling
     client.on(Events.InteractionCreate, async interaction => {
+        
         lang = defaultLanguage
 
         if (interaction.guildId === null) { //if it's a dm
@@ -116,6 +117,7 @@ import('./database.mjs').then((db) => {
             }
 
             try {
+                // if the command is a DM command, pass in the client in addition to the interaction and lang.
                 await command.execute(interaction, lang);
             } catch (error) {
                 console.error(error);
@@ -155,7 +157,7 @@ import('./database.mjs').then((db) => {
 
         let LCM = message.content.toLowerCase(); //Lower case message text
 
-        if (message.mentions.users.first() === client.user && message.reference == null) {
+        if (message.mentions.users.first() === client.user) {
             return require('./events/mention.cjs').execute(message, lang);
         } else {
             return require('./events/check.cjs').execute(message, lang);
@@ -168,8 +170,6 @@ import('./database.mjs').then((db) => {
     });
 
 
-    client.login(token);
+    client.login(token)
     exports.client = client;
-
-
 });

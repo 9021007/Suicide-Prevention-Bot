@@ -13,7 +13,7 @@ module.exports = {
     async execute(interaction, lang) {
         import('../../database.mjs').then((db) => {
             db.setMutedUser(interaction.user.id, false);
-            interaction.reply(__("You have successfully opted into bot replies. To opt out, use `/optout`", lang));
+            interaction.reply({ content: __("You have successfully opted into bot replies. To opt out, use `/optout`", lang), ephemeral: true });
         });
     },
 };
