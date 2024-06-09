@@ -32,6 +32,8 @@ For some sources of data, check out the links in the comments of `main.py`.
 
 Once the folders are organized and filled, run `python3 -m pip install tensorflow==2.15.0` to install TensorFlow.
 
+If you are on macOS, ensure you are running the version of python native to your archetecture, i.e. ARM-native python for Apple Silicon, and Intel-native python for Intel.
+
 Finally, you're go for launch. run `python3 main.py` and go for a walk outside. A long walk. Longer. This will take hours... assuming you don't run into any errors.
 
 Once it's running, you can take a deep breath and move on to Part 2. You can run it through `pm2` if you want it daemonized.
@@ -48,7 +50,7 @@ Make sure that the database is accessible via a password, and make sure you save
 
 If you have not done so already, simply clone the repository, and open it in your IDE of choice.
 
-Once you have done that, clone the `.env.example` file, and rename the cloned version to `.env`. It comes with prefilled example values that you will need to change yourself. Do the same with `config.json.example`, renaming it to `config.json`.
+Once you have done that, duplicate the `.env.example` file, and rename the new version to `.env`. It comes with prefilled example values that you will need to change yourself. Do the same with `config.json.example`, renaming it to `config.json`.
 
 Install `node` and `npm` if you have not done so already.
 
