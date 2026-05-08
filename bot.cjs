@@ -1,4 +1,4 @@
-const { Client, Events, Collection, GatewayIntentBits, PermissionsBitField, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { Client, Events, Collection, GatewayIntentBits, PermissionsBitField, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, WebhookClient } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 const { I18n } = require('i18n');
@@ -51,6 +51,7 @@ import('./database.mjs').then(async (db) => {
         GatewayIntentBits.MessageContent,
     ] });
 
+    const webhookClient = new WebhookClient({ url: process.env.REPORT_WEBHOOK });
 
     // command directory
     client.commands = new Collection();
@@ -177,13 +178,9 @@ import('./database.mjs').then(async (db) => {
                 // var channel = await client.guilds.cache.get(process.env.BOT_GUILD).channels.fetch(issuechannel);
                 // channel.send({ embeds: [newembed] });
                 // await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
-                // multishard version
-                client.shard.broadcastEval(async (client, { newembed, issuechannel }) => {
-                    var channel = await client.channels.fetch(issuechannel);
-                    channel.send({ embeds: [newembed] });
-                }, { newembed: newembed, issuechannel: issuechannel });
 
-                await interaction.reply({ content: __("Issue reported.", lang), ephemeral: true });
+                webhookClient.send({ embeds: [newembed] });
+                await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
             }
         } else {
             console.log(`Unhandled interaction type: ${interaction.type}`);
