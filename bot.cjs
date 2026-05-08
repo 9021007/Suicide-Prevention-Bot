@@ -174,9 +174,21 @@ import('./database.mjs').then(async (db) => {
                 } else {
                     newembed.addFields({name: "Message", value: message.content});
                 }
-                var channel = await client.guilds.cache.get(process.env.BOT_GUILD).channels.fetch(issuechannel);
-                channel.send({ embeds: [newembed] });
-                await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
+                // var channel = await client.guilds.cache.get(process.env.BOT_GUILD).channels.fetch(issuechannel);
+                // channel.send({ embeds: [newembed] });
+                // await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
+
+                // multishard version
+                client.shard.broadcastEval((client, { newembed, issuechannel }) => {
+                    const { EmbedBuilder } = require('discord.js');
+                    const embed = new EmbedBuilder(newembed);
+                    const channel = client.channels.cache.get(issuechannel);
+                    if (channel) {
+                        channel.send({ embeds: [embed] });
+                    }
+                }, { newembed: newembed.toJSON(), issuechannel: issuechannel });
+
+                await interaction.reply({ content: __("Issue reported.", lang), ephemeral: true });
             }
         } else {
             console.log(`Unhandled interaction type: ${interaction.type}`);
