@@ -177,16 +177,11 @@ import('./database.mjs').then(async (db) => {
                 // var channel = await client.guilds.cache.get(process.env.BOT_GUILD).channels.fetch(issuechannel);
                 // channel.send({ embeds: [newembed] });
                 // await interaction.reply({ content: __("Issue reported. ", lang), ephemeral: true });
-
                 // multishard version
-                client.shard.broadcastEval((client, { newembed, issuechannel }) => {
-                    const { EmbedBuilder } = require('discord.js');
-                    const embed = new EmbedBuilder(newembed);
-                    const channel = client.channels.cache.get(issuechannel);
-                    if (channel) {
-                        channel.send({ embeds: [embed] });
-                    }
-                }, { newembed: newembed.toJSON(), issuechannel: issuechannel });
+                client.shard.broadcastEval(async (client, { newembed, issuechannel }) => {
+                    var channel = await client.channels.fetch(issuechannel);
+                    channel.send({ embeds: [newembed] });
+                }, { newembed: newembed, issuechannel: issuechannel });
 
                 await interaction.reply({ content: __("Issue reported.", lang), ephemeral: true });
             }
